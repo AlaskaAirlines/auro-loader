@@ -17,22 +17,62 @@ import styleCss from "./style-css.js";
 
 // See https://git.io/JJ6SJ for "How to document your components using JSDoc"
 /**
- * auro-loader provides users a way to ...
+ * auro-loader is an easy to use animated loader component
  *
- * @attr {String} cssClass - Applies designated CSS class to DOM element.
+ * @attr {Boolean} ripple - sets loader type
+ * @attr {Boolean} pulse - sets loader type
+ * @attr {Boolean} star - sets loader type
+ * @attr {Boolean} ring - sets loader type
+ * @attr {Boolean} wave - sets loader type
+ * @attr {Boolean} orbit - sets loader type
+ * @attr {Boolean} white - sets color of loader to white
+ * @attr {Boolean} ondark - sets color of loader to auro-color-ui-default-on-dark
+ * @attr {Boolean} onlight - sets color of loader to auro-color-ui-default-on-light
+ * @attr {Boolean} sm - sets size to sm
+ * @attr {Boolean} md - sets size to md
+ * @attr {Boolean} lg - sets size to lg
+ * @attr {Boolean} xl - sets size to xl
  */
 
 // build the component class
 class AuroLoader extends LitElement {
-  // constructor() {
-  //   super();
-  // }
+  constructor() {
+    super();
+
+    /**
+     * @private internal var
+     */
+    this.keys = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+
+    /**
+     * @private internal var
+     */
+    this.norm = 3;
+
+    /**
+     * @private internal var
+     */
+    this.sm = 2;
+
+    /**
+     * @private internal var
+     */
+    this.md = 5;
+
+    /**
+     * @private internal var
+     */
+    this.lg = 8;
+  }
 
   // function to define props used within the scope of this component
   static get properties() {
     return {
       // ...super.properties,
-      cssClass:   { type: String }
+      star: { type: Boolean},
+      ring: { type: Boolean},
+      wave: { type: Boolean},
+      orbit: { type: Boolean}
     };
   }
 
@@ -42,15 +82,33 @@ class AuroLoader extends LitElement {
     `;
   }
 
+  /**
+   * @private internal function for template definition
+   * @returns {array} numbered array for template map
+   */
+  defineTemplate() {
+    let nodes = Array.from(Array(this.norm).keys());
+
+    if (this.star || this.ring) {
+      nodes = Array.from(Array(this.lg).keys());
+    } else if (this.wave) {
+      nodes = Array.from(Array(this.md).keys());
+    } else if (this.orbit) {
+      nodes = Array.from(Array(this.sm).keys());
+    }
+
+    return nodes;
+  }
+
   // When using auroElement, use the following attribute and function when hiding content from screen readers.
   // aria-hidden="${this.hideAudible(this.hiddenAudible)}"
 
   // function that renders the HTML and CSS into  the scope of the component
   render() {
     return html`
-      <div class=${this.cssClass}>
-        <slot></slot>
-      </div>
+      ${this.defineTemplate().map((idx) => html`
+        <span class="node-${idx}"></span>
+      `)}
     `;
   }
 }

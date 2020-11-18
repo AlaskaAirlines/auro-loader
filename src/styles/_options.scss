@@ -1,0 +1,11 @@
+:host([onlight]) {
+  color: var(--auro-color-ui-default-on-light);
+}
+
+:host([ondark]) {
+  color: var(--auro-color-ui-default-on-dark);
+}
+
+:host([white]) {
+  color: var(--auro-color-base-white);
+}

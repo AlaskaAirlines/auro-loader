@@ -18,7 +18,7 @@ module.exports = {
       "array-bracket-newline": "error",
       "array-bracket-spacing": "error",
       "array-callback-return": "error",
-      "array-element-newline": "error",
+      "array-element-newline": "off",
       "arrow-body-style": "error",
       "arrow-parens": "error",
       "arrow-spacing": ["error", {
@@ -127,7 +127,7 @@ module.exports = {
       "no-lone-blocks": "error",
       "no-lonely-if": "error",
       "no-loop-func": "error",
-      "no-magic-numbers": "error",
+      "no-magic-numbers": "off",
       "no-mixed-operators": "error",
       "no-mixed-requires": "error",
       "no-multi-assign": "error",

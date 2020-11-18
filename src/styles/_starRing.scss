@@ -1,0 +1,163 @@
+:host([ring]),
+:host([star]) {
+  margin: 0.5rem;
+  width: 2rem;
+  height: 2rem;
+}
+
+:host([ring]) {
+  margin: 0;
+}
+
+:host([ring]) > span,
+:host([star]) > span {
+  width: 1px;
+  height: 8px;
+  margin: 2px;
+  margin-top: -5px;
+  margin-left: -1px;
+  border-radius: 0;
+  animation: rotator 1s infinite ease-in-out;
+}
+
+:host([ring]) > span {
+  height: 1px;
+  border-radius: 100%;
+  margin: -5px 2px 2px -5px;
+}
+
+:host([ring][sm]),
+:host([star][sm]) {
+  width: 3rem;
+  height: 3rem;
+}
+
+:host([ring][sm]) > span {
+  width: 2px;
+  height: 2px;
+}
+
+:host([star][sm]) > span {
+  height: 12px;
+}
+
+:host([ring][md]),
+:host([star][md]) {
+  width: 5rem;
+  height: 5rem;
+}
+
+:host([star][md]) > span  {
+  width: 2px;
+  height: 20px;
+}
+
+:host([ring][md]) > span {
+  width: 4px;
+  height: 4px;
+}
+
+:host([ring][lg]),
+:host([star][lg]) {
+  width: 8rem;
+  height: 8rem;
+}
+
+:host([star][lg]) > span  {
+  width: 5px;
+  height: 40px;
+}
+
+:host([ring][lg]) > span {
+  width: 8px;
+  height: 8px;
+}
+
+:host([ring][xl]),
+:host([star][xl]) {
+  width: 13rem;
+  height: 13rem;
+}
+
+:host([star][xl]) > span  {
+  width: 12px;
+  height: 60px;
+}
+
+:host([ring][xl]) > span {
+  width: 12px;
+  height: 12px;
+}
+
+:host([ring]) > span:nth-child(1),
+:host([star]) > span:nth-child(1) {
+  top: 15%;
+  left: 50%;
+  transform: rotate(0deg);
+  animation-delay: -.875s;
+}
+
+:host([ring]) > span:nth-child(2),
+:host([star]) > span:nth-child(2) {
+  top: 25.2512626585%;
+  left: 74.7487373415%;
+  transform: rotate(45deg);;
+  animation-delay: -.75s;
+}
+
+:host([ring]) > span:nth-child(3),
+:host([star]) > span:nth-child(3) {
+  top: 50%;
+  left: 85%;
+  transform: rotate(90deg);
+  animation-delay: -.625s;
+}
+
+:host([ring]) > span:nth-child(4),
+:host([star]) > span:nth-child(4) {
+  top: 74.7487373415%;
+  left: 74.7487373415%;
+  transform: rotate(135deg);
+  animation-delay: -.5s;
+}
+
+:host([ring]) > span:nth-child(5),
+:host([star]) > span:nth-child(5) {
+  top: 84.9999999974%;
+  left: 50.0000000004%;
+  transform: rotate(180deg);
+  animation-delay: -.375s;
+}
+
+:host([ring]) > span:nth-child(6),
+:host([star]) > span:nth-child(6) {
+  top: 74.7487369862%;
+  left: 25.2512627193%;
+  transform: rotate(225deg);
+  animation-delay: -.25s;
+}
+
+:host([ring]) > span:nth-child(7),
+:host([star]) > span:nth-child(7) {
+  top: 49.9999806189%;
+  left: 15.0000039834%;
+  transform: rotate(270deg);
+  animation-delay: -.125s;
+}
+
+:host([ring]) > span:nth-child(8),
+:host([star]) > span:nth-child(8) {
+  top: 25.2506949798%;
+  left: 25.2513989292%;
+  transform: rotate(315deg);
+  animation-delay: 0s;
+}
+
+@keyframes rotator {
+  50% {
+      opacity: .2;
+  }
+  100% {
+      opacity: 1;
+  }
+}

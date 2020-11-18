@@ -1,0 +1,47 @@
+:host([ripple]) > span {
+  border-width: 2px;
+  background-color: transparent;
+  animation: ripple 1.25s 0s infinite cubic-bezier(.21, .53, .56, .8);
+}
+
+:host([ripple]) > span:nth-child(1) {
+  animation-delay: 0s;
+}
+
+:host([ripple]) > span:nth-child(2) {
+  animation-delay: 0.25s;
+}
+
+:host([ripple]) > span:nth-child(3) {
+  animation-delay: 0.5s;
+}
+
+:host([ripple][md]),
+:host([ripple][md]) > span {
+  border-width: 4px;
+}
+
+:host([ripple][lg]),
+:host([ripple][lg]) > span {
+  border-width: 6px;
+}
+
+:host([ripple][xl]),
+:host([ripple][xl]) > span {
+  border-width: 8px;
+}
+
+@keyframes ripple {
+  0% {
+    opacity: 1;
+    transform: scale(.1);
+  }
+  70% {
+    opacity: .5;
+    transform: scale(1);
+  }
+  95% {
+    opacity: 0;
+  }
+}
+

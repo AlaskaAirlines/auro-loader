@@ -9,11 +9,9 @@
 }
 
 :host([pulse]) > span {
-  display: inline-block;
   width: 1rem;
   height: 1rem;
   margin: 0.25rem;
-  float: none;
   animation: pulse 1s ease infinite;
 }
 
@@ -48,11 +46,11 @@
 }
 
 :host([pulse]) > span:nth-child(1) {
-  animation-delay: -200ms;
+  animation-delay: -400ms;
 }
 
 :host([pulse]) > span:nth-child(2) {
-  animation-delay: -100ms;
+  animation-delay: -200ms;
 }
 
 :host([pulse]) > span:nth-child(3) {
@@ -63,11 +61,11 @@
   0%,
   60%,
   100% {
-    opacity: 1;
+    opacity: .5;
     transform: scale(1);
   }
   30% {
-    opacity: .1;
-    transform: scale(.01);
+    opacity: 1;
+    transform: scale(1.08);
   }
 }

@@ -25,6 +25,7 @@ import styleCss from "./style-css.js";
  * @attr {Boolean} ring - sets loader type
  * @attr {Boolean} wave - sets loader type
  * @attr {Boolean} orbit - sets loader type
+ * @attr {Boolean} cloud - sets loader type
  * @attr {Boolean} white - sets color of loader to white
  * @attr {Boolean} ondark - sets color of loader to auro-color-ui-default-on-dark
  * @attr {Boolean} onlight - sets color of loader to auro-color-ui-default-on-light
@@ -32,6 +33,7 @@ import styleCss from "./style-css.js";
  * @attr {Boolean} md - sets size to md
  * @attr {Boolean} lg - sets size to lg
  * @attr {Boolean} xl - sets size to xl
+ * @csspart element - apply style to adjust speed of animation
  */
 
 // build the component class
@@ -48,6 +50,11 @@ class AuroLoader extends LitElement {
      * @private internal var
      */
     this.norm = 3;
+
+    /**
+     * @private internal var
+     */
+    this.sgl = 1;
 
     /**
      * @private internal var
@@ -72,7 +79,8 @@ class AuroLoader extends LitElement {
       star: { type: Boolean},
       ring: { type: Boolean},
       wave: { type: Boolean},
-      orbit: { type: Boolean}
+      orbit: { type: Boolean},
+      cloud: { type: Boolean}
     };
   }
 
@@ -95,6 +103,8 @@ class AuroLoader extends LitElement {
       nodes = Array.from(Array(this.md).keys());
     } else if (this.orbit) {
       nodes = Array.from(Array(this.sm).keys());
+    } else if (this.cloud) {
+      nodes = Array.from(Array(this.sgl).keys());
     }
 
     return nodes;
@@ -107,7 +117,7 @@ class AuroLoader extends LitElement {
   render() {
     return html`
       ${this.defineTemplate().map((idx) => html`
-        <span class="node-${idx}"></span>
+        <span part="element" class="node-${idx}"></span>
       `)}
     `;
   }

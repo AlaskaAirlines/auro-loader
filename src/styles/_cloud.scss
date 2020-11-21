@@ -1,0 +1,67 @@
+:host([cloud]) {
+  opacity: 1;
+  width: 100%;
+  display: block;
+  height: unset;
+  overflow: hidden;
+  font-size: 3px;
+}
+
+:host([cloud]) > span {
+  opacity: 1;
+  position: relative;
+  margin-top: 3.125em;
+  width: 11.25em;
+  height: 3.75em;
+  background: currentColor;
+  border-radius: 6.25em;
+  animation: cloud 3s linear infinite;
+}
+
+:host([cloud]) > span::after,
+:host([cloud]) > span::before {
+  content: "";
+  position: relative;
+  display: inline-block;
+  background-color: currentColor;
+  border-radius: inherit;
+}
+
+:host([cloud]) > span::after {
+  width: 3.125em;
+  height: 3.125em;
+  top: -3.5em;
+  left: -3.5em;
+}
+
+:host([cloud]) > span::before {
+  width: 5.3125em;
+  height: 5.3125em;
+  top: -2.5em;
+  left: 4.375em;
+}
+
+:host([cloud][sm]) {
+  font-size: 5px;
+}
+
+:host([cloud][md]) {
+  font-size: 8px;
+}
+
+:host([cloud][lg]) {
+  font-size: 13px;
+}
+
+:host([cloud][xl]) {
+  font-size: 21px;
+}
+
+@keyframes cloud {
+  0% {
+    left: -100%;
+  }
+  100%{
+    left : 110%;
+  }
+}

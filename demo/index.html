@@ -16,6 +16,17 @@
     <custom-style>
       <style is="custom-style" include="demo-pages-shared-styles"></style>
     </custom-style>
+    <style>
+      .slow::part(element) {
+        animation-duration: 8s;
+      }
+      .med::part(element) {
+        animation-duration: 5s;
+      }
+      .fast::part(element) {
+        animation-duration: 1s;
+      }
+    </style>
 
     <link rel="stylesheet" type="text/css" href="css/style.css" />
   </head>
@@ -30,6 +41,16 @@
           <auro-loader md></auro-loader>
           <auro-loader ondark lg></auro-loader>
           <auro-loader onlight xl></auro-loader>
+        </template>
+      </demo-snippet>
+
+      <demo-snippet>
+        <template>
+          <auro-loader cloud></auro-loader>
+          <auro-loader class="fast" cloud sm></auro-loader>
+          <auro-loader class="med" cloud md></auro-loader>
+          <auro-loader cloud ondark lg></auro-loader>
+          <auro-loader class="slow" cloud onlight xl></auro-loader>
         </template>
       </demo-snippet>
 
@@ -85,10 +106,10 @@
 
       <demo-snippet>
         <template>
-          <auro-loader pulse color="blue"></auro-loader><br>
+          <auro-loader pulse></auro-loader><br>
           <auro-loader pulse sm></auro-loader><br>
           <auro-loader pulse md></auro-loader><br>
-          <auro-loader pulse lg color="blue"></auro-loader>
+          <auro-loader pulse lg></auro-loader>
         </template>
       </demo-snippet>
     </div>

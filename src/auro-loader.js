@@ -117,8 +117,9 @@ class AuroLoader extends LitElement {
   render() {
     return html`
       ${this.defineTemplate().map((idx) => html`
-        <span part="element" class="node-${idx}"></span>
+        <span part="element" class="loader node-${idx}"></span>
       `)}
+      <div class="no-animation">Loading...</div>
     `;
   }
 }

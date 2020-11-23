@@ -1,5 +1,4 @@
 :host([cloud]) {
-  opacity: 1;
   width: 100%;
   display: block;
   height: unset;
@@ -8,12 +7,10 @@
 }
 
 :host([cloud]) > span {
-  opacity: 1;
   position: relative;
   margin-top: 3.125em;
   width: 11.25em;
   height: 3.75em;
-  background: currentColor;
   border-radius: 6.25em;
   animation: cloud 3s linear infinite;
 }

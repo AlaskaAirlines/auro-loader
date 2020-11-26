@@ -13,6 +13,7 @@
   height: 3.75em;
   border-radius: 6.25em;
   animation: cloud 3s linear infinite;
+  animation-timing-function: cubic-bezier(.39,.77,.74,.42);
 }
 
 :host([cloud]) > span::after,

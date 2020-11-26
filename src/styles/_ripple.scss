@@ -1,4 +1,5 @@
 :host([ripple]) > span {
+  opacity: 0;
   border-width: 2px;
   background-color: transparent;
   animation: ripple 1.25s 0s infinite cubic-bezier(.21, .53, .56, .8);

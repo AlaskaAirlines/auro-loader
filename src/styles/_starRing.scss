@@ -1,12 +1,7 @@
 :host([ring]),
 :host([star]) {
-  margin: 0.5rem;
   width: 2rem;
   height: 2rem;
-}
-
-:host([ring]) {
-  margin: 0;
 }
 
 :host([ring]) > span,

@@ -51,7 +51,10 @@
     }
 
     var auroLoader = [
-      '<auro-loader cssClass="testClass">Hello World</auro-loader>'
+      '<auro-loader ringworm></auro-loader>',
+      '<auro-loader onlight orbit sm></auro-loader>',
+      '<auro-loader onlight laser sm></auro-loader>',
+      '<auro-loader onlight pulse sm></auro-loader>'
     ]
   </script>
 </head>
@@ -81,19 +84,18 @@
   </main>
   <div id="assets">
     <link rel="stylesheet"
-      href="https://unpkg.com/@alaskaairux/orion-design-tokens@2.12.3/dist/tokens/CSSCustomProperties.css" />
+      href="https://unpkg.com/@alaskaairux/orion-design-tokens@latest/dist/tokens/CSSCustomProperties.css" />
     <link rel="stylesheet"
-      href="https://unpkg.com/@alaskaairux/orion-web-core-style-sheets@2.12.2/dist/bundled/essentials.css" />
+      href="https://unpkg.com/@alaskaairux/orion-web-core-style-sheets@latest/dist/bundled/essentials.css" />
 
 
     <!-- for initial build and test only -->
-    <script src="./polyfills.js"></script>
-    <script src="./auro-loader__bundled.js"></script>
+    <script src="/dist/auro-loader__bundled.js" type="module"></script>
+    <script src="/dist/auro-loader__bundled.es5.js" nomodule></script>
 
     <!-- once first build has been released, update with the links below -->
-    <!-- Be sure to update the :version number -->
-    <!-- <script src="https://unpkg.com/@alaskaairux/auro-loader@:version/dist/polyfills.js"></script>
-    <script src="https://unpkg.com/@alaskaairux/auro-loader@:version/dist/auro-loader__bundled.js"></script> -->
+    <!-- <script src="https://unpkg.com/@alaskaairux/auro-loader@latest/dist/auro-loader__bundled.js" type="module"></script>
+    <script src="https://unpkg.com/@alaskaairux/auro-loader@latest/dist/auro-loader__bundled.es5.js" nomodule></script> -->
   </div>
 </body>
 

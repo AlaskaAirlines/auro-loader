@@ -2,7 +2,7 @@ repository:
   # See https://docs.github.com/en/free-pro-team@latest/rest/reference/repos#edit for all available settings.
 
   # A short description of the repository that will show up on GitHub
-  description: TBD ...
+  description: A custom element for the purpose of illustrating animated loaders
 
   # A URL with more information about the repository
   homepage: https://auro.alaskaair.com/components/auro/loader

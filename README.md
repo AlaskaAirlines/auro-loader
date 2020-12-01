@@ -1,6 +1,6 @@
 # auro-loader
 
-`<auro-loader>` is a [HTML custom element](https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_custom_elements) for the purpose of ...
+`<auro-loader>` is a [HTML custom element](https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_custom_elements) for the purpose of using consistent loaders across all Alaska Airlines digital properties. 
 
 ## UI development browser support
 
@@ -39,7 +39,11 @@ import "@alaskaairux/auro-loader";
 **Reference component in HTML**
 
 ```html
-<auro-loader>Hello World</auro-loader>
+<auro-loader laser></auro-loader>
+
+<auro-loader ringworm ondark lg></auro-loader>
+
+<auro-loader orbit onlight sm></auro-loader>
 ```
 
 ## Install bundled assets from CDN
@@ -49,8 +53,8 @@ In cases where the project is not able to process JS assets, there are pre-proce
 **NOTE:** Be sure to replace `:version` in the URL with the version of the asset you want.
 
 ```html
-<link rel="stylesheet" href="https://unpkg.com/@alaskaairux/orion-design-tokens@:version/dist/tokens/CSSTokenProperties.css" />
-<link rel="stylesheet" href="https://unpkg.com/@alaskaairux/orion-web-core-style-sheets@:version/dist/bundled/baseline.css" />
+<link rel="stylesheet" href="https://unpkg.com/@alaskaairux/design-tokens@:version/dist/tokens/CSSTokenProperties.css" />
+<link rel="stylesheet" href="https://unpkg.com/@alaskaairux/webcorestylesheets@:version/dist/bundled/baseline.css" />
 
 <script src="https://unpkg.com/@alaskaairux/auro-loader@:version/dist/polyfills.js"></script>
 <script src="https://unpkg.com/@alaskaairux/auro-loader@:version/dist/auro-loader__bundled.js"></script>
@@ -69,17 +73,8 @@ The `polyfills.js` is packaged with this component, but **IT IS NOT NEEDED** to 
 
 The `<auro-loader>` element should be used in situations where users may:
 
-* ...
-* ...
-* ...
-
-## API Code Examples
-
-Default auro-loader
-
-```html
-<auro-loader>Hello World</auro-loader>
-```
+* Waiting for data to return from the server
+* Giving the user notice that a process has started 
 
 ## Development
 

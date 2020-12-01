@@ -19,13 +19,10 @@ import styleCss from "./style-css.js";
 /**
  * auro-loader is an easy to use animated loader component
  *
- * @attr {Boolean} ripple - sets loader type
  * @attr {Boolean} pulse - sets loader type
- * @attr {Boolean} star - sets loader type
- * @attr {Boolean} ring - sets loader type
- * @attr {Boolean} wave - sets loader type
+ * @attr {Boolean} ringworm - sets loader type
+ * @attr {Boolean} laser - sets loader type
  * @attr {Boolean} orbit - sets loader type
- * @attr {Boolean} cloud - sets loader type
  * @attr {Boolean} white - sets color of loader to white
  * @attr {Boolean} ondark - sets color of loader to auro-color-ui-default-on-dark
  * @attr {Boolean} onlight - sets color of loader to auro-color-ui-default-on-light
@@ -49,38 +46,21 @@ class AuroLoader extends LitElement {
     /**
      * @private internal var
      */
-    this.norm = 3;
-
-    /**
-     * @private internal var
-     */
-    this.sgl = 1;
+    this.md = 3;
 
     /**
      * @private internal var
      */
     this.sm = 2;
-
-    /**
-     * @private internal var
-     */
-    this.md = 5;
-
-    /**
-     * @private internal var
-     */
-    this.lg = 8;
   }
 
   // function to define props used within the scope of this component
   static get properties() {
     return {
       // ...super.properties,
-      star: { type: Boolean},
-      ring: { type: Boolean},
-      wave: { type: Boolean},
       orbit: { type: Boolean},
-      cloud: { type: Boolean}
+      ringworm: { type: Boolean},
+      laser: { type: Boolean}
     };
   }
 
@@ -95,16 +75,12 @@ class AuroLoader extends LitElement {
    * @returns {array} numbered array for template map
    */
   defineTemplate() {
-    let nodes = Array.from(Array(this.norm).keys());
+    let nodes = Array.from(Array(this.md).keys());
 
-    if (this.star || this.ring) {
-      nodes = Array.from(Array(this.lg).keys());
-    } else if (this.wave) {
-      nodes = Array.from(Array(this.md).keys());
-    } else if (this.orbit) {
+    if (this.orbit || this.laser) {
       nodes = Array.from(Array(this.sm).keys());
-    } else if (this.cloud) {
-      nodes = Array.from(Array(this.sgl).keys());
+    } else if (this.ringworm) {
+      nodes = Array.from(Array(0).keys());
     }
 
     return nodes;
@@ -119,7 +95,15 @@ class AuroLoader extends LitElement {
       ${this.defineTemplate().map((idx) => html`
         <span part="element" class="loader node-${idx}"></span>
       `)}
+
       <div class="no-animation">Loading...</div>
+
+      ${this.ringworm ? html`
+        <svg  part="element" class="circular" viewBox="25 25 50 50">
+          <circle class="path" cx="50" cy="50" r="20" fill="none"/>
+        </svg>`
+        : ``
+      }
     `;
   }
 }

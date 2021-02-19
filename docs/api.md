@@ -7,9 +7,11 @@ auro-loader is an easy to use animated loader component
 | Attribute | Type      | Description                                      |
 |-----------|-----------|--------------------------------------------------|
 | `lg`      | `Boolean` | sets size to lg                                  |
+| `md`      | `Boolean` | sets size to md                                  |
 | `ondark`  | `Boolean` | sets color of loader to auro-color-ui-default-on-dark |
 | `onlight` | `Boolean` | sets color of loader to auro-color-ui-default-on-light |
 | `pulse`   | `Boolean` | sets loader type                                 |
+| `sm`      | `Boolean` | sets size to sm                                  |
 | `white`   | `Boolean` | sets color of loader to white                    |
 | `xl`      | `Boolean` | sets size to xl                                  |
 

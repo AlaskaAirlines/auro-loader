@@ -46,21 +46,29 @@ class AuroLoader extends LitElement {
     /**
      * @private internal var
      */
-    this.md = 3;
+    this.mdCount = 3;
 
     /**
      * @private internal var
      */
-    this.sm = 2;
+    this.smCount = 2;
   }
 
   // function to define props used within the scope of this component
   static get properties() {
     return {
-      // ...super.properties,
-      orbit: { type: Boolean},
-      ringworm: { type: Boolean},
-      laser: { type: Boolean}
+      orbit: {
+        type: Boolean,
+        reflect: true
+      },
+      ringworm: {
+        type: Boolean,
+        reflect: true
+      },
+      laser: {
+        type: Boolean,
+        reflect: true
+      }
     };
   }
 
@@ -75,10 +83,10 @@ class AuroLoader extends LitElement {
    * @returns {array} numbered array for template map
    */
   defineTemplate() {
-    let nodes = Array.from(Array(this.md).keys());
+    let nodes = Array.from(Array(this.mdCount).keys());
 
     if (this.orbit || this.laser) {
-      nodes = Array.from(Array(this.sm).keys());
+      nodes = Array.from(Array(this.smCount).keys());
     } else if (this.ringworm) {
       nodes = Array.from(Array(0).keys());
     }

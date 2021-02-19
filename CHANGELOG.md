@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [1.0.1](https://github.com/AlaskaAirlines/auro-loader/compare/v1.0.0...v1.0.1) (2021-02-19)
+
+
+### Bug Fixes
+
+* reflect properties to attributes ([4a73298](https://github.com/AlaskaAirlines/auro-loader/commit/4a73298bdf348a4b0b5e72628256bb9eabd1e716))
+
 # 1.0.0 (2020-12-03)
 
 

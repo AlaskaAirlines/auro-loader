@@ -26,6 +26,8 @@ import styleCss from "./style-css.js";
  * @attr {Boolean} white - sets color of loader to white
  * @attr {Boolean} ondark - sets color of loader to auro-color-ui-default-on-dark
  * @attr {Boolean} onlight - sets color of loader to auro-color-ui-default-on-light
+ * @attr {Boolean} xxs - sets size to xxs
+ * @attr {Boolean} xs - sets size to xs
  * @attr {Boolean} sm - sets size to sm
  * @attr {Boolean} md - sets size to md
  * @attr {Boolean} lg - sets size to lg

@@ -14,6 +14,8 @@ auro-loader is an easy to use animated loader component
 | `sm`      | `Boolean` | sets size to sm                                  |
 | `white`   | `Boolean` | sets color of loader to white                    |
 | `xl`      | `Boolean` | sets size to xl                                  |
+| `xs`      | `Boolean` | sets size to xs                                  |
+| `xxs`     | `Boolean` | sets size to xxs                                 |
 
 ## Properties
 

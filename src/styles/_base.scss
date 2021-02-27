@@ -24,6 +24,18 @@
   border: 0 solid currentColor;
 }
 
+:host([xxs]),
+:host([xxs]) > span {
+  width: .7rem;
+  height: .7rem;
+}
+
+:host([xs]),
+:host([xs]) > span {
+  width: 1.2rem;
+  height: 1.2rem;
+}
+
 :host([sm]),
 :host([sm]) > span {
   width: 3rem;

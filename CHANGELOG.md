@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+# [1.1.0](https://github.com/AlaskaAirlines/auro-loader/compare/v1.0.1...v1.1.0) (2021-03-04)
+
+
+### Features
+
+* add xs and xxs sizes ([4a8887b](https://github.com/AlaskaAirlines/auro-loader/commit/4a8887bb3db8c49ca5bab8e6d2585fbb3e78b3b4))
+
 ## [1.0.1](https://github.com/AlaskaAirlines/auro-loader/compare/v1.0.0...v1.0.1) (2021-02-19)
 
 

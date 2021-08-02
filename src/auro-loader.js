@@ -54,6 +54,10 @@ class AuroLoader extends LitElement {
      * @private internal var
      */
     this.smCount = 2;
+
+    this.orbit = false;
+    this.ringworm = false;
+    this.laser = false;
   }
 
   // function to define props used within the scope of this component

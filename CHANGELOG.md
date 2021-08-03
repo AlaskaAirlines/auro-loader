@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [1.1.1](https://github.com/AlaskaAirlines/auro-loader/compare/v1.1.0...v1.1.1) (2021-08-03)
+
+
+### Bug Fixes
+
+* default boolean props to false [#11](https://github.com/AlaskaAirlines/auro-loader/issues/11) ([27c06b6](https://github.com/AlaskaAirlines/auro-loader/commit/27c06b66a3770cf6208a2627ccad4a74ffed58ce))
+
 # [1.1.0](https://github.com/AlaskaAirlines/auro-loader/compare/v1.0.1...v1.1.0) (2021-03-04)
 
 

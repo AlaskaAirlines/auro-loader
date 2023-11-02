@@ -19,11 +19,11 @@ auro-loader is an easy to use animated loader component
 
 ## Properties
 
-| Property   | Attribute  | Type      | Description      |
-|------------|------------|-----------|------------------|
-| `laser`    | `laser`    | `Boolean` | sets loader type |
-| `orbit`    | `orbit`    | `Boolean` | sets loader type |
-| `ringworm` | `ringworm` | `Boolean` | sets loader type |
+| Property   | Attribute  | Type      | Default | Description      |
+|------------|------------|-----------|---------|------------------|
+| `laser`    | `laser`    | `Boolean` | false   | sets loader type |
+| `orbit`    | `orbit`    | `Boolean` | false   | sets loader type |
+| `ringworm` | `ringworm` | `Boolean` | false   | sets loader type |
 
 ## CSS Shadow Parts
 

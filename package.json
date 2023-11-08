@@ -82,7 +82,8 @@
     "wc-sass-render": "^1.2.3",
     "web-component-analyzer": "^1.1.6",
     "webpack-merge": "^5.4.0",
-    "whatwg-fetch": "^3.5.0"
+    "whatwg-fetch": "^3.5.0",
+    "sass": "^1.49.9"
   },
   "browserslist": [
     "last 2 Chrome versions",
@@ -109,11 +110,12 @@
     "test:watch": "karma start --auto-watch=true --single-run=false",
     "test:ci": "npm-run-all test lint",
     "ciBuild": "npm-run-all sassBuild sassRender cssLint distJS bundler postinstall apiBuild",
-    "sassBuild": "npm-run-all sassBuild:demo sassBuild:component postCss:component sassRender",
-    "sassBuild:dev": "npm-run-all sassBuild:demo sassBuild:component postCss:component sassRender",
-    "sassBuild:demo": "node-sass ./demo/sass/ --output ./demo/css/",
-    "sassBuild:component": "node-sass ./src/ --output ./src/",
+    "sassBuild": "npm-run-all sassBuild:component postCss:component sassRender",
+    "sassBuild:dev": "npm-run-all sassBuild:component postCss:component sassRender",
+    "sassBuild:component": "sass --no-source-map src:src",
     "sassBuild:watch": "nodemon -e scss --watch src --exec npm run sassBuild:dev",
+    "sassBuild:debug": "sass —source-map scss/index.scss docs/index.css",
+    "sassBuild:release": "sass —style=compressed scss/index.scss dist/index.css",
     "postCss:component": "node ./scripts/postCss.js",
     "serve": "web-dev-server --open demo/ --node-resolve --watch"
   },

@@ -3,7 +3,7 @@
 }
 
 :host([ondark]) {
-  color: var(--ds-color-brand-breeze-300, $ds-color-brand-breeze-300);
+  color: var(--ds-color-ui-default-inverse, $ds-color-ui-default-inverse);
 }
 
 :host([white]) {

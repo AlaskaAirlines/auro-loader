@@ -1,5 +1,9 @@
-`<auro-loader>` is a [HTML custom element](https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_custom_elements) for the purpose of ...
+`<auro-loader>` is a [HTML custom element](https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_custom_elements) for the purpose of illustrating animated loaders.
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam convallis in tellus nec pellentesque. Integer bibendum ligula sit amet vehicula gravida. Maecenas accumsan, ligula vitae molestie iaculis, tellus mi laoreet ex [install instructions](https://auro.alaskaair.com/components/auro/button/install), ac malesuada velit dolor vel mi. Cras et rutrum urna. Sed mattis mi eu tortor ullamcorper, egestas bibendum mauris cursus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus viverra eros eget neque commodo vulputate. In tempus eu velit at dictum.
+Things take time. Sometimes we just need to take a second for some data to show up. For this Auro supports the `<auro-loader>` custom element. This powerful element supports multiple modes for use, `ringworm`, `orbit`, `pulse`, and `laser`.
 
-Nulla at augue facilisis `odio lobortis` molestie vitae a nulla.
+And each of these modes support five size settings, `default`, `sm`, `md`, `lg`, and `xl`.
+
+For color support `<auro-loader>` supports `currentColor`, this allows for any color set on the parent element to influence the color of the loader.
+
+The `<auro-loader>` custom element also supports three pre-defined color modes, `onlight`, `ondark` and `white`.

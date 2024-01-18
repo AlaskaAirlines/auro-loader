@@ -4,11 +4,10 @@
 // ---------------------------------------------------------------------
 
 // Import Auro tokens
-@import "./node_modules/@alaskaairux/design-tokens/dist/tokens/SCSSVariables";
-@import "./node_modules/@alaskaairux/design-tokens/dist/tokens/SassCustomProperties";
+@import "./../node_modules/@aurodesignsystem/design-tokens/dist/tokens/SCSSVariables";
 
-@import "./node_modules/@alaskaairux/webcorestylesheets/dist/breakpoints";
-@import "./node_modules/@alaskaairux/webcorestylesheets/dist/core";
+@import "./../node_modules/@aurodesignsystem/webcorestylesheets/src/breakpoints";
+@import "./../node_modules/@aurodesignsystem/webcorestylesheets/src/core";
 
 @import "./styles/base";
 @import "./styles/options";
@@ -19,8 +18,10 @@
 
 
 // a11y support for reduced motion
-:host > .no-animation {
-  display: none;
+:host {
+  > .no-animation {
+    display: none;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -31,15 +32,21 @@
     font-size: 1rem;
   }
 
-  :host > span {
-    opacity: 1;
+  :host {
+    > span {
+      opacity: 1;
+    }
   }
 
-  :host > .loader {
-    display: none;
+  :host {
+    > .loader {
+      display: none;
+    }
   }
 
-  :host > .no-animation {
-    display: block;
+  :host {
+    > .no-animation {
+      display: block;
+    }
   }
 }

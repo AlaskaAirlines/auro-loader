@@ -16,23 +16,23 @@
   animation-timing-function: cubic-bezier(.39,.77,.74,.42);
 }
 
-:host([cloud]) > span::after,
-:host([cloud]) > span::before {
+:host([cloud]) > span:after,
+:host([cloud]) > span:before {
   content: "";
   position: relative;
   display: inline-block;
-  background-color: currentColor;
+  background-color: currentcolor;
   border-radius: inherit;
 }
 
-:host([cloud]) > span::after {
+:host([cloud]) > span:after {
   width: 3.125em;
   height: 3.125em;
   top: -3.5em;
   left: -3.5em;
 }
 
-:host([cloud]) > span::before {
+:host([cloud]) > span:before {
   width: 5.3125em;
   height: 5.3125em;
   top: -2.5em;
@@ -59,6 +59,7 @@
   0% {
     left: -100%;
   }
+
   100%{
     left : 110%;
   }

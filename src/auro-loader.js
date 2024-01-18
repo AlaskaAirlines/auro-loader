@@ -12,12 +12,11 @@ import { LitElement, html, css } from "lit-element";
 // import AuroElement from '@alaskaairux/orion-web-core-style-sheets/dist/auroElement/auroElement';
 
 // Import touch detection lib
-import "focus-visible/dist/focus-visible.min.js";
 import styleCss from "./style-css.js";
 
 // See https://git.io/JJ6SJ for "How to document your components using JSDoc"
 /**
- * auro-loader is an easy to use animated loader component
+ * The auro-loader element is an easy to use animated loader component.
  *
  * @attr {Boolean} pulse - sets loader type
  * @attr {Boolean} ringworm - sets loader type
@@ -36,22 +35,24 @@ import styleCss from "./style-css.js";
  */
 
 // build the component class
-class AuroLoader extends LitElement {
+export class AuroLoader extends LitElement {
   constructor() {
     super();
 
+    /* eslint array-element-newline: ["warn", "always"] */
+    /* eslint no-magic-numbers: "warn" */
     /**
-     * @private internal var
+     * @private
      */
     this.keys = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
 
     /**
-     * @private internal var
+     * @private
      */
     this.mdCount = 3;
 
     /**
-     * @private internal var
+     * @private
      */
     this.smCount = 2;
 
@@ -85,8 +86,8 @@ class AuroLoader extends LitElement {
   }
 
   /**
-   * @private internal function for template definition
-   * @returns {array} numbered array for template map
+   * @private
+   * @returns {array} Numbered array for template map.
    */
   defineTemplate() {
     let nodes = Array.from(Array(this.mdCount).keys());
@@ -122,8 +123,7 @@ class AuroLoader extends LitElement {
   }
 }
 
-/* istanbul ignore else */
-// define the name of the custom component
+// default internal definition
 if (!customElements.get("auro-loader")) {
   customElements.define("auro-loader", AuroLoader);
 }

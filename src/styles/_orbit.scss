@@ -9,12 +9,12 @@
 }
 
 :host([orbit]) > span:nth-child(1) {
-  border-color: currentColor;
+  border-color: currentcolor;
   opacity: 0.25;
 }
 
 :host([orbit]) > span:nth-child(2) {
-  border-color: currentColor;
+  border-color: currentcolor;
   border-right-color: transparent;
   border-bottom-color: transparent;
   border-left-color: transparent;
@@ -41,6 +41,7 @@
   0% {
     transform: rotate(0deg);
   }
+
   100% {
     transform: rotate(360deg);
   }

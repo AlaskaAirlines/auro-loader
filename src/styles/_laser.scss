@@ -16,12 +16,12 @@
 }
 
 :host([laser]) > span:nth-child(1) {
-  border-color: currentColor;
+  border-color: currentcolor;
   opacity: 0.25;
 }
 
 :host([laser]) > span:nth-child(2) {
-  border-color: currentColor;
+  border-color: currentcolor;
   animation: laser 2s linear infinite;
   opacity: 1;
   width: 50%;
@@ -49,6 +49,7 @@
   0% {
     left: -100%;
   }
+
   100%{
     left : 110%;
   }

@@ -25,12 +25,10 @@ import styleCss from "./style-css.js";
  * @attr {Boolean} white - sets color of loader to white
  * @attr {Boolean} ondark - sets color of loader to auro-color-ui-default-on-dark
  * @attr {Boolean} onlight - sets color of loader to auro-color-ui-default-on-light
- * @attr {Boolean} xxs - sets size to xxs
- * @attr {Boolean} xs - sets size to xs
- * @attr {Boolean} sm - sets size to sm
- * @attr {Boolean} md - sets size to md
- * @attr {Boolean} lg - sets size to lg
- * @attr {Boolean} xl - sets size to xl
+ * @attr {Boolean} xs - sets size to extra small
+ * @attr {Boolean} sm - sets size to small
+ * @attr {Boolean} md - sets size to medium
+ * @attr {Boolean} lg - sets size to large
  * @csspart element - apply style to adjust speed of animation
  */
 
@@ -59,11 +57,16 @@ export class AuroLoader extends LitElement {
     this.orbit = false;
     this.ringworm = false;
     this.laser = false;
+    this.pulse = false;
   }
 
   // function to define props used within the scope of this component
   static get properties() {
     return {
+      pulse: {
+        type: Boolean,
+        reflect: true
+      },
       orbit: {
         type: Boolean,
         reflect: true

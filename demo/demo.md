@@ -33,9 +33,9 @@ See in the following examples the different loader modes that the `<auro-loader>
 <div class="exampleWrapper">
   <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/loaderGallery.html) -->
   <!-- The below content is automatically added from ./../../apiExamples/loaderGallery.html -->
-  <auro-loader ringworm md></auro-loader>
-  <auro-loader orbit md></auro-loader>
-  <auro-loader pulse md></auro-loader>
+  <auro-loader ringworm></auro-loader>
+  <auro-loader orbit></auro-loader>
+  <auro-loader pulse></auro-loader>
   <auro-loader laser></auro-loader>
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
@@ -45,9 +45,9 @@ See in the following examples the different loader modes that the `<auro-loader>
 <!-- The below code snippet is automatically added from ./../../apiExamples/loaderGallery.html -->
 
 ```html
-<auro-loader ringworm md></auro-loader>
-<auro-loader orbit md></auro-loader>
-<auro-loader pulse md></auro-loader>
+<auro-loader ringworm></auro-loader>
+<auro-loader orbit></auro-loader>
+<auro-loader pulse></auro-loader>
 <auro-loader laser></auro-loader>
 ```
 <!-- AURO-GENERATED-CONTENT:END -->
@@ -60,11 +60,11 @@ The `<auro-loader>` element supports a scale of sizes. Options are `[sm, md, lg,
 <div class="exampleWrapper">
   <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/loader_sizes.html) -->
   <!-- The below content is automatically added from ./../../apiExamples/loader_sizes.html -->
+  <auro-loader ringworm xs></auro-loader>
   <auro-loader ringworm></auro-loader>
   <auro-loader ringworm sm></auro-loader>
   <auro-loader ringworm md></auro-loader>
   <auro-loader ringworm lg></auro-loader>
-  <auro-loader ringworm xl></auro-loader>
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
 <auro-accordion alignRight>
@@ -73,11 +73,11 @@ The `<auro-loader>` element supports a scale of sizes. Options are `[sm, md, lg,
 <!-- The below code snippet is automatically added from ./../../apiExamples/loader_sizes.html -->
 
 ```html
+<auro-loader ringworm xs></auro-loader>
 <auro-loader ringworm></auro-loader>
 <auro-loader ringworm sm></auro-loader>
 <auro-loader ringworm md></auro-loader>
 <auro-loader ringworm lg></auro-loader>
-<auro-loader ringworm xl></auro-loader>
 ```
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>
@@ -161,8 +161,8 @@ The `<auro-loader>` custom element has a CSS shadow part included in it's API. C
       animation-duration: 1s;
     }
   </style>
-  <auro-loader class="slow" orbit lg></auro-loader>
-  <auro-loader class="fast" orbit xl></auro-loader>
+  <auro-loader class="slow" orbit md></auro-loader>
+  <auro-loader class="fast" orbit lg></auro-loader>
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
 <auro-accordion alignRight>
@@ -179,8 +179,8 @@ The `<auro-loader>` custom element has a CSS shadow part included in it's API. C
     animation-duration: 1s;
   }
 </style>
-<auro-loader class="slow" orbit lg></auro-loader>
-<auro-loader class="fast" orbit xl></auro-loader>
+<auro-loader class="slow" orbit md></auro-loader>
+<auro-loader class="fast" orbit lg></auro-loader>
 ```
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>

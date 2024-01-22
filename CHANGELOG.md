@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [2.0.1](https://github.com/AlaskaAirlines/auro-loader/compare/v2.0.0...v2.0.1) (2024-01-22)
+
+
+### Performance Improvements
+
+* update dependencies and lit-element refs ([233a22b](https://github.com/AlaskaAirlines/auro-loader/commit/233a22b1d6d77f6dce31a5347533024f04ae52ac))
+
 # [2.0.0](https://github.com/AlaskaAirlines/auro-loader/compare/v1.1.1...v2.0.0) (2024-01-20)
 
 

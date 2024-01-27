@@ -1,4 +1,4 @@
-import { AuroLoader } from './src/auro-loader';
+import { AuroLoader } from './src/auro-loader.js';
 
 /**
  * Register Custom Element.

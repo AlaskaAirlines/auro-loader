@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [2.0.4](https://github.com/AlaskaAirlines/auro-loader/compare/v2.0.3...v2.0.4) (2024-02-11)
+
+
+### Performance Improvements
+
+* update deps and add ESM support badge ([35ed22c](https://github.com/AlaskaAirlines/auro-loader/commit/35ed22cfceff879743724f0f3b0f27be7c49e5ec))
+
 ## [2.0.3](https://github.com/AlaskaAirlines/auro-loader/compare/v2.0.2...v2.0.3) (2024-01-31)
 
 

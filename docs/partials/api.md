@@ -7,12 +7,10 @@
 
 The following illustrates the use of the base elements with default output. The `laser` example is shown at the top of the page due to its fixed positioning.
 
-<div class="twoColDemoRow">
-  <div>
-    <div class="exampleWrapper">
-      <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/loaderGallery.html) -->
-      <!-- AURO-GENERATED-CONTENT:END -->
-    </div>
+<div class="exampleWrapper">
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/loaderGallery.html) -->
+  <!-- AURO-GENERATED-CONTENT:END -->
+</div>
 <auro-accordion alignRight>
   <span slot="trigger">See code</span>
 
@@ -220,4 +218,3 @@ Use the `element` CSS Part with your CSS as illustrated to effect things like th
 <!-- AURO-GENERATED-CONTENT:END -->
 
 </auro-accordion>
-

@@ -17,7 +17,7 @@ The following sections are editable by making changes to the following files:
 | Component Example Code | HTML sample code of the components use            | `./apiExamples/basic.html`          |
 -->
 
-# Loader
+# [Name]
 
 <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../docs/partials/description.md) -->
 <!-- The below content is automatically added from ./../docs/partials/description.md -->
@@ -45,14 +45,13 @@ For the most up to date information on [UI development browser support](https://
 
 ## Install
 
-<!-- AURO-GENERATED-CONTENT:START (REMOTE:url=https://raw.githubusercontent.com/AlaskaAirlines/WC-Generator/master/componentDocs/partials/usage/componentInstall_esm.md) -->
-[![Build Status](https://img.shields.io/github/actions/workflow/status/AlaskaAirlines/auro-loader/testPublish.yml?style=for-the-badge)](https://github.com/AlaskaAirlines/auro-loader/actions/workflows/testPublish.yml)
-[![See it on NPM!](https://img.shields.io/npm/v/@aurodesignsystem/auro-loader?style=for-the-badge&color=orange)](https://www.npmjs.com/package/@aurodesignsystem/auro-loader)
-[![License](https://img.shields.io/npm/l/@aurodesignsystem/auro-loader?color=blue&style=for-the-badge)](https://www.apache.org/licenses/LICENSE-2.0)
-![ESM supported](https://img.shields.io/badge/ESM-compatible-FFE900?style=for-the-badge)
+<!-- AURO-GENERATED-CONTENT:START (REMOTE:url=https://raw.githubusercontent.com/AlaskaAirlines/WC-Generator/master/componentDocs/partials/usage/componentInstall.md) -->
+[![Build Status](https://img.shields.io/github/actions/workflow/status/AlaskaAirlines/[namespace]-[name]/testPublish.yml?style=for-the-badge)](https://github.com/AlaskaAirlines/[namespace]-[name]/actions/workflows/testPublish.yml)
+[![See it on NPM!](https://img.shields.io/npm/v/[npm]/[namespace]-[name]?style=for-the-badge&color=orange)](https://www.npmjs.com/package/[npm]/[namespace]-[name])
+[![License](https://img.shields.io/npm/l/[npm]/[namespace]-[name]?color=blue&style=for-the-badge)](https://www.apache.org/licenses/LICENSE-2.0)
 
 ```shell
-$ npm i @aurodesignsystem/auro-loader
+$ npm i [npm]/[namespace]-[name]
 ```
 
 Installing as a direct, dev or peer dependency is up to the user installing the package. If you are unsure as to what type of dependency you should use, consider reading this [stack overflow](https://stackoverflow.com/questions/18875674/whats-the-difference-between-dependencies-devdependencies-and-peerdependencies) answer.
@@ -78,13 +77,13 @@ Any update to the Auro Design Tokens will be immediately reflected with browsers
 ### Define dependency in project component
 
 <!-- AURO-GENERATED-CONTENT:START (REMOTE:url=https://raw.githubusercontent.com/AlaskaAirlines/WC-Generator/master/componentDocs/partials/usage/componentImportDescription.md) -->
-Defining the component dependency within each component that is using the `<auro-loader>` component.
+Defining the component dependency within each component that is using the `<[namespace]-[name]>` component.
 
 <!-- AURO-GENERATED-CONTENT:END -->
 <!-- AURO-GENERATED-CONTENT:START (REMOTE:url=https://raw.githubusercontent.com/AlaskaAirlines/WC-Generator/master/componentDocs/partials/usage/componentImport.md) -->
 
 ```js
-import "@aurodesignsystem/auro-loader";
+import "[npm]/[namespace]-[name]";
 ```
 
 <!-- AURO-GENERATED-CONTENT:END -->
@@ -100,7 +99,7 @@ foo
 ## Install bundled assets from CDN
 
 <!-- AURO-GENERATED-CONTENT:START (REMOTE:url=https://raw.githubusercontent.com/AlaskaAirlines/WC-Generator/master/componentDocs/partials/usage/bundleInstallDescription.md) -->
-In cases where the project is not able to process JS assets, there are pre-processed assets available for use. See -- `auro-loader__bundled.js` for modern browsers. Legacy browsers such as IE11 are no longer supported.
+In cases where the project is not able to process JS assets, there are pre-processed assets available for use. See -- `[namespace]-[name]__bundled.js` for modern browsers. Legacy browsers such as IE11 are no longer supported.
 
 **WARNING!** When installing into your application environment, DO NOT use `@latest` for the requested version. Risks include unknown MAJOR version releases and instant adoption of any new features and possible bugs without developer knowledge. The `@latest` wildcard should NEVER be used for production customer-facing applications. You have been warned.
 
@@ -111,14 +110,14 @@ In cases where the project is not able to process JS assets, there are pre-proce
 <!-- AURO-GENERATED-CONTENT:START (REMOTE:url=https://raw.githubusercontent.com/AlaskaAirlines/WC-Generator/master/componentDocs/partials/usage/bundleUseModBrowsers.md) -->
 
 ```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@aurodesignsystem/design-tokens@4.3.0/dist/tokens/CSSCustomProperties.css" />
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@aurodesignsystem/webcorestylesheets@5.0.8/dist/bundled/essentials.css" />
-<script src="https://cdn.jsdelivr.net/npm/@aurodesignsystem/auro-loader@2.0.4/dist/auro-loader__bundled.js" type="module"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@aurodesignsystem/design-tokens@[dtVersion]/dist/tokens/CSSCustomProperties.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@aurodesignsystem/webcorestylesheets@[wcssVersion]/dist/bundled/essentials.css" />
+<script src="https://cdn.jsdelivr.net/npm/[npm]/[namespace]-[name]@[Version]/dist/[namespace]-[name]__bundled.js" type="module"></script>
 ```
 
 <!-- AURO-GENERATED-CONTENT:END -->
 
-## auro-loader use cases
+## [namespace]-[name] use cases
 
 <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../docs/partials/useCases.md) -->
 <!-- The below content is automatically added from ./../docs/partials/useCases.md -->
@@ -127,7 +126,7 @@ The `<auro-loader>` element should be used in situations where developers may ne
 
 ## API Code Examples
 
-### Default auro-loader
+### Default [namespace]-[name]
 
 <!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/basic.html) -->
 <!-- The below code snippet is automatically added from ./../apiExamples/basic.html -->
@@ -177,7 +176,7 @@ The custom element API file is generated in the build and committed back to the 
 ### Testing
 
 <!-- AURO-GENERATED-CONTENT:START (REMOTE:url=https://raw.githubusercontent.com/AlaskaAirlines/WC-Generator/master/componentDocs/partials/development/testing.md) -->
-Automated tests are required for every Auro component. See `.\test\auro-loader.test.js` for the tests for this component. Run `npm test` to run the tests and check code coverage. Tests must pass and meet a certain coverage threshold to commit. See [the testing documentation](https://auro.alaskaair.com/support/tests) for more details.
+Automated tests are required for every Auro component. See `.\test\[namespace]-[name].test.js` for the tests for this component. Run `npm test` to run the tests and check code coverage. Tests must pass and meet a certain coverage threshold to commit. See [the testing documentation](https://auro.alaskaair.com/support/tests) for more details.
 
 <!-- AURO-GENERATED-CONTENT:END -->
 

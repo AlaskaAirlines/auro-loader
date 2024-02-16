@@ -39,17 +39,15 @@ The auro-loader element is an easy to use animated loader component.
 
 The following illustrates the use of the base elements with default output. The `laser` example is shown at the top of the page due to its fixed positioning.
 
-<div class="twoColDemoRow">
-  <div>
-    <div class="exampleWrapper">
-      <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/loaderGallery.html) -->
-      <!-- The below content is automatically added from ./../../apiExamples/loaderGallery.html -->
-      <auro-loader ringworm></auro-loader>
-      <auro-loader orbit></auro-loader>
-      <auro-loader pulse></auro-loader>
-      <auro-loader laser></auro-loader>
-      <!-- AURO-GENERATED-CONTENT:END -->
-    </div>
+<div class="exampleWrapper">
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/loaderGallery.html) -->
+  <!-- The below content is automatically added from ./../../apiExamples/loaderGallery.html -->
+  <auro-loader ringworm></auro-loader>
+  <auro-loader orbit></auro-loader>
+  <auro-loader pulse></auro-loader>
+  <auro-loader laser></auro-loader>
+  <!-- AURO-GENERATED-CONTENT:END -->
+</div>
 <auro-accordion alignRight>
   <span slot="trigger">See code</span>
 <!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/loaderGallery.html) -->
@@ -66,8 +64,7 @@ The following illustrates the use of the base elements with default output. The 
 
 ### Attribute Examples
 
-#### <a name="xs"></a>`xs`
-
+#### <a name="xs"></a>`xs`<a href="#" style="float: right; font-size: 1rem; font-weight: 100;">back to top</a>
 Use the `xs` boolean attribute for a pre-defined size. Type `laser` does not support a size attribute.
 
 <div class="exampleWrapper">
@@ -91,8 +88,7 @@ Use the `xs` boolean attribute for a pre-defined size. Type `laser` does not sup
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>
 
-#### <a name="sm"></a>`sm`
-
+#### <a name="sm"></a>`sm`<a href="#" style="float: right; font-size: 1rem; font-weight: 100;">back to top</a>
 Use the `sm` boolean attribute for a pre-defined size. Type `laser` does not support a size attribute.
 
 <div class="exampleWrapper">
@@ -116,8 +112,7 @@ Use the `sm` boolean attribute for a pre-defined size. Type `laser` does not sup
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>
 
-#### <a name="md"></a>`md`
-
+#### <a name="md"></a>`md`<a href="#" style="float: right; font-size: 1rem; font-weight: 100;">back to top</a>
 Use the `md` boolean attribute for a pre-defined size. Type `laser` does not support a size attribute.
 
 <div class="exampleWrapper">
@@ -141,8 +136,7 @@ Use the `md` boolean attribute for a pre-defined size. Type `laser` does not sup
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>
 
-#### <a name="lg"></a>`lg`
-
+#### <a name="lg"></a>`lg`<a href="#" style="float: right; font-size: 1rem; font-weight: 100;">back to top</a>
 Use the `lg` boolean attribute for a pre-defined size. Type `laser` does not support a size attribute.
 
 <div class="exampleWrapper">
@@ -166,8 +160,7 @@ Use the `lg` boolean attribute for a pre-defined size. Type `laser` does not sup
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>
 
-#### <a name="onlight"></a>`onlight`
-
+#### <a name="onlight"></a>`onlight`<a href="#" style="float: right; font-size: 1rem; font-weight: 100;">back to top</a>
 Use the `onlight` boolean attribute for a pre-defined color. Type `laser` is supported, but not shown due to fixed positioning.
 
 <div class="exampleWrapper">
@@ -191,8 +184,7 @@ Use the `onlight` boolean attribute for a pre-defined color. Type `laser` is sup
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>
 
-#### <a name="ondark"></a>`ondark`
-
+#### <a name="ondark"></a>`ondark`<a href="#" style="float: right; font-size: 1rem; font-weight: 100;">back to top</a>
 Use the `ondark` boolean attribute for a pre-defined color. Type `laser` is supported, but not shown due to fixed positioning.
 
 <div class="exampleWrapper--ondark">
@@ -216,8 +208,7 @@ Use the `ondark` boolean attribute for a pre-defined color. Type `laser` is supp
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>
 
-#### <a name="white"></a>`white`
-
+#### <a name="white"></a>`white`<a href="#" style="float: right; font-size: 1rem; font-weight: 100;">back to top</a>
 Use the `white` boolean attribute for a pre-defined color. Type `laser` is supported, but not shown due to fixed positioning.
 
 <div class="exampleWrapper--ondark">
@@ -245,8 +236,7 @@ Use the `white` boolean attribute for a pre-defined color. Type `laser` is suppo
 
 Use the following `orbit`, `laser`, `ringworm`, and `pulse` properties as illustrated.
 
-#### <a name="orbit"></a>`orbit`
-
+#### <a name="orbit"></a>`orbit`<a href="#" style="float: right; font-size: 1rem; font-weight: 100;">back to top</a>
 Use the `orbit` property for the desired animated loader.
 
 <div class="exampleWrapper">
@@ -266,8 +256,7 @@ Use the `orbit` property for the desired animated loader.
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>
 
-#### <a name="laser"></a>`laser`
-
+#### <a name="laser"></a>`laser`<a href="#" style="float: right; font-size: 1rem; font-weight: 100;">back to top</a>
 Use the `laser` property for the desired animated loader. Example is shown at the top of the page due its fixed positioning.
 
 <div class="exampleWrapper">
@@ -287,8 +276,7 @@ Use the `laser` property for the desired animated loader. Example is shown at th
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>
 
-#### <a name="pulse"></a>`pulse`
-
+#### <a name="pulse"></a>`pulse`<a href="#" style="float: right; font-size: 1rem; font-weight: 100;">back to top</a>
 Use the `pulse` property for the desired animated loader.
 
 <div class="exampleWrapper">
@@ -308,8 +296,7 @@ Use the `pulse` property for the desired animated loader.
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>
 
-#### <a name="ringworm"></a>`ringworm`
-
+#### <a name="ringworm"></a>`ringworm`<a href="#" style="float: right; font-size: 1rem; font-weight: 100;">back to top</a>
 Use the `ringworm` property for the desired animated loader.
 
 <div class="exampleWrapper">
@@ -331,8 +318,7 @@ Use the `ringworm` property for the desired animated loader.
 
 ### CSS Shadow Parts Examples
 
-#### <a name="element"></a>`element`
-
+#### <a name="element"></a>`element`<a href="#" style="float: right; font-size: 1rem; font-weight: 100;">back to top</a>
 Use the `element` CSS Part with your CSS as illustrated to effect things like the speed of the animation.
 
 <div class="exampleWrapper">

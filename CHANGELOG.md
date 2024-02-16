@@ -65,10 +65,10 @@ new file:   apiExamples/property_pulse.html
 new file:   apiExamples/property_ringworm.html
 new file:   apiExamples/white.html
 modified:   demo/api.html
-modified:   demo/apiExamples.md
+modified:   demo/api.md
 modified:   demo/demo.md
 modified:   docs/api.md
-modified:   docs/partials/apiExamples.md
+modified:   docs/partials/api.md
 modified:   scripts/generateDocs.mjs
 modified:   src/auro-loader.js
 modified:   src/styles/_base.scss

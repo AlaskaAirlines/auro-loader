@@ -1,5 +1,17 @@
 # Semantic Release Automated Changelog
 
+## [2.0.5](https://github.com/AlaskaAirlines/auro-loader/compare/v2.0.4...v2.0.5) (2024-02-18)
+
+
+### Bug Fixes
+
+* **docs:** fix broken readme build ([55d5aa7](https://github.com/AlaskaAirlines/auro-loader/commit/55d5aa78b2b2f857d5cfb601490a65529b925496))
+
+
+### Performance Improvements
+
+* **modernize:** rebuild component using generator build [#27](https://github.com/AlaskaAirlines/auro-loader/issues/27) ([37e6929](https://github.com/AlaskaAirlines/auro-loader/commit/37e6929d100b4311cf09189ce7273cdccbeabacb))
+
 ## [2.0.4](https://github.com/AlaskaAirlines/auro-loader/compare/v2.0.3...v2.0.4) (2024-02-11)
 
 

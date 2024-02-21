@@ -93,7 +93,10 @@ import "@aurodesignsystem/auro-loader";
 <!-- The below code snippet is automatically added from ./../apiExamples/basic.html -->
 
 ```html
-foo
+<auro-loader ringworm></auro-loader>
+<auro-loader orbit></auro-loader>
+<auro-loader pulse></auro-loader>
+<auro-loader laser></auro-loader>
 ```
 <!-- AURO-GENERATED-CONTENT:END -->
 
@@ -133,7 +136,10 @@ The `<auro-loader>` element should be used in situations where developers may ne
 <!-- The below code snippet is automatically added from ./../apiExamples/basic.html -->
 
 ```html
-foo
+<auro-loader ringworm></auro-loader>
+<auro-loader orbit></auro-loader>
+<auro-loader pulse></auro-loader>
+<auro-loader laser></auro-loader>
 ```
 <!-- AURO-GENERATED-CONTENT:END -->
 

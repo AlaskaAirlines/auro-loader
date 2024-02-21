@@ -31,8 +31,8 @@ The `<auro-loader>` element should be used in situations where developers may ne
 See in the following examples the different loader modes that the `<auro-loader>` element supports.
 
 <div class="exampleWrapper">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/loaderGallery.html) -->
-  <!-- The below content is automatically added from ./../../apiExamples/loaderGallery.html -->
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/basic.html) -->
+  <!-- The below content is automatically added from ./../../apiExamples/basic.html -->
   <auro-loader ringworm></auro-loader>
   <auro-loader orbit></auro-loader>
   <auro-loader pulse></auro-loader>
@@ -41,8 +41,8 @@ See in the following examples the different loader modes that the `<auro-loader>
 </div>
 <auro-accordion alignRight>
   <span slot="trigger">See code</span>
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/loaderGallery.html) -->
-<!-- The below code snippet is automatically added from ./../../apiExamples/loaderGallery.html -->
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/basic.html) -->
+<!-- The below code snippet is automatically added from ./../../apiExamples/basic.html -->
 
 ```html
 <auro-loader ringworm></auro-loader>
@@ -181,6 +181,42 @@ The `<auro-loader>` custom element has a CSS shadow part included in it's API. C
 </style>
 <auro-loader class="slow" orbit md></auro-loader>
 <auro-loader class="fast" orbit lg></auro-loader>
+```
+<!-- AURO-GENERATED-CONTENT:END -->
+</auro-accordion>
+
+## Recommended Use and Version Control
+
+There are two important parts of every Auro component. The <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes">class</a> and the custom clement. The class is exported and then used as part of defining the Web Component. When importing this component as described in the <a href="#install">install</a> section, the class is imported and the `auro-loader` custom element is defined automatically.
+
+To protect from versioning conflicts with other instances of the component being loaded, it is recommended to use our `registerComponent(name)` method and pass in a unique name.
+
+```js
+import './node_modules/@aurodesignsystem/auro-loader';
+registerComponent('custom-loader');
+```
+
+This will create a new custom element that you can use in your HTML that will function identically to the `<auro-loader>` element.
+
+<div class="exampleWrapper exampleWrapper--flex">
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/custom.html) -->
+  <!-- The below content is automatically added from ./../../apiExamples/custom.html -->
+  <custom-loader ringworm></custom-loader>
+  <custom-loader orbit></custom-loader>
+  <custom-loader pulse></custom-loader>
+  <custom-loader laser></custom-loader>
+  <!-- AURO-GENERATED-CONTENT:END -->
+</div>
+<auro-accordion alignRight>
+  <span slot="trigger">See code</span>
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/custom.html) -->
+<!-- The below code snippet is automatically added from ./../../apiExamples/custom.html -->
+
+```html
+<custom-loader ringworm></custom-loader>
+<custom-loader orbit></custom-loader>
+<custom-loader pulse></custom-loader>
+<custom-loader laser></custom-loader>
 ```
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>

@@ -40,8 +40,8 @@ The auro-loader element is an easy to use animated loader component.
 The following illustrates the use of the base elements with default output. The `laser` example is shown at the top of the page due to its fixed positioning.
 
 <div class="exampleWrapper">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/loaderGallery.html) -->
-  <!-- The below content is automatically added from ./../../apiExamples/loaderGallery.html -->
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/basic.html) -->
+  <!-- The below content is automatically added from ./../../apiExamples/basic.html -->
   <auro-loader ringworm></auro-loader>
   <auro-loader orbit></auro-loader>
   <auro-loader pulse></auro-loader>
@@ -50,8 +50,8 @@ The following illustrates the use of the base elements with default output. The 
 </div>
 <auro-accordion alignRight>
   <span slot="trigger">See code</span>
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/loaderGallery.html) -->
-<!-- The below code snippet is automatically added from ./../../apiExamples/loaderGallery.html -->
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/basic.html) -->
+<!-- The below code snippet is automatically added from ./../../apiExamples/basic.html -->
 
 ```html
 <auro-loader ringworm></auro-loader>

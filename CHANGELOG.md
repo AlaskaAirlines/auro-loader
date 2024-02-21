@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [2.0.6](https://github.com/AlaskaAirlines/auro-loader/compare/v2.0.5...v2.0.6) (2024-02-21)
+
+
+### Performance Improvements
+
+* **docs:** update to include custom registration example ([ce100f4](https://github.com/AlaskaAirlines/auro-loader/commit/ce100f4b9a1ebc7aabe40a850fd254781103cd34))
+
 ## [2.0.5](https://github.com/AlaskaAirlines/auro-loader/compare/v2.0.4...v2.0.5) (2024-02-18)
 
 

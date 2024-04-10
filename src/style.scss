@@ -4,17 +4,19 @@
 // ---------------------------------------------------------------------
 
 // Import Auro tokens
-@import "./../node_modules/@aurodesignsystem/design-tokens/dist/tokens/SCSSVariables";
+@import './../node_modules/@aurodesignsystem/design-tokens/dist/tokens/SCSSVariables';
 
-@import "./../node_modules/@aurodesignsystem/webcorestylesheets/src/breakpoints";
-@import "./../node_modules/@aurodesignsystem/webcorestylesheets/src/core";
+@import './../node_modules/@aurodesignsystem/webcorestylesheets/src/breakpoints';
+@import './../node_modules/@aurodesignsystem/webcorestylesheets/src/core';
 
-@import "./styles/base";
-@import "./styles/options";
-@import "./styles/pulse";
-@import "./styles/orbit";
-@import "./styles/ringworm";
-@import "./styles/laser";
+
+@import './styles/tokens';
+@import './styles/base';
+@import './styles/options';
+@import './styles/pulse';
+@import './styles/orbit';
+@import './styles/ringworm';
+@import './styles/laser';
 
 
 // a11y support for reduced motion

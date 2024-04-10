@@ -1,11 +1,11 @@
 :host([onlight]) {
-  color: var(--ds-color-ui-default-default, $ds-color-ui-default-default);
+  color: var(--ds-auro-loader-color-default);
 }
 
 :host([ondark]) {
-  color: var(--ds-color-brand-breeze-300, ds-color-brand-breeze-300);
+  color: var(--ds-auro-loader-color-inverse);
 }
 
 :host([white]) {
-  color: var(--ds-color-base-white, $ds-color-base-white);
+  color: var(--ds-auro-loader-color-base-white);
 }

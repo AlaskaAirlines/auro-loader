@@ -8,8 +8,9 @@
 // If use litElement base class
 import { LitElement, html, css } from "lit";
 
-// Import touch detection lib
 import styleCss from "./style-css.js";
+import colorCss from "./color-css.js";
+import tokensCss from "./tokens-css.js";
 
 // See https://git.io/JJ6SJ for "How to document your components using JSDoc"
 /**
@@ -78,9 +79,11 @@ export class AuroLoader extends LitElement {
   }
 
   static get styles() {
-    return css`
-      ${styleCss}
-    `;
+    return [
+      css`${styleCss}`,
+      css`${colorCss}`,
+      css`${tokensCss}`
+    ];
   }
 
   /**

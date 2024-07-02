@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+# [2.1.0-beta.1](https://github.com/AlaskaAirlines/auro-loader/compare/v2.0.6...v2.1.0-beta.1) (2024-07-02)
+
+
+### Features
+
+* refactor color styles to use tier 3 tokens ([3ec4e0e](https://github.com/AlaskaAirlines/auro-loader/commit/3ec4e0edbe3a5f0b69da1c2b61492a2aea530ccf))
+
 ## [2.0.6](https://github.com/AlaskaAirlines/auro-loader/compare/v2.0.5...v2.0.6) (2024-02-21)
 
 

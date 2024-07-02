@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+# [2.1.0-beta.2](https://github.com/AlaskaAirlines/auro-loader/compare/v2.1.0-beta.1...v2.1.0-beta.2) (2024-07-02)
+
+
+### Features
+
+* add function to handle custom name registration ([d269851](https://github.com/AlaskaAirlines/auro-loader/commit/d269851220c240e04fdb961c145a7cb2a3e6d84a))
+
 # [2.1.0-beta.1](https://github.com/AlaskaAirlines/auro-loader/compare/v2.0.6...v2.1.0-beta.1) (2024-07-02)
 
 

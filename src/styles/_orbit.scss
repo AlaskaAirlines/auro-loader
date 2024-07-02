@@ -4,20 +4,10 @@
 }
 
 :host([orbit]) > span {
-    background: transparent;
     border-width: 5px;
 }
 
-:host([orbit]) > span:nth-child(1) {
-  border-color: currentcolor;
-  opacity: 0.25;
-}
-
 :host([orbit]) > span:nth-child(2) {
-  border-color: currentcolor;
-  border-right-color: transparent;
-  border-bottom-color: transparent;
-  border-left-color: transparent;
   animation: orbit 2s linear infinite;
 }
 
@@ -32,10 +22,6 @@
 :host([orbit][lg]) > span {
   border-width: 21px;
 }
-
-// :host([orbit][xl]) > span {
-//   border-width: 34px;
-// }
 
 @keyframes orbit {
   0% {

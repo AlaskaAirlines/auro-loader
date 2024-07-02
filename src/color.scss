@@ -1,0 +1,50 @@
+// Copyright (c) 2024 Alaska Airlines. All right reserved. Licensed under the Apache-2.0 license
+// See LICENSE in the project root for license information.
+
+// ---------------------------------------------------------------------
+
+// Import Auro tokens
+@import "./../node_modules/@aurodesignsystem/design-tokens/dist/tokens/SCSSVariables";
+
+:host {
+  color: var(--ds-auro-loader-color);
+}
+
+:host > span {
+  background-color: var(--ds-auro-loader-background-color);
+  border-color: var(--ds-auro-loader-border-color);
+}
+
+:host([onlight]) {
+  // No semantically named token for this
+  --ds-auro-loader-color: var(--ds-color-ui-default-default, #{$ds-color-ui-default-default});
+}
+
+:host([ondark]) {
+  // No semantically named token for this
+  --ds-auro-loader-color: var(--ds-color-brand-breeze-300, #{$ds-color-brand-breeze-300});
+}
+
+:host([white]) {
+  // Is this correct token to use?
+  --ds-auro-loader-color: var(--ds-color-container-ui-secondary-default-default, #{$ds-color-container-ui-secondary-default-default});
+}
+
+:host([orbit]) > span {
+  --ds-auro-loader-background-color: transparent;
+}
+
+:host([orbit]) > span:nth-child(1) {
+  --ds-auro-loader-border-color: currentcolor;
+
+  opacity: 0.25;
+}
+
+:host([orbit]) > span:nth-child(2) {
+  --ds-auro-loader-border-color: currentcolor;
+  
+  border-right-color: transparent;
+  border-bottom-color: transparent;
+  border-left-color: transparent;
+}
+

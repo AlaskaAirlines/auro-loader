@@ -3,13 +3,10 @@
 
 // ---------------------------------------------------------------------
 
+/* eslint-disable no-magic-numbers, array-element-newline */
+
 // If use litElement base class
 import { LitElement, html, css } from "lit";
-
-// If using auroElement base class
-// See instructions for importing auroElement base class https://git.io/JULq4
-// import { html, css } from "lit";
-// import AuroElement from '@aurodesignsystem/orion-web-core-style-sheets/dist/auroElement/auroElement';
 
 // Import touch detection lib
 import styleCss from "./style-css.js";
@@ -37,8 +34,6 @@ export class AuroLoader extends LitElement {
   constructor() {
     super();
 
-    /* eslint array-element-newline: ["warn", "always"] */
-    /* eslint no-magic-numbers: "warn" */
     /**
      * @private
      */
@@ -90,7 +85,7 @@ export class AuroLoader extends LitElement {
 
   /**
    * @private
-   * @returns {array} Numbered array for template map.
+   * @returns {Array} Numbered array for template map.
    */
   defineTemplate() {
     let nodes = Array.from(Array(this.mdCount).keys());

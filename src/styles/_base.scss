@@ -8,7 +8,6 @@
   height: 2rem;
   display: inline-block;
   font-size: 0;
-  color: currentcolor;
 }
 
 :host > span {
@@ -20,8 +19,8 @@
   width: 2rem;
   height: 2rem;
   border-radius: 100%;
-  background-color: currentcolor;
-  border: 0 solid currentcolor;
+  border-style: solid;
+  border-width: 0;
 }
 
 :host([xs]),

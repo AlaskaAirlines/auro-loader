@@ -1,19 +1,5 @@
 # Semantic Release Automated Changelog
 
-# [2.1.0-beta.2](https://github.com/AlaskaAirlines/auro-loader/compare/v2.1.0-beta.1...v2.1.0-beta.2) (2024-07-02)
-
-
-### Features
-
-* add function to handle custom name registration ([d269851](https://github.com/AlaskaAirlines/auro-loader/commit/d269851220c240e04fdb961c145a7cb2a3e6d84a))
-
-# [2.1.0-beta.1](https://github.com/AlaskaAirlines/auro-loader/compare/v2.0.6...v2.1.0-beta.1) (2024-07-02)
-
-
-### Features
-
-* refactor color styles to use tier 3 tokens ([3ec4e0e](https://github.com/AlaskaAirlines/auro-loader/commit/3ec4e0edbe3a5f0b69da1c2b61492a2aea530ccf))
-
 ## [2.0.6](https://github.com/AlaskaAirlines/auro-loader/compare/v2.0.5...v2.0.6) (2024-02-21)
 
 

@@ -16,18 +16,15 @@
 }
 
 :host([onlight]) {
-  // No semantically named token for this
-  --ds-auro-loader-color: var(--ds-color-ui-default-default, #{$ds-color-ui-default-default});
+  --ds-auro-loader-color: var(--ds-color-utility-navy-default, #{$ds-color-utility-navy-default});
 }
 
 :host([ondark]) {
-  // No semantically named token for this
-  --ds-auro-loader-color: var(--ds-color-brand-breeze-300, #{$ds-color-brand-breeze-300});
+  --ds-auro-loader-color: var(--ds-color-utility-cyan-inverse, #{$ds-color-utility-cyan-inverse});
 }
 
 :host([white]) {
-  // Is this correct token to use?
-  --ds-auro-loader-color: var(--ds-color-container-ui-secondary-default-default, #{$ds-color-container-ui-secondary-default-default});
+  --ds-auro-loader-color: var(--ds-color-utility-neutral-inverse, #{$ds-color-utility-neutral-inverse});
 }
 
 :host([orbit]) > span {

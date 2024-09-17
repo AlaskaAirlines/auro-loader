@@ -8,6 +8,8 @@
 // If use litElement base class
 import { LitElement, html, css } from "lit";
 
+import AuroLibraryRuntimeUtils from '@aurodesignsystem/auro-library/scripts/utils/runtimeUtils.mjs';
+
 import styleCss from "./style-css.js";
 import colorCss from "./color-css.js";
 import tokensCss from "./tokens-css.js";
@@ -50,6 +52,11 @@ export class AuroLoader extends LitElement {
      */
     this.smCount = 2;
 
+    /**
+     * @private
+     */
+    this.runtimeUtils = new AuroLibraryRuntimeUtils();
+
     this.orbit = false;
     this.ringworm = false;
     this.laser = false;
@@ -86,25 +93,13 @@ export class AuroLoader extends LitElement {
     ];
   }
 
-  /**
-   * If component is registered as a custom name,
-   * this function will add an attribute to the element
-   * with the default name. This is so that other parent
-   * components can still this the element.
-   * @private
-   * @param {string} name - The default tag name.
-   * @param {HTMLElement} elem - The element to add the attribute to.
-   * @returns {void}
-   */
-  handleCustomTagName(name, elem) {
-    if (name.toLowerCase() !== elem.tagName.toLowerCase()) {
-      elem.setAttribute(name, true);
-    }
+  firstUpdated() {
+    // Add the tag name as an attribute if it is different than the component name
+    this.runtimeUtils.handleComponentTagRename(this, 'auro-loader');
   }
 
   connectedCallback() {
     super.connectedCallback();
-    this.handleCustomTagName('auro-loader', this);
   }
 
   /**

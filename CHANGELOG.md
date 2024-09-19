@@ -1,12 +1,5 @@
 # Semantic Release Automated Changelog
 
-# [2.1.0-beta.5](https://github.com/AlaskaAirlines/auro-loader/compare/v2.1.0-beta.4...v2.1.0-beta.5) (2024-09-18)
-
-
-### Performance Improvements
-
-* point to use shared library scripts for build process ([9a87e99](https://github.com/AlaskaAirlines/auro-loader/commit/9a87e9914326e630011f1deea347a821d7a3b631))
-
 ## [2.0.6](https://github.com/AlaskaAirlines/auro-loader/compare/v2.0.5...v2.0.6) (2024-02-21)
 
 

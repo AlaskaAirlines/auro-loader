@@ -1,5 +1,25 @@
 # Semantic Release Automated Changelog
 
+# [2.1.0](https://github.com/AlaskaAirlines/auro-loader/compare/v2.0.6...v2.1.0) (2024-09-23)
+
+
+### Bug Fixes
+
+* **color:** resolve minor color theming issues [#32](https://github.com/AlaskaAirlines/auro-loader/issues/32) ([b4359cc](https://github.com/AlaskaAirlines/auro-loader/commit/b4359cc338a24eeccab24155f833e956f8cd7b34))
+
+
+### Features
+
+* add function to handle custom name registration ([a9da87a](https://github.com/AlaskaAirlines/auro-loader/commit/a9da87a7d8cbd476c98020eb8f9f6383057e470c))
+* refactor color styles to use tier 3 tokens ([c6e6275](https://github.com/AlaskaAirlines/auro-loader/commit/c6e627589c77b7653e191df16be217bd481e7e90))
+
+
+### Performance Improvements
+
+* point to use shared library scripts for build process ([8946612](https://github.com/AlaskaAirlines/auro-loader/commit/89466121c2689d65037c1093a1dc579f0bd866cd))
+* refactor custom component registration config [#34](https://github.com/AlaskaAirlines/auro-loader/issues/34) ([9ca1854](https://github.com/AlaskaAirlines/auro-loader/commit/9ca1854ce579b826f15861418cdf954a5974245c))
+* update dependencies ([5235e4f](https://github.com/AlaskaAirlines/auro-loader/commit/5235e4f9cbfda80bf0781a16eed55188b6c87763))
+
 ## [2.0.6](https://github.com/AlaskaAirlines/auro-loader/compare/v2.0.5...v2.0.6) (2024-02-21)
 
 

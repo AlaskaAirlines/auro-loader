@@ -1,5 +1,22 @@
 # Semantic Release Automated Changelog
 
+# [3.0.0](https://github.com/AlaskaAirlines/auro-loader/compare/v2.1.0...v3.0.0) (2024-09-24)
+
+
+### Bug Fixes
+
+* update path to component js file ([a30ed95](https://github.com/AlaskaAirlines/auro-loader/commit/a30ed9590298979c3a2bf98d8e3ade47084620c9))
+
+
+### Performance Improvements
+
+* update dependencies ([8481564](https://github.com/AlaskaAirlines/auro-loader/commit/8481564faf9cf7775e91cdfdd902845871413959))
+
+
+### BREAKING CHANGES
+
+* trigger major release for theming support #31
+
 # [2.1.0](https://github.com/AlaskaAirlines/auro-loader/compare/v2.0.6...v2.1.0) (2024-09-23)
 
 

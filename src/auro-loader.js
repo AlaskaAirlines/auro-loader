@@ -93,6 +93,18 @@ export class AuroLoader extends LitElement {
     ];
   }
 
+  /**
+   * This will register this element with the browser.
+   * @param {string} [name="auro-loader"] - The name of element that you want to register to.
+   *
+   * @example
+   * AuroLoader.register("custom-loader") // this will register this element to <custom-loader/>
+   *
+   */
+  static register(name = "auro-loader") {
+    AuroLibraryRuntimeUtils.prototype.registerComponent(name, AuroLoader);
+  }
+
   firstUpdated() {
     // Add the tag name as an attribute if it is different than the component name
     this.runtimeUtils.handleComponentTagRename(this, 'auro-loader');
@@ -138,9 +150,4 @@ export class AuroLoader extends LitElement {
       }
     `;
   }
-}
-
-// default internal definition
-if (!customElements.get("auro-loader")) {
-  customElements.define("auro-loader", AuroLoader);
 }

@@ -1,6 +1,5 @@
 import { fixture, html, expect } from '@open-wc/testing';
-import sinon from 'sinon';
-import '../src/auro-loader.js';
+import '../index.js';
 
 describe('auro-loader', () => {
   it('auro-loader is accessible', async () => {

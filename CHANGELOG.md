@@ -1,5 +1,17 @@
 # Semantic Release Automated Changelog
 
+# [3.1.0](https://github.com/AlaskaAirlines/auro-loader/compare/v3.0.1...v3.1.0) (2024-10-23)
+
+
+### Features
+
+* **api:** add register static method [#44](https://github.com/AlaskaAirlines/auro-loader/issues/44) ([d5e5e65](https://github.com/AlaskaAirlines/auro-loader/commit/d5e5e65ddfc94e04e365413906042a1a99fe57fe))
+
+
+### Performance Improvements
+
+* update dependency versions ([73c34e8](https://github.com/AlaskaAirlines/auro-loader/commit/73c34e8c16247eedfa3376c4a7799cebcc92c4df))
+
 ## [3.0.1](https://github.com/AlaskaAirlines/auro-loader/compare/v3.0.0...v3.0.1) (2024-10-08)
 
 

@@ -1,5 +1,14 @@
 # Semantic Release Automated Changelog
 
+## [3.1.1](https://github.com/AlaskaAirlines/auro-loader/compare/v3.1.0...v3.1.1) (2024-10-30)
+
+
+### Bug Fixes
+
+* add package.lock ([9a745dc](https://github.com/AlaskaAirlines/auro-loader/commit/9a745dcb81b3715f9b5f51a0e133b51e8f466916))
+* limit auro-library version to patch updates ([06041c1](https://github.com/AlaskaAirlines/auro-loader/commit/06041c13920864770fbdda8f604d8eafc2c51ea2))
+* rollback auro-library to fix generateDoc scripting ([d71c779](https://github.com/AlaskaAirlines/auro-loader/commit/d71c779099e5736a3e6c08d7fa30b1cd5839a519))
+
 # [3.1.0](https://github.com/AlaskaAirlines/auro-loader/compare/v3.0.1...v3.1.0) (2024-10-23)
 
 

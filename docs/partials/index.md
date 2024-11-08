@@ -6,12 +6,12 @@ This file is generated based on a template fetched from `./docs/partials/index.m
 
 # Loader
 
-<!-- AURO-GENERATED-CONTENT:START (FILE:src=./description.md) -->
+<!-- AURO-GENERATED-CONTENT:START (FILE:src=../docs/partials/description.md) -->
 <!-- AURO-GENERATED-CONTENT:END -->
 
 ## auro-loader use cases
 
-<!-- AURO-GENERATED-CONTENT:START (FILE:src=./useCases.md) -->
+<!-- AURO-GENERATED-CONTENT:START (FILE:src=../docs/partials/useCases.md) -->
 <!-- AURO-GENERATED-CONTENT:END -->
 
 ## Loader Gallery
@@ -19,14 +19,14 @@ This file is generated based on a template fetched from `./docs/partials/index.m
 See in the following examples the different loader modes that the `<auro-loader>` element supports.
 
 <div class="exampleWrapper">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/basic.html) -->
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=../apiExamples/basic.html) -->
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
 
 <auro-accordion alignRight>
   <span slot="trigger">See code</span>
 
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/basic.html) -->
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=../apiExamples/basic.html) -->
 <!-- AURO-GENERATED-CONTENT:END -->
 
 </auro-accordion>
@@ -36,14 +36,14 @@ See in the following examples the different loader modes that the `<auro-loader>
 The `<auro-loader>` element supports a scale of sizes. Options are `[sm, md, lg, xl]`.
 
 <div class="exampleWrapper">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/loader_sizes.html) -->
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=../apiExamples/loader_sizes.html) -->
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
 
 <auro-accordion alignRight>
   <span slot="trigger">See code</span>
 
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/loader_sizes.html) -->
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=../apiExamples/loader_sizes.html) -->
 <!-- AURO-GENERATED-CONTENT:END -->
 
 </auro-accordion>
@@ -53,27 +53,27 @@ The `<auro-loader>` element supports a scale of sizes. Options are `[sm, md, lg,
 The `<auro-loader>` element supports a scale of pre-defines color options. Options are `[onLight, onDark, white]`.
 
 <div class="exampleWrapper">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/loader_color.html) -->
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=../apiExamples/loader_color.html) -->
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
 
 <auro-accordion alignRight>
   <span slot="trigger">See code</span>
 
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/loader_color.html) -->
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=../apiExamples/loader_color.html) -->
 <!-- AURO-GENERATED-CONTENT:END -->
 
 </auro-accordion>
 
 <div class="exampleWrapper--ondark">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/loader_color_ondark.html) -->
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=../apiExamples/loader_color_ondark.html) -->
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
 
 <auro-accordion alignRight>
   <span slot="trigger">See code</span>
 
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/loader_color_ondark.html) -->
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=../apiExamples/loader_color_ondark.html) -->
 <!-- AURO-GENERATED-CONTENT:END -->
 
 </auro-accordion>
@@ -83,14 +83,14 @@ The `<auro-loader>` element supports a scale of pre-defines color options. Optio
 The `<auro-loader>` element supports any custom color defined at the root level of the element.
 
 <div class="exampleWrapper">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/custom_color.html) -->
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=../apiExamples/custom_color.html) -->
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
 
 <auro-accordion alignRight>
   <span slot="trigger">See code</span>
 
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/custom_color.html) -->
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=../apiExamples/custom_color.html) -->
 <!-- AURO-GENERATED-CONTENT:END -->
 
 </auro-accordion>
@@ -100,14 +100,14 @@ The `<auro-loader>` element supports any custom color defined at the root level 
 The `<auro-loader>` custom element has a CSS shadow part included in it's API. Create a custom selector using `::part(element)` and easily adjust the `animation-duration` as seen in the examples below.
 
 <div class="exampleWrapper">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/custom_speed.html) -->
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=../apiExamples/custom_speed.html) -->
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
 
 <auro-accordion alignRight>
   <span slot="trigger">See code</span>
 
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/custom_speed.html) -->
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=../apiExamples/custom_speed.html) -->
 <!-- AURO-GENERATED-CONTENT:END -->
 
 </auro-accordion>
@@ -127,11 +127,11 @@ AuroLoader.register('custom-loader');
 This will create a new custom element that you can use in your HTML that will function identically to the `<auro-loader>` element.
 
 <div class="exampleWrapper exampleWrapper--flex">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/custom.html) -->
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=../apiExamples/custom.html) -->
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
 <auro-accordion alignRight>
   <span slot="trigger">See code</span>
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/custom.html) -->
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=../apiExamples/custom.html) -->
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>

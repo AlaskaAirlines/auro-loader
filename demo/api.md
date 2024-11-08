@@ -1,5 +1,5 @@
-<!-- AURO-GENERATED-CONTENT:START (FILE:src=./../api.md) -->
-<!-- The below content is automatically added from ./../api.md -->
+<!-- AURO-GENERATED-CONTENT:START (FILE:src=../docs/api.md) -->
+<!-- The below content is automatically added from ../docs/api.md -->
 
 # auro-loader
 
@@ -40,8 +40,8 @@ The auro-loader element is an easy to use animated loader component.
 The following illustrates the use of the base elements with default output. The `laser` example is shown at the top of the page due to its fixed positioning.
 
 <div class="exampleWrapper">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/basic.html) -->
-  <!-- The below content is automatically added from ./../../apiExamples/basic.html -->
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=../apiExamples/basic.html) -->
+  <!-- The below content is automatically added from ../apiExamples/basic.html -->
   <auro-loader ringworm></auro-loader>
   <auro-loader orbit></auro-loader>
   <auro-loader pulse></auro-loader>
@@ -50,8 +50,8 @@ The following illustrates the use of the base elements with default output. The 
 </div>
 <auro-accordion alignRight>
   <span slot="trigger">See code</span>
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/basic.html) -->
-<!-- The below code snippet is automatically added from ./../../apiExamples/basic.html -->
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=../apiExamples/basic.html) -->
+<!-- The below code snippet is automatically added from ../apiExamples/basic.html -->
 
 ```html
 <auro-loader ringworm></auro-loader>
@@ -68,8 +68,8 @@ The following illustrates the use of the base elements with default output. The 
 Use the `xs` boolean attribute for a pre-defined size. Type `laser` does not support a size attribute.
 
 <div class="exampleWrapper">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/api_xs.html) -->
-  <!-- The below content is automatically added from ./../../apiExamples/api_xs.html -->
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=../apiExamples/api_xs.html) -->
+  <!-- The below content is automatically added from ../apiExamples/api_xs.html -->
   <auro-loader ringworm xs></auro-loader>
   <auro-loader orbit xs></auro-loader>
   <auro-loader pulse xs></auro-loader>
@@ -77,8 +77,8 @@ Use the `xs` boolean attribute for a pre-defined size. Type `laser` does not sup
 </div>
 <auro-accordion alignRight>
   <span slot="trigger">See code</span>
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/api_xs.html) -->
-<!-- The below code snippet is automatically added from ./../../apiExamples/api_xs.html -->
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=../apiExamples/api_xs.html) -->
+<!-- The below code snippet is automatically added from ../apiExamples/api_xs.html -->
 
 ```html
 <auro-loader ringworm xs></auro-loader>
@@ -92,8 +92,8 @@ Use the `xs` boolean attribute for a pre-defined size. Type `laser` does not sup
 Use the `sm` boolean attribute for a pre-defined size. Type `laser` does not support a size attribute.
 
 <div class="exampleWrapper">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/api_small.html) -->
-  <!-- The below content is automatically added from ./../../apiExamples/api_small.html -->
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=../apiExamples/api_small.html) -->
+  <!-- The below content is automatically added from ../apiExamples/api_small.html -->
   <auro-loader ringworm sm></auro-loader>
   <auro-loader orbit sm></auro-loader>
   <auro-loader pulse sm></auro-loader>
@@ -101,8 +101,8 @@ Use the `sm` boolean attribute for a pre-defined size. Type `laser` does not sup
 </div>
 <auro-accordion alignRight>
   <span slot="trigger">See code</span>
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/api_small.html) -->
-<!-- The below code snippet is automatically added from ./../../apiExamples/api_small.html -->
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=../apiExamples/api_small.html) -->
+<!-- The below code snippet is automatically added from ../apiExamples/api_small.html -->
 
 ```html
 <auro-loader ringworm sm></auro-loader>
@@ -116,8 +116,8 @@ Use the `sm` boolean attribute for a pre-defined size. Type `laser` does not sup
 Use the `md` boolean attribute for a pre-defined size. Type `laser` does not support a size attribute.
 
 <div class="exampleWrapper">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/api_medium.html) -->
-  <!-- The below content is automatically added from ./../../apiExamples/api_medium.html -->
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=../apiExamples/api_medium.html) -->
+  <!-- The below content is automatically added from ../apiExamples/api_medium.html -->
   <auro-loader ringworm md></auro-loader>
   <auro-loader orbit md></auro-loader>
   <auro-loader pulse md></auro-loader>
@@ -125,8 +125,8 @@ Use the `md` boolean attribute for a pre-defined size. Type `laser` does not sup
 </div>
 <auro-accordion alignRight>
   <span slot="trigger">See code</span>
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/api_medium.html) -->
-<!-- The below code snippet is automatically added from ./../../apiExamples/api_medium.html -->
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=../apiExamples/api_medium.html) -->
+<!-- The below code snippet is automatically added from ../apiExamples/api_medium.html -->
 
 ```html
 <auro-loader ringworm md></auro-loader>
@@ -140,8 +140,8 @@ Use the `md` boolean attribute for a pre-defined size. Type `laser` does not sup
 Use the `lg` boolean attribute for a pre-defined size. Type `laser` does not support a size attribute.
 
 <div class="exampleWrapper">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/api_large.html) -->
-  <!-- The below content is automatically added from ./../../apiExamples/api_large.html -->
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=../apiExamples/api_large.html) -->
+  <!-- The below content is automatically added from ../apiExamples/api_large.html -->
   <auro-loader ringworm lg></auro-loader>
   <auro-loader orbit lg></auro-loader>
   <auro-loader pulse lg></auro-loader>
@@ -149,8 +149,8 @@ Use the `lg` boolean attribute for a pre-defined size. Type `laser` does not sup
 </div>
 <auro-accordion alignRight>
   <span slot="trigger">See code</span>
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/api_large.html) -->
-<!-- The below code snippet is automatically added from ./../../apiExamples/api_large.html -->
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=../apiExamples/api_large.html) -->
+<!-- The below code snippet is automatically added from ../apiExamples/api_large.html -->
 
 ```html
 <auro-loader ringworm lg></auro-loader>
@@ -164,8 +164,8 @@ Use the `lg` boolean attribute for a pre-defined size. Type `laser` does not sup
 Use the `onlight` boolean attribute for a pre-defined color. Type `laser` is supported, but not shown due to fixed positioning.
 
 <div class="exampleWrapper">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/onlight.html) -->
-  <!-- The below content is automatically added from ./../../apiExamples/onlight.html -->
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=../apiExamples/onlight.html) -->
+  <!-- The below content is automatically added from ../apiExamples/onlight.html -->
   <auro-loader ringworm onLight></auro-loader>
   <auro-loader orbit onLight></auro-loader>
   <auro-loader pulse onLight></auro-loader>
@@ -173,8 +173,8 @@ Use the `onlight` boolean attribute for a pre-defined color. Type `laser` is sup
 </div>
 <auro-accordion alignRight>
   <span slot="trigger">See code</span>
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/onlight.html) -->
-<!-- The below code snippet is automatically added from ./../../apiExamples/onlight.html -->
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=../apiExamples/onlight.html) -->
+<!-- The below code snippet is automatically added from ../apiExamples/onlight.html -->
 
 ```html
 <auro-loader ringworm onLight></auro-loader>
@@ -188,8 +188,8 @@ Use the `onlight` boolean attribute for a pre-defined color. Type `laser` is sup
 Use the `ondark` boolean attribute for a pre-defined color. Type `laser` is supported, but not shown due to fixed positioning.
 
 <div class="exampleWrapper--ondark">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/ondark.html) -->
-  <!-- The below content is automatically added from ./../../apiExamples/ondark.html -->
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=../apiExamples/ondark.html) -->
+  <!-- The below content is automatically added from ../apiExamples/ondark.html -->
   <auro-loader ringworm ondark></auro-loader>
   <auro-loader orbit ondark></auro-loader>
   <auro-loader pulse ondark></auro-loader>
@@ -197,8 +197,8 @@ Use the `ondark` boolean attribute for a pre-defined color. Type `laser` is supp
 </div>
 <auro-accordion alignRight>
   <span slot="trigger">See code</span>
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/ondark.html) -->
-<!-- The below code snippet is automatically added from ./../../apiExamples/ondark.html -->
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=../apiExamples/ondark.html) -->
+<!-- The below code snippet is automatically added from ../apiExamples/ondark.html -->
 
 ```html
 <auro-loader ringworm ondark></auro-loader>
@@ -212,8 +212,8 @@ Use the `ondark` boolean attribute for a pre-defined color. Type `laser` is supp
 Use the `white` boolean attribute for a pre-defined color. Type `laser` is supported, but not shown due to fixed positioning.
 
 <div class="exampleWrapper--ondark">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/white.html) -->
-  <!-- The below content is automatically added from ./../../apiExamples/white.html -->
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=../apiExamples/white.html) -->
+  <!-- The below content is automatically added from ../apiExamples/white.html -->
   <auro-loader ringworm white></auro-loader>
   <auro-loader orbit white></auro-loader>
   <auro-loader pulse white></auro-loader>
@@ -221,8 +221,8 @@ Use the `white` boolean attribute for a pre-defined color. Type `laser` is suppo
 </div>
 <auro-accordion alignRight>
   <span slot="trigger">See code</span>
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/white.html) -->
-<!-- The below code snippet is automatically added from ./../../apiExamples/white.html -->
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=../apiExamples/white.html) -->
+<!-- The below code snippet is automatically added from ../apiExamples/white.html -->
 
 ```html
 <auro-loader ringworm white></auro-loader>
@@ -240,15 +240,15 @@ Use the following `orbit`, `laser`, `ringworm`, and `pulse` properties as illust
 Use the `orbit` property for the desired animated loader.
 
 <div class="exampleWrapper">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/property_orbit.html) -->
-  <!-- The below content is automatically added from ./../../apiExamples/property_orbit.html -->
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=../apiExamples/property_orbit.html) -->
+  <!-- The below content is automatically added from ../apiExamples/property_orbit.html -->
   <auro-loader orbit></auro-loader>
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
 <auro-accordion alignRight>
   <span slot="trigger">See code</span>
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/property_orbit.html) -->
-<!-- The below code snippet is automatically added from ./../../apiExamples/property_orbit.html -->
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=../apiExamples/property_orbit.html) -->
+<!-- The below code snippet is automatically added from ../apiExamples/property_orbit.html -->
 
 ```html
 <auro-loader orbit></auro-loader>
@@ -260,15 +260,15 @@ Use the `orbit` property for the desired animated loader.
 Use the `laser` property for the desired animated loader. Example is shown at the top of the page due its fixed positioning.
 
 <div class="exampleWrapper">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/property_laser.html) -->
-  <!-- The below content is automatically added from ./../../apiExamples/property_laser.html -->
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=../apiExamples/property_laser.html) -->
+  <!-- The below content is automatically added from ../apiExamples/property_laser.html -->
   <auro-loader laser></auro-loader>
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
 <auro-accordion alignRight>
   <span slot="trigger">See code</span>
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/property_laser.html) -->
-<!-- The below code snippet is automatically added from ./../../apiExamples/property_laser.html -->
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=../apiExamples/property_laser.html) -->
+<!-- The below code snippet is automatically added from ../apiExamples/property_laser.html -->
 
 ```html
 <auro-loader laser></auro-loader>
@@ -280,15 +280,15 @@ Use the `laser` property for the desired animated loader. Example is shown at th
 Use the `pulse` property for the desired animated loader.
 
 <div class="exampleWrapper">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/property_pulse.html) -->
-  <!-- The below content is automatically added from ./../../apiExamples/property_pulse.html -->
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=../apiExamples/property_pulse.html) -->
+  <!-- The below content is automatically added from ../apiExamples/property_pulse.html -->
   <auro-loader pulse></auro-loader>
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
 <auro-accordion alignRight>
   <span slot="trigger">See code</span>
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/property_pulse.html) -->
-<!-- The below code snippet is automatically added from ./../../apiExamples/property_pulse.html -->
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=../apiExamples/property_pulse.html) -->
+<!-- The below code snippet is automatically added from ../apiExamples/property_pulse.html -->
 
 ```html
 <auro-loader pulse></auro-loader>
@@ -300,15 +300,15 @@ Use the `pulse` property for the desired animated loader.
 Use the `ringworm` property for the desired animated loader.
 
 <div class="exampleWrapper">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/property_ringworm.html) -->
-  <!-- The below content is automatically added from ./../../apiExamples/property_ringworm.html -->
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=../apiExamples/property_ringworm.html) -->
+  <!-- The below content is automatically added from ../apiExamples/property_ringworm.html -->
   <auro-loader ringworm></auro-loader>
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
 <auro-accordion alignRight>
   <span slot="trigger">See code</span>
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/property_ringworm.html) -->
-<!-- The below code snippet is automatically added from ./../../apiExamples/property_ringworm.html -->
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=../apiExamples/property_ringworm.html) -->
+<!-- The below code snippet is automatically added from ../apiExamples/property_ringworm.html -->
 
 ```html
 <auro-loader ringworm></auro-loader>
@@ -322,8 +322,8 @@ Use the `ringworm` property for the desired animated loader.
 Use the `element` CSS Part with your CSS as illustrated to effect things like the speed of the animation.
 
 <div class="exampleWrapper">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/custom_speed.html) -->
-  <!-- The below content is automatically added from ./../../apiExamples/custom_speed.html -->
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=../apiExamples/custom_speed.html) -->
+  <!-- The below content is automatically added from ../apiExamples/custom_speed.html -->
   <style>
     .slow::part(element) {
       animation-duration: 8s;
@@ -338,8 +338,8 @@ Use the `element` CSS Part with your CSS as illustrated to effect things like th
 </div>
 <auro-accordion alignRight>
   <span slot="trigger">See code</span>
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/custom_speed.html) -->
-<!-- The below code snippet is automatically added from ./../../apiExamples/custom_speed.html -->
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=../apiExamples/custom_speed.html) -->
+<!-- The below code snippet is automatically added from ../apiExamples/custom_speed.html -->
 
 ```html
 <style>
@@ -360,8 +360,8 @@ Use the `element` CSS Part with your CSS as illustrated to effect things like th
 
 The component may be restyled using the following code sample and changing the values of the following token(s).
 
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../src/tokens.scss) -->
-<!-- The below code snippet is automatically added from ./../../src/tokens.scss -->
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../src/tokens.scss) -->
+<!-- The below code snippet is automatically added from ./../src/tokens.scss -->
 
 ```scss
 :host {

@@ -1,4 +1,4 @@
-<!-- AURO-GENERATED-CONTENT:START (FILE:src=./../api.md) -->
+<!-- AURO-GENERATED-CONTENT:START (FILE:src=../docs/api.md) -->
 <!-- AURO-GENERATED-CONTENT:END -->
 
 ## API Examples
@@ -8,13 +8,13 @@
 The following illustrates the use of the base elements with default output. The `laser` example is shown at the top of the page due to its fixed positioning.
 
 <div class="exampleWrapper">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/basic.html) -->
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=../apiExamples/basic.html) -->
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
 <auro-accordion alignRight>
   <span slot="trigger">See code</span>
 
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/basic.html) -->
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=../apiExamples/basic.html) -->
 <!-- AURO-GENERATED-CONTENT:END -->
 
 </auro-accordion>
@@ -26,13 +26,13 @@ The following illustrates the use of the base elements with default output. The 
 Use the `xs` boolean attribute for a pre-defined size. Type `laser` does not support a size attribute.
 
 <div class="exampleWrapper">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/api_xs.html) -->
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=../apiExamples/api_xs.html) -->
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
 <auro-accordion alignRight>
   <span slot="trigger">See code</span>
 
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/api_xs.html) -->
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=../apiExamples/api_xs.html) -->
 <!-- AURO-GENERATED-CONTENT:END -->
 
 </auro-accordion>
@@ -42,13 +42,13 @@ Use the `xs` boolean attribute for a pre-defined size. Type `laser` does not sup
 Use the `sm` boolean attribute for a pre-defined size. Type `laser` does not support a size attribute.
 
 <div class="exampleWrapper">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/api_small.html) -->
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=../apiExamples/api_small.html) -->
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
 <auro-accordion alignRight>
   <span slot="trigger">See code</span>
 
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/api_small.html) -->
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=../apiExamples/api_small.html) -->
 <!-- AURO-GENERATED-CONTENT:END -->
 
 </auro-accordion>
@@ -58,13 +58,13 @@ Use the `sm` boolean attribute for a pre-defined size. Type `laser` does not sup
 Use the `md` boolean attribute for a pre-defined size. Type `laser` does not support a size attribute.
 
 <div class="exampleWrapper">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/api_medium.html) -->
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=../apiExamples/api_medium.html) -->
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
 <auro-accordion alignRight>
   <span slot="trigger">See code</span>
 
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/api_medium.html) -->
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=../apiExamples/api_medium.html) -->
 <!-- AURO-GENERATED-CONTENT:END -->
 
 </auro-accordion>
@@ -74,13 +74,13 @@ Use the `md` boolean attribute for a pre-defined size. Type `laser` does not sup
 Use the `lg` boolean attribute for a pre-defined size. Type `laser` does not support a size attribute.
 
 <div class="exampleWrapper">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/api_large.html) -->
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=../apiExamples/api_large.html) -->
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
 <auro-accordion alignRight>
   <span slot="trigger">See code</span>
 
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/api_large.html) -->
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=../apiExamples/api_large.html) -->
 <!-- AURO-GENERATED-CONTENT:END -->
 
 </auro-accordion>
@@ -90,13 +90,13 @@ Use the `lg` boolean attribute for a pre-defined size. Type `laser` does not sup
 Use the `onlight` boolean attribute for a pre-defined color. Type `laser` is supported, but not shown due to fixed positioning.
 
 <div class="exampleWrapper">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/onlight.html) -->
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=../apiExamples/onlight.html) -->
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
 <auro-accordion alignRight>
   <span slot="trigger">See code</span>
 
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/onlight.html) -->
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=../apiExamples/onlight.html) -->
 <!-- AURO-GENERATED-CONTENT:END -->
 
 </auro-accordion>
@@ -106,13 +106,13 @@ Use the `onlight` boolean attribute for a pre-defined color. Type `laser` is sup
 Use the `ondark` boolean attribute for a pre-defined color. Type `laser` is supported, but not shown due to fixed positioning.
 
 <div class="exampleWrapper--ondark">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/ondark.html) -->
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=../apiExamples/ondark.html) -->
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
 <auro-accordion alignRight>
   <span slot="trigger">See code</span>
 
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/ondark.html) -->
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=../apiExamples/ondark.html) -->
 <!-- AURO-GENERATED-CONTENT:END -->
 
 </auro-accordion>
@@ -122,13 +122,13 @@ Use the `ondark` boolean attribute for a pre-defined color. Type `laser` is supp
 Use the `white` boolean attribute for a pre-defined color. Type `laser` is supported, but not shown due to fixed positioning.
 
 <div class="exampleWrapper--ondark">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/white.html) -->
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=../apiExamples/white.html) -->
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
 <auro-accordion alignRight>
   <span slot="trigger">See code</span>
 
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/white.html) -->
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=../apiExamples/white.html) -->
 <!-- AURO-GENERATED-CONTENT:END -->
 
 </auro-accordion>
@@ -142,13 +142,13 @@ Use the following `orbit`, `laser`, `ringworm`, and `pulse` properties as illust
 Use the `orbit` property for the desired animated loader.
 
 <div class="exampleWrapper">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/property_orbit.html) -->
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=../apiExamples/property_orbit.html) -->
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
 <auro-accordion alignRight>
   <span slot="trigger">See code</span>
 
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/property_orbit.html) -->
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=../apiExamples/property_orbit.html) -->
 <!-- AURO-GENERATED-CONTENT:END -->
 
 </auro-accordion>
@@ -158,13 +158,13 @@ Use the `orbit` property for the desired animated loader.
 Use the `laser` property for the desired animated loader. Example is shown at the top of the page due its fixed positioning.
 
 <div class="exampleWrapper">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/property_laser.html) -->
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=../apiExamples/property_laser.html) -->
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
 <auro-accordion alignRight>
   <span slot="trigger">See code</span>
 
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/property_laser.html) -->
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=../apiExamples/property_laser.html) -->
 <!-- AURO-GENERATED-CONTENT:END -->
 
 </auro-accordion>
@@ -174,13 +174,13 @@ Use the `laser` property for the desired animated loader. Example is shown at th
 Use the `pulse` property for the desired animated loader.
 
 <div class="exampleWrapper">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/property_pulse.html) -->
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=../apiExamples/property_pulse.html) -->
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
 <auro-accordion alignRight>
   <span slot="trigger">See code</span>
 
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/property_pulse.html) -->
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=../apiExamples/property_pulse.html) -->
 <!-- AURO-GENERATED-CONTENT:END -->
 
 </auro-accordion>
@@ -190,13 +190,13 @@ Use the `pulse` property for the desired animated loader.
 Use the `ringworm` property for the desired animated loader.
 
 <div class="exampleWrapper">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/property_ringworm.html) -->
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=../apiExamples/property_ringworm.html) -->
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
 <auro-accordion alignRight>
   <span slot="trigger">See code</span>
 
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/property_ringworm.html) -->
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=../apiExamples/property_ringworm.html) -->
 <!-- AURO-GENERATED-CONTENT:END -->
 
 </auro-accordion>
@@ -208,13 +208,13 @@ Use the `ringworm` property for the desired animated loader.
 Use the `element` CSS Part with your CSS as illustrated to effect things like the speed of the animation.
 
 <div class="exampleWrapper">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/custom_speed.html) -->
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=../apiExamples/custom_speed.html) -->
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
 <auro-accordion alignRight>
   <span slot="trigger">See code</span>
 
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/custom_speed.html) -->
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=../apiExamples/custom_speed.html) -->
 <!-- AURO-GENERATED-CONTENT:END -->
 
 </auro-accordion>
@@ -223,5 +223,5 @@ Use the `element` CSS Part with your CSS as illustrated to effect things like th
 
 The component may be restyled using the following code sample and changing the values of the following token(s).
 
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../src/tokens.scss) -->
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../src/tokens.scss) -->
 <!-- AURO-GENERATED-CONTENT:END -->

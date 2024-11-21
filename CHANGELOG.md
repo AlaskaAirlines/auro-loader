@@ -1,5 +1,17 @@
 # Semantic Release Automated Changelog
 
+## [3.1.2](https://github.com/AlaskaAirlines/auro-loader/compare/v3.1.1...v3.1.2) (2024-11-21)
+
+
+### Bug Fixes
+
+* update markdown partial pathing to consume new auro lib [#48](https://github.com/AlaskaAirlines/auro-loader/issues/48) ([075a82b](https://github.com/AlaskaAirlines/auro-loader/commit/075a82b306c7e95d1d5fa4295f501c6f407587c6))
+
+
+### Performance Improvements
+
+* update library to 3.0.2 ([7eb49af](https://github.com/AlaskaAirlines/auro-loader/commit/7eb49af297236c151fb027b864d6ad7f27bf887b))
+
 ## [3.1.1](https://github.com/AlaskaAirlines/auro-loader/compare/v3.1.0...v3.1.1) (2024-10-30)
 
 

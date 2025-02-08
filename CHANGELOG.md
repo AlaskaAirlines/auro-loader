@@ -1,5 +1,13 @@
 # Semantic Release Automated Changelog
 
+## [3.1.4](https://github.com/AlaskaAirlines/auro-loader/compare/v3.1.3...v3.1.4) (2025-02-08)
+
+
+### Performance Improvements
+
+* update dependencies ([da8021e](https://github.com/AlaskaAirlines/auro-loader/commit/da8021eaa0937f728c24a1006d75b344a0babd22))
+* update package-lock error ([857fb7e](https://github.com/AlaskaAirlines/auro-loader/commit/857fb7e9d08d79cfa653d6008b6ccd9f152cd881))
+
 ## [3.1.3](https://github.com/AlaskaAirlines/auro-loader/compare/v3.1.2...v3.1.3) (2024-12-21)
 
 

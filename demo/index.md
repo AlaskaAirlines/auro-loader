@@ -16,7 +16,7 @@ And each of these modes support five size settings, `default`, `sm`, `md`, `lg`,
 
 For color support `<auro-loader>` supports `currentColor`, this allows for any color set on the parent element to influence the color of the loader.
 
-The `<auro-loader>` custom element also supports three pre-defined color modes, `onlight`, `ondark` and `white`.
+The `<auro-loader>` custom element also supports three pre-defined color modes, `onLight`, `onDark`.
 <!-- AURO-GENERATED-CONTENT:END -->
 
 ## auro-loader use cases
@@ -84,7 +84,7 @@ The `<auro-loader>` element supports a scale of sizes. Options are `[sm, md, lg,
 
 ## Color support
 
-The `<auro-loader>` element supports a scale of pre-defines color options. Options are `[onLight, onDark, white]`.
+The `<auro-loader>` element supports a scale of pre-defines color options. Options are `[onLight, onDark]`.
 
 <div class="exampleWrapper">
   <!-- AURO-GENERATED-CONTENT:START (FILE:src=../apiExamples/loader_color.html) -->
@@ -106,7 +106,6 @@ The `<auro-loader>` element supports a scale of pre-defines color options. Optio
   <!-- AURO-GENERATED-CONTENT:START (FILE:src=../apiExamples/loader_color_ondark.html) -->
   <!-- The below content is automatically added from ../apiExamples/loader_color_ondark.html -->
   <auro-loader pulse ondark md></auro-loader>
-  <auro-loader pulse white md></auro-loader>
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
 <auro-accordion alignRight>
@@ -116,7 +115,6 @@ The `<auro-loader>` element supports a scale of pre-defines color options. Optio
 
 ```html
 <auro-loader pulse ondark md></auro-loader>
-<auro-loader pulse white md></auro-loader>
 ```
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>

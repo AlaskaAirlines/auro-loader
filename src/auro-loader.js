@@ -22,7 +22,6 @@ import tokensCss from "./tokens-css.js";
  * @attr {Boolean} ringworm - sets loader type
  * @attr {Boolean} laser - sets loader type
  * @attr {Boolean} orbit - sets loader type
- * @attr {Boolean} white - sets color of loader to white
  * @attr {Boolean} ondark - sets color of loader to auro-color-ui-default-on-dark
  * @attr {Boolean} onlight - sets color of loader to auro-color-ui-default-on-light
  * @attr {Boolean} xs - sets size to extra small

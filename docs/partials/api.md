@@ -117,22 +117,6 @@ Use the `ondark` boolean attribute for a pre-defined color. Type `laser` is supp
 
 </auro-accordion>
 
-#### `white`
-
-Use the `white` boolean attribute for a pre-defined color. Type `laser` is supported, but not shown due to fixed positioning.
-
-<div class="exampleWrapper--ondark">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=../apiExamples/white.html) -->
-  <!-- AURO-GENERATED-CONTENT:END -->
-</div>
-<auro-accordion alignRight>
-  <span slot="trigger">See code</span>
-
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=../apiExamples/white.html) -->
-<!-- AURO-GENERATED-CONTENT:END -->
-
-</auro-accordion>
-
 ### Property Examples
 
 Use the following `orbit`, `laser`, `ringworm`, and `pulse` properties as illustrated.

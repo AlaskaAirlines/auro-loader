@@ -4,7 +4,7 @@
 // ---------------------------------------------------------------------
 
 // Import Auro tokens
-@import "./../node_modules/@aurodesignsystem/design-tokens/dist/tokens/SCSSVariables";
+@import "./../node_modules/@aurodesignsystem/design-tokens/dist/alaska/SCSSVariables--alaska";
 
 :host {
   color: var(--ds-auro-loader-color);
@@ -16,15 +16,11 @@
 }
 
 :host([onlight]) {
-  --ds-auro-loader-color: var(--ds-color-utility-navy-default, #{$ds-color-utility-navy-default});
+  --ds-auro-loader-color: var(--ds-basic-color-brand-primary, #{$ds-basic-color-brand-primary});
 }
 
 :host([ondark]) {
-  --ds-auro-loader-color: var(--ds-color-utility-cyan-inverse, #{$ds-color-utility-cyan-inverse});
-}
-
-:host([white]) {
-  --ds-auro-loader-color: var(--ds-color-utility-neutral-inverse, #{$ds-color-utility-neutral-inverse});
+  --ds-auro-loader-color: var(--ds-basic-color-texticon-inverse, #{$ds-basic-color-texticon-inverse});
 }
 
 :host([orbit]) > span {

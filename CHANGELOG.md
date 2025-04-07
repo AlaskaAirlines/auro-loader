@@ -1,5 +1,18 @@
 # Semantic Release Automated Changelog
 
+# [5.0.0](https://github.com/AlaskaAirlines/auro-loader/compare/v4.0.0...v5.0.0) (2025-04-07)
+
+
+### Performance Improvements
+
+* update component to use newly released theming tokens [#58](https://github.com/AlaskaAirlines/auro-loader/issues/58) ([1e6cf61](https://github.com/AlaskaAirlines/auro-loader/commit/1e6cf613477af29f3d38b37cd5fa25082a6531d2))
+* update dependencies and tsconfig ([5d8c4f9](https://github.com/AlaskaAirlines/auro-loader/commit/5d8c4f98e6f9cdde15014be43a8880a01ab98b75))
+
+
+### BREAKING CHANGES
+
+* The `white` attribute has been removed.
+
 # [4.0.0](https://github.com/AlaskaAirlines/auro-loader/compare/v3.1.4...v4.0.0) (2025-02-28)
 
 

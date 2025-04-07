@@ -14,17 +14,16 @@ The auro-loader element is an easy to use animated loader component.
 | [ondark](#ondark)  | `Boolean` | sets color of loader to auro-color-ui-default-on-dark |
 | [onlight](#onlight) | `Boolean` | sets color of loader to auro-color-ui-default-on-light |
 | [sm](#sm)      | `Boolean` | sets size to small                               |
-| [white](#white)   | `Boolean` | sets color of loader to white                    |
 | [xs](#xs)      | `Boolean` | sets size to extra small                         |
 
 ## Properties
 
-| Property   | Attribute  | Type      | Default | Description      |
-|------------|------------|-----------|---------|------------------|
-| [laser](#laser)    | `laser`    | `Boolean` | false   | sets loader type |
-| [orbit](#orbit)    | `orbit`    | `Boolean` | false   | sets loader type |
-| [pulse](#pulse)    | `pulse`    | `Boolean` | false   | sets loader type |
-| [ringworm](#ringworm) | `ringworm` | `Boolean` | false   | sets loader type |
+| Property   | Attribute  | Type      | Default | Description                  |
+|------------|------------|-----------|---------|------------------------------|
+| [laser](#laser)    | `laser`    | `boolean` | false   | Sets loader to laser type    |
+| [orbit](#orbit)    | `orbit`    | `boolean` | false   | Sets loader to orbit type    |
+| [pulse](#pulse)    | `pulse`    | `boolean` | false   | Sets loader to pulse type    |
+| [ringworm](#ringworm) | `ringworm` | `boolean` | false   | Sets loader to ringworm type |
 
 ## CSS Shadow Parts
 

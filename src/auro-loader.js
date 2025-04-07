@@ -14,24 +14,6 @@ import styleCss from "./style-css.js";
 import colorCss from "./color-css.js";
 import tokensCss from "./tokens-css.js";
 
-// See https://git.io/JJ6SJ for "How to document your components using JSDoc"
-/**
- * The auro-loader element is an easy to use animated loader component.
- *
- * @attr {Boolean} pulse - sets loader type
- * @attr {Boolean} ringworm - sets loader type
- * @attr {Boolean} laser - sets loader type
- * @attr {Boolean} orbit - sets loader type
- * @attr {Boolean} ondark - sets color of loader to auro-color-ui-default-on-dark
- * @attr {Boolean} onlight - sets color of loader to auro-color-ui-default-on-light
- * @attr {Boolean} xs - sets size to extra small
- * @attr {Boolean} sm - sets size to small
- * @attr {Boolean} md - sets size to medium
- * @attr {Boolean} lg - sets size to large
- * @csspart element - apply style to adjust speed of animation
- */
-
-// build the component class
 export class AuroLoader extends LitElement {
   constructor() {
     super();
@@ -65,19 +47,35 @@ export class AuroLoader extends LitElement {
   // function to define props used within the scope of this component
   static get properties() {
     return {
-      pulse: {
+
+      /**
+       * Sets loader to laser type
+       */
+      laser: {
         type: Boolean,
         reflect: true
       },
+
+      /**
+       * Sets loader to orbit type
+       */
       orbit: {
         type: Boolean,
         reflect: true
       },
-      ringworm: {
+
+      /**
+       * Sets loader to pulse type
+       */
+      pulse: {
         type: Boolean,
         reflect: true
       },
-      laser: {
+
+      /**
+       * Sets loader to ringworm type
+       */
+      ringworm: {
         type: Boolean,
         reflect: true
       }

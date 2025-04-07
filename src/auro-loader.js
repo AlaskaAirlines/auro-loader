@@ -49,7 +49,7 @@ export class AuroLoader extends LitElement {
     return {
 
       /**
-       * Sets loader to laser type
+       * Sets loader to laser type.
        */
       laser: {
         type: Boolean,
@@ -57,7 +57,7 @@ export class AuroLoader extends LitElement {
       },
 
       /**
-       * Sets loader to orbit type
+       * Sets loader to orbit type.
        */
       orbit: {
         type: Boolean,
@@ -65,7 +65,7 @@ export class AuroLoader extends LitElement {
       },
 
       /**
-       * Sets loader to pulse type
+       * Sets loader to pulse type.
        */
       pulse: {
         type: Boolean,
@@ -73,7 +73,7 @@ export class AuroLoader extends LitElement {
       },
 
       /**
-       * Sets loader to ringworm type
+       * Sets loader to ringworm type.
        */
       ringworm: {
         type: Boolean,

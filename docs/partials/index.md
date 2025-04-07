@@ -50,7 +50,7 @@ The `<auro-loader>` element supports a scale of sizes. Options are `[sm, md, lg,
 
 ## Color support
 
-The `<auro-loader>` element supports a scale of pre-defines color options. Options are `[onLight, onDark, white]`.
+The `<auro-loader>` element supports a scale of pre-defines color options. Options are `[onLight, onDark]`.
 
 <div class="exampleWrapper">
   <!-- AURO-GENERATED-CONTENT:START (FILE:src=../apiExamples/loader_color.html) -->

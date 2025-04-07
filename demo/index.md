@@ -16,7 +16,7 @@ And each of these modes support five size settings, `default`, `sm`, `md`, `lg`,
 
 For color support `<auro-loader>` supports `currentColor`, this allows for any color set on the parent element to influence the color of the loader.
 
-The `<auro-loader>` custom element also supports three pre-defined color modes, `onLight`, `onDark`.
+The `<auro-loader>` custom element also supports two pre-defined color modes: `onlight` and `ondark`.
 <!-- AURO-GENERATED-CONTENT:END -->
 
 ## auro-loader use cases
@@ -84,7 +84,7 @@ The `<auro-loader>` element supports a scale of sizes. Options are `[sm, md, lg,
 
 ## Color support
 
-The `<auro-loader>` element supports a scale of pre-defines color options. Options are `[onLight, onDark]`.
+The `<auro-loader>` element supports a scale of pre-defines color options. Options are `[onlight, ondark]`.
 
 <div class="exampleWrapper">
   <!-- AURO-GENERATED-CONTENT:START (FILE:src=../apiExamples/loader_color.html) -->

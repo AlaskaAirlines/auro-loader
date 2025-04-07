@@ -7,29 +7,29 @@ The auro-loader element is an easy to use animated loader component.
 
 ## Attributes
 
-| Attribute | Type      | Description                                      |
-|-----------|-----------|--------------------------------------------------|
-| [lg](#lg)      | `Boolean` | sets size to large                               |
-| [md](#md)      | `Boolean` | sets size to medium                              |
-| [ondark](#ondark)  | `Boolean` | sets color of loader to auro-color-ui-default-on-dark |
-| [onlight](#onlight) | `Boolean` | sets color of loader to auro-color-ui-default-on-light |
-| [sm](#sm)      | `Boolean` | sets size to small                               |
-| [xs](#xs)      | `Boolean` | sets size to extra small                         |
+| Attribute | Type      | Description                                 |
+|-----------|-----------|---------------------------------------------|
+| [lg](#lg)      | `Boolean` | Sets size to large.                         |
+| [md](#md)      | `Boolean` | Sets size to medium.                        |
+| [ondark](#ondark)  | `Boolean` | Sets color of loader for dark backgrounds.  |
+| [onlight](#onlight) | `Boolean` | sets color of loader for light backgrounds. |
+| [sm](#sm)      | `Boolean` | Sets size to small.                         |
+| [xs](#xs)      | `Boolean` | Sets size to extra small.                   |
 
 ## Properties
 
-| Property   | Attribute  | Type      | Default | Description                  |
-|------------|------------|-----------|---------|------------------------------|
-| [laser](#laser)    | `laser`    | `boolean` | false   | Sets loader to laser type    |
-| [orbit](#orbit)    | `orbit`    | `boolean` | false   | Sets loader to orbit type    |
-| [pulse](#pulse)    | `pulse`    | `boolean` | false   | Sets loader to pulse type    |
-| [ringworm](#ringworm) | `ringworm` | `boolean` | false   | Sets loader to ringworm type |
+| Property   | Attribute  | Type      | Default | Description                   |
+|------------|------------|-----------|---------|-------------------------------|
+| [laser](#laser)    | `laser`    | `boolean` | false   | Sets loader to laser type.    |
+| [orbit](#orbit)    | `orbit`    | `boolean` | false   | Sets loader to orbit type.    |
+| [pulse](#pulse)    | `pulse`    | `boolean` | false   | Sets loader to pulse type.    |
+| [ringworm](#ringworm) | `ringworm` | `boolean` | false   | Sets loader to ringworm type. |
 
 ## CSS Shadow Parts
 
-| Part      | Description                              |
-|-----------|------------------------------------------|
-| [element](#element) | apply style to adjust speed of animation |
+| Part      | Description                               |
+|-----------|-------------------------------------------|
+| [element](#element) | Apply style to adjust speed of animation. |
 <!-- AURO-GENERATED-CONTENT:END -->
 
 ## API Examples

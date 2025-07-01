@@ -4,7 +4,7 @@
 // ---------------------------------------------------------------------
 
 // Import Auro tokens
-@import "./../node_modules/@aurodesignsystem/design-tokens/dist/alaska/SCSSVariables--alaska";
+@use "@aurodesignsystem/design-tokens/dist/themes/alaska/SCSSVariables--alaska" as v;
 
 :host {
   color: var(--ds-auro-loader-color);
@@ -16,11 +16,11 @@
 }
 
 :host([onlight]) {
-  --ds-auro-loader-color: var(--ds-basic-color-brand-primary, #{$ds-basic-color-brand-primary});
+  --ds-auro-loader-color: var(--ds-basic-color-brand-primary, #{v.$ds-basic-color-brand-primary});
 }
 
 :host([ondark]) {
-  --ds-auro-loader-color: var(--ds-basic-color-texticon-inverse, #{$ds-basic-color-texticon-inverse});
+  --ds-auro-loader-color: var(--ds-basic-color-texticon-inverse, #{v.$ds-basic-color-texticon-inverse});
 }
 
 :host([orbit]) > span {

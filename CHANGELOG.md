@@ -1,5 +1,17 @@
 # Semantic Release Automated Changelog
 
+# [5.1.0](https://github.com/AlaskaAirlines/auro-loader/compare/v5.0.0...v5.1.0) (2025-07-01)
+
+
+### Bug Fixes
+
+* update docs head content ([2e6ad7f](https://github.com/AlaskaAirlines/auro-loader/commit/2e6ad7fd4b424439fb2adafdae547be61c9eda33))
+
+
+### Features
+
+* add themeable type classes ([b39308b](https://github.com/AlaskaAirlines/auro-loader/commit/b39308bd1f3354d82d6d31d3fd23f357ef12e5d4))
+
 # [5.0.0](https://github.com/AlaskaAirlines/auro-loader/compare/v4.0.0...v5.0.0) (2025-04-07)
 
 

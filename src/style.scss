@@ -4,17 +4,17 @@
 // ---------------------------------------------------------------------
 
 // Import Auro tokens
-@import "./../node_modules/@aurodesignsystem/design-tokens/dist/auro-classic/SCSSVariables";
+@use "@aurodesignsystem/design-tokens/dist/legacy/auro-classic/SCSSVariables" as vac;
+@use "@aurodesignsystem/webcorestylesheets/dist/bundled/type/classes.alaska.min.css";
 
-@import "./../node_modules/@aurodesignsystem/webcorestylesheets/src/breakpoints";
-@import "./../node_modules/@aurodesignsystem/webcorestylesheets/src/core";
+@use "@aurodesignsystem/webcorestylesheets/src/breakpoints";
+@use "@aurodesignsystem/webcorestylesheets/src/core";
 
-@import "./styles/base";
-@import "./styles/pulse";
-@import "./styles/orbit";
-@import "./styles/ringworm";
-@import "./styles/laser";
-
+@use "./styles/base";
+@use "./styles/pulse";
+@use "./styles/orbit";
+@use "./styles/ringworm";
+@use "./styles/laser";
 
 // a11y support for reduced motion
 :host {
@@ -28,7 +28,6 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1rem;
   }
 
   :host {
@@ -39,6 +38,12 @@
 
   :host {
     > .loader {
+      display: none;
+    }
+  }
+
+  :host {
+    > svg {
       display: none;
     }
   }

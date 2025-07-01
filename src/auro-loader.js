@@ -137,7 +137,7 @@ export class AuroLoader extends LitElement {
         <span part="element" class="loader node-${idx}"></span>
       `)}
 
-      <div class="no-animation">Loading...</div>
+      <div class="no-animation body-default">Loading...</div>
 
       ${this.ringworm ? html`
         <svg  part="element" class="circular" viewBox="25 25 50 50">

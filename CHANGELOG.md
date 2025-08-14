@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [5.1.2](https://github.com/AlaskaAirlines/auro-loader/compare/v5.1.1...v5.1.2) (2025-08-14)
+
+
+### Bug Fixes
+
+* update auro-library to latest version ([84c5c09](https://github.com/AlaskaAirlines/auro-loader/commit/84c5c09598ed76313ae334ebc36917bcf3145353))
+
 ## [5.1.1](https://github.com/AlaskaAirlines/auro-loader/compare/v5.1.0...v5.1.1) (2025-08-11)
 
 

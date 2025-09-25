@@ -1,5 +1,4 @@
-
-import { AuroLoader } from '../../src/auro-loader.js';
+import { AuroLoader } from "../../src/auro-loader.js";
 
 /**
  * The auro-loader element is an easy to use animated loader component.

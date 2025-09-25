@@ -1,3 +1,3 @@
-import { AuroLoader } from './src/auro-loader.js';
+import { AuroLoader } from "./src/auro-loader.js";
 
 AuroLoader.register();

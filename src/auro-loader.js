@@ -3,14 +3,12 @@
 
 // ---------------------------------------------------------------------
 
-/* eslint-disable no-magic-numbers, array-element-newline */
-
 import AuroLibraryRuntimeUtils from "@aurodesignsystem/auro-library/scripts/utils/runtimeUtils.mjs";
 // If use litElement base class
-import { css, html, LitElement } from "lit";
-import colorCss from "./color-css.js";
-import styleCss from "./style-css.js";
-import tokensCss from "./tokens-css.js";
+import { html, LitElement } from "lit";
+import colorCss from "./styles/color.scss";
+import styleCss from "./styles/style.scss";
+import tokensCss from "./styles/tokens.scss";
 
 export class AuroLoader extends LitElement {
   constructor() {
@@ -80,7 +78,7 @@ export class AuroLoader extends LitElement {
   }
 
   static get styles() {
-    return [css`${styleCss}`, css`${colorCss}`, css`${tokensCss}`];
+    return [styleCss, colorCss, tokensCss];
   }
 
   /**

@@ -207,5 +207,5 @@ Use the `element` CSS Part with your CSS as illustrated to effect things like th
 
 The component may be restyled using the following code sample and changing the values of the following token(s).
 
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../src/tokens.scss) -->
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../src/styles/tokens.scss) -->
 <!-- AURO-GENERATED-CONTENT:END -->

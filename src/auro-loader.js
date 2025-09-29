@@ -3,16 +3,12 @@
 
 // ---------------------------------------------------------------------
 
-/* eslint-disable no-magic-numbers, array-element-newline */
-
+import AuroLibraryRuntimeUtils from "@aurodesignsystem/auro-library/scripts/utils/runtimeUtils.mjs";
 // If use litElement base class
-import { LitElement, html, css } from "lit";
-
-import AuroLibraryRuntimeUtils from '@aurodesignsystem/auro-library/scripts/utils/runtimeUtils.mjs';
-
-import styleCss from "./style-css.js";
-import colorCss from "./color-css.js";
-import tokensCss from "./tokens-css.js";
+import { html, LitElement } from "lit";
+import colorCss from "./styles/color.scss";
+import styleCss from "./styles/style.scss";
+import tokensCss from "./styles/tokens.scss";
 
 export class AuroLoader extends LitElement {
   constructor() {
@@ -47,13 +43,12 @@ export class AuroLoader extends LitElement {
   // function to define props used within the scope of this component
   static get properties() {
     return {
-
       /**
        * Sets loader to laser type.
        */
       laser: {
         type: Boolean,
-        reflect: true
+        reflect: true,
       },
 
       /**
@@ -61,7 +56,7 @@ export class AuroLoader extends LitElement {
        */
       orbit: {
         type: Boolean,
-        reflect: true
+        reflect: true,
       },
 
       /**
@@ -69,7 +64,7 @@ export class AuroLoader extends LitElement {
        */
       pulse: {
         type: Boolean,
-        reflect: true
+        reflect: true,
       },
 
       /**
@@ -77,17 +72,13 @@ export class AuroLoader extends LitElement {
        */
       ringworm: {
         type: Boolean,
-        reflect: true
-      }
+        reflect: true,
+      },
     };
   }
 
   static get styles() {
-    return [
-      css`${styleCss}`,
-      css`${colorCss}`,
-      css`${tokensCss}`
-    ];
+    return [styleCss, colorCss, tokensCss];
   }
 
   /**
@@ -104,7 +95,7 @@ export class AuroLoader extends LitElement {
 
   firstUpdated() {
     // Add the tag name as an attribute if it is different than the component name
-    this.runtimeUtils.handleComponentTagRename(this, 'auro-loader');
+    this.runtimeUtils.handleComponentTagRename(this, "auro-loader");
   }
 
   connectedCallback() {
@@ -133,17 +124,21 @@ export class AuroLoader extends LitElement {
   // function that renders the HTML and CSS into  the scope of the component
   render() {
     return html`
-      ${this.defineTemplate().map((idx) => html`
+      ${this.defineTemplate().map(
+        (idx) => html`
         <span part="element" class="loader node-${idx}"></span>
-      `)}
+      `,
+      )}
 
       <div class="no-animation body-default">Loading...</div>
 
-      ${this.ringworm ? html`
+      ${
+        this.ringworm
+          ? html`
         <svg  part="element" class="circular" viewBox="25 25 50 50">
           <circle class="path" cx="50" cy="50" r="20" fill="none"/>
         </svg>`
-        : ``
+          : ""
       }
     `;
   }

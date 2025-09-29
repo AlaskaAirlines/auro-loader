@@ -10,11 +10,11 @@
 @use "@aurodesignsystem/webcorestylesheets/src/breakpoints";
 @use "@aurodesignsystem/webcorestylesheets/src/core";
 
-@use "./styles/base";
-@use "./styles/pulse";
-@use "./styles/orbit";
-@use "./styles/ringworm";
-@use "./styles/laser";
+@use "./partials/base";
+@use "./partials/pulse";
+@use "./partials/orbit";
+@use "./partials/ringworm";
+@use "./partials/laser";
 
 // a11y support for reduced motion
 :host {

@@ -85,34 +85,36 @@ Use the `lg` boolean attribute for a pre-defined size. Type `laser` does not sup
 
 </auro-accordion>
 
-#### `onlight`
+### Appearance examples <a name="appearance"></a>
 
-Use the `onlight` boolean attribute for a pre-defined color. Type `laser` is supported, but not shown due to fixed positioning.
+#### `appearance="brand"`
+
+Use the `appearance="brand"` attribute for a brand color. Type `laser` is supported, but not shown due to fixed positioning.
 
 <div class="exampleWrapper">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=../apiExamples/onlight.html) -->
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=../apiExamples/brandAppearance.html) -->
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
 <auro-accordion alignRight>
   <span slot="trigger">See code</span>
 
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=../apiExamples/onlight.html) -->
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=../apiExamples/brandAppearance.html) -->
 <!-- AURO-GENERATED-CONTENT:END -->
 
 </auro-accordion>
 
-#### `ondark`
+#### `appearance="inverse"`
 
-Use the `ondark` boolean attribute for a pre-defined color. Type `laser` is supported, but not shown due to fixed positioning.
+Use the `appearance="inverse"` attribute for a pre-defined color. Type `laser` is supported, but not shown due to fixed positioning.
 
 <div class="exampleWrapper--ondark">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=../apiExamples/ondark.html) -->
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=../apiExamples/inverseAppearance.html) -->
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
 <auro-accordion alignRight>
   <span slot="trigger">See code</span>
 
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=../apiExamples/ondark.html) -->
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=../apiExamples/inverseAppearance.html) -->
 <!-- AURO-GENERATED-CONTENT:END -->
 
 </auro-accordion>

@@ -50,7 +50,7 @@ The `<auro-loader>` element supports a scale of sizes. Options are `[sm, md, lg,
 
 ## Color support
 
-The `<auro-loader>` element supports a scale of pre-defines color options. Options are `[onlight, ondark]`.
+The `<auro-loader>` element supports a scale of pre-defines color options. Options are `appearance="brand", appearance="inverse"`.
 
 <div class="exampleWrapper">
   <!-- AURO-GENERATED-CONTENT:START (FILE:src=../apiExamples/loader_color.html) -->
@@ -66,14 +66,14 @@ The `<auro-loader>` element supports a scale of pre-defines color options. Optio
 </auro-accordion>
 
 <div class="exampleWrapper--ondark">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=../apiExamples/loader_color_ondark.html) -->
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=../apiExamples/loader_color_inverse.html) -->
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
 
 <auro-accordion alignRight>
   <span slot="trigger">See code</span>
 
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=../apiExamples/loader_color_ondark.html) -->
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=../apiExamples/loader_color_inverse.html) -->
 <!-- AURO-GENERATED-CONTENT:END -->
 
 </auro-accordion>

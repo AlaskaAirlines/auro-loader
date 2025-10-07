@@ -15,11 +15,13 @@
   border-color: var(--ds-auro-loader-border-color);
 }
 
-:host([onlight]) {
+:host([onlight]),
+:host([appearance="brand"]) {
   --ds-auro-loader-color: var(--ds-basic-color-brand-primary, #{v.$ds-basic-color-brand-primary});
 }
 
-:host([ondark]) {
+:host([ondark]),
+:host([appearance="inverse"]) {
   --ds-auro-loader-color: var(--ds-basic-color-texticon-inverse, #{v.$ds-basic-color-texticon-inverse});
 }
 

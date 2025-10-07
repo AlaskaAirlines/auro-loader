@@ -6,4 +6,4 @@ And each of these modes support five size settings, `default`, `sm`, `md`, `lg`,
 
 For color support `<auro-loader>` supports `currentColor`, this allows for any color set on the parent element to influence the color of the loader.
 
-The `<auro-loader>` custom element also supports two pre-defined color modes: `onlight` and `ondark`.
+The `<auro-loader>` custom element also supports two pre-defined appearance modes: `appearance="brand"` and `appearance="inverse"`.

@@ -7,23 +7,24 @@ The auro-loader element is an easy to use animated loader component.
 
 ## Attributes
 
-| Attribute | Type      | Description                                 |
-|-----------|-----------|---------------------------------------------|
-| [lg](#lg)      | `Boolean` | Sets size to large.                         |
-| [md](#md)      | `Boolean` | Sets size to medium.                        |
-| [ondark](#ondark)  | `Boolean` | Sets color of loader for dark backgrounds.  |
-| [onlight](#onlight) | `Boolean` | sets color of loader for light backgrounds. |
-| [sm](#sm)      | `Boolean` | Sets size to small.                         |
-| [xs](#xs)      | `Boolean` | Sets size to extra small.                   |
+| Attribute | Type      | Description                              |
+|-----------|-----------|------------------------------------------|
+| [lg](#lg)      | `Boolean` | Sets size to large.                      |
+| [md](#md)      | `Boolean` | Sets size to medium.                     |
+| [ondark](#ondark)  | `Boolean` | DEPRECATED - use `appearance="inverse"`. |
+| [onlight](#onlight) | `Boolean` | DEPRECATED - use `appearance="brand"`.   |
+| [sm](#sm)      | `Boolean` | Sets size to small.                      |
+| [xs](#xs)      | `Boolean` | Sets size to extra small.                |
 
 ## Properties
 
-| Property   | Attribute  | Type      | Default | Description                   |
-|------------|------------|-----------|---------|-------------------------------|
-| [laser](#laser)    | `laser`    | `boolean` | false   | Sets loader to laser type.    |
-| [orbit](#orbit)    | `orbit`    | `boolean` | false   | Sets loader to orbit type.    |
-| [pulse](#pulse)    | `pulse`    | `boolean` | false   | Sets loader to pulse type.    |
-| [ringworm](#ringworm) | `ringworm` | `boolean` | false   | Sets loader to ringworm type. |
+| Property     | Attribute    | Type      | Default     | Description                                      |
+|--------------|--------------|-----------|-------------|--------------------------------------------------|
+| [appearance](#appearance) | `appearance` | `string`  | "'default'" | Defines whether the button is intended for lighter or darker backgrounds, or if it should use the brand color regardless of the background. |
+| [laser](#laser)      | `laser`      | `boolean` | false       | Sets loader to laser type.                       |
+| [orbit](#orbit)      | `orbit`      | `boolean` | false       | Sets loader to orbit type.                       |
+| [pulse](#pulse)      | `pulse`      | `boolean` | false       | Sets loader to pulse type.                       |
+| [ringworm](#ringworm)   | `ringworm`   | `boolean` | false       | Sets loader to ringworm type.                    |
 
 ## CSS Shadow Parts
 
@@ -159,50 +160,54 @@ Use the `lg` boolean attribute for a pre-defined size. Type `laser` does not sup
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>
 
-#### <a name="onlight"></a>`onlight`<a href="#" style="float: right; font-size: 1rem; font-weight: 100;">back to top</a>
-Use the `onlight` boolean attribute for a pre-defined color. Type `laser` is supported, but not shown due to fixed positioning.
+### Appearance examples <a name="appearance"></a>
+
+#### `appearance="brand"`
+
+Use the `appearance="brand"` attribute for a brand color. Type `laser` is supported, but not shown due to fixed positioning.
 
 <div class="exampleWrapper">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=../apiExamples/onlight.html) -->
-  <!-- The below content is automatically added from ../apiExamples/onlight.html -->
-  <auro-loader ringworm onLight></auro-loader>
-  <auro-loader orbit onLight></auro-loader>
-  <auro-loader pulse onLight></auro-loader>
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=../apiExamples/brandAppearance.html) -->
+  <!-- The below content is automatically added from ../apiExamples/brandAppearance.html -->
+  <auro-loader ringworm appearance="brand"></auro-loader>
+  <auro-loader orbit appearance="brand"></auro-loader>
+  <auro-loader pulse appearance="brand"></auro-loader>
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
 <auro-accordion alignRight>
   <span slot="trigger">See code</span>
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=../apiExamples/onlight.html) -->
-<!-- The below code snippet is automatically added from ../apiExamples/onlight.html -->
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=../apiExamples/brandAppearance.html) -->
+<!-- The below code snippet is automatically added from ../apiExamples/brandAppearance.html -->
 
 ```html
-<auro-loader ringworm onLight></auro-loader>
-<auro-loader orbit onLight></auro-loader>
-<auro-loader pulse onLight></auro-loader>
+<auro-loader ringworm appearance="brand"></auro-loader>
+<auro-loader orbit appearance="brand"></auro-loader>
+<auro-loader pulse appearance="brand"></auro-loader>
 ```
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>
 
-#### <a name="ondark"></a>`ondark`<a href="#" style="float: right; font-size: 1rem; font-weight: 100;">back to top</a>
-Use the `ondark` boolean attribute for a pre-defined color. Type `laser` is supported, but not shown due to fixed positioning.
+#### `appearance="inverse"`
+
+Use the `appearance="inverse"` attribute for a pre-defined color. Type `laser` is supported, but not shown due to fixed positioning.
 
 <div class="exampleWrapper--ondark">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=../apiExamples/ondark.html) -->
-  <!-- The below content is automatically added from ../apiExamples/ondark.html -->
-  <auro-loader ringworm ondark></auro-loader>
-  <auro-loader orbit ondark></auro-loader>
-  <auro-loader pulse ondark></auro-loader>
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=../apiExamples/inverseAppearance.html) -->
+  <!-- The below content is automatically added from ../apiExamples/inverseAppearance.html -->
+  <auro-loader ringworm appearance="inverse"></auro-loader>
+  <auro-loader orbit appearance="inverse"></auro-loader>
+  <auro-loader pulse appearance="inverse"></auro-loader>
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
 <auro-accordion alignRight>
   <span slot="trigger">See code</span>
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=../apiExamples/ondark.html) -->
-<!-- The below code snippet is automatically added from ../apiExamples/ondark.html -->
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=../apiExamples/inverseAppearance.html) -->
+<!-- The below code snippet is automatically added from ../apiExamples/inverseAppearance.html -->
 
 ```html
-<auro-loader ringworm ondark></auro-loader>
-<auro-loader orbit ondark></auro-loader>
-<auro-loader pulse ondark></auro-loader>
+<auro-loader ringworm appearance="inverse"></auro-loader>
+<auro-loader orbit appearance="inverse"></auro-loader>
+<auro-loader pulse appearance="inverse"></auro-loader>
 ```
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>

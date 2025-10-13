@@ -16,7 +16,7 @@ And each of these modes support five size settings, `default`, `sm`, `md`, `lg`,
 
 For color support `<auro-loader>` supports `currentColor`, this allows for any color set on the parent element to influence the color of the loader.
 
-The `<auro-loader>` custom element also supports two pre-defined color modes: `onlight` and `ondark`.
+The `<auro-loader>` custom element also supports two pre-defined appearance modes: `appearance="brand"` and `appearance="inverse"`.
 <!-- AURO-GENERATED-CONTENT:END -->
 
 ## auro-loader use cases
@@ -84,12 +84,12 @@ The `<auro-loader>` element supports a scale of sizes. Options are `[sm, md, lg,
 
 ## Color support
 
-The `<auro-loader>` element supports a scale of pre-defines color options. Options are `[onlight, ondark]`.
+The `<auro-loader>` element supports a scale of pre-defines color options. Options are `appearance="brand", appearance="inverse"`.
 
 <div class="exampleWrapper">
   <!-- AURO-GENERATED-CONTENT:START (FILE:src=../apiExamples/loader_color.html) -->
   <!-- The below content is automatically added from ../apiExamples/loader_color.html -->
-  <auro-loader pulse onlight md></auro-loader>
+  <auro-loader pulse appearance="brand" md></auro-loader>
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
 <auro-accordion alignRight>
@@ -98,23 +98,23 @@ The `<auro-loader>` element supports a scale of pre-defines color options. Optio
 <!-- The below code snippet is automatically added from ../apiExamples/loader_color.html -->
 
 ```html
-<auro-loader pulse onlight md></auro-loader>
+<auro-loader pulse appearance="brand" md></auro-loader>
 ```
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>
 <div class="exampleWrapper--ondark">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=../apiExamples/loader_color_ondark.html) -->
-  <!-- The below content is automatically added from ../apiExamples/loader_color_ondark.html -->
-  <auro-loader pulse ondark md></auro-loader>
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=../apiExamples/loader_color_inverse.html) -->
+  <!-- The below content is automatically added from ../apiExamples/loader_color_inverse.html -->
+  <auro-loader pulse appearance="inverse" md></auro-loader>
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
 <auro-accordion alignRight>
   <span slot="trigger">See code</span>
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=../apiExamples/loader_color_ondark.html) -->
-<!-- The below code snippet is automatically added from ../apiExamples/loader_color_ondark.html -->
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=../apiExamples/loader_color_inverse.html) -->
+<!-- The below code snippet is automatically added from ../apiExamples/loader_color_inverse.html -->
 
 ```html
-<auro-loader pulse ondark md></auro-loader>
+<auro-loader pulse appearance="inverse" md></auro-loader>
 ```
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>

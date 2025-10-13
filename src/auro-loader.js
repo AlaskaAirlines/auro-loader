@@ -56,7 +56,7 @@ export class AuroLoader extends LitElement {
     return {
 
       /**
-       * Defines whether the button is intended for lighter or darker backgrounds, or if it should use the brand color regardless of the background.
+       * Defines whether the loader is intended for lighter or darker backgrounds, or if it should use the brand color regardless of the background.
        * @property {'default', 'inverse', 'brand'}
        * @default 'default'
        */

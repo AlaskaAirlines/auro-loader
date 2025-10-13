@@ -13,7 +13,7 @@
 
 :host([pulse]) {
   width: calc((3 * 1rem) + (var(--margin) * 6));
-  height: 1.5rem;
+  height: calc((1rem) + (var(--margin) * 2));
 }
 
 :host([pulse]) > span {
@@ -24,8 +24,8 @@
 }
 
 :host([pulse][xs]) {
-  width: calc((3 * .85rem) + (var(--margin-xs) * 6));
-  height: 1.55rem;
+  width: calc((3 * .65rem) + (var(--margin-xs) * 6));
+  height: calc((.65rem) + (var(--margin-xs) * 2));
 }
 
 :host([pulse][xs]) > span {
@@ -36,7 +36,7 @@
 
 :host([pulse][sm]) {
   width: calc((3 * 2rem) + (var(--margin-sm) * 6));
-  height: 2.5rem;
+  height: calc((2rem) + (var(--margin-sm) * 2));
 }
 
 :host([pulse][sm]) > span {
@@ -47,7 +47,7 @@
 
 :host([pulse][md]) {
   width: calc((3 * 3rem) + (var(--margin-md) * 6));
-  height: 3.5rem;
+  height: calc((3rem) + (var(--margin-md) * 2));
 }
 
 :host([pulse][md]) > span {
@@ -58,7 +58,7 @@
 
 :host([pulse][lg]) {
   width: calc((3 * 5rem) + (var(--margin-lg) * 6));
-  height: 5.5rem;
+  height: calc((5rem) + (var(--margin-lg) * 2));
 }
 
 :host([pulse][lg]) > span {

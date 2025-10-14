@@ -20,7 +20,7 @@ The auro-loader element is an easy to use animated loader component.
 
 | Property     | Attribute    | Type      | Default     | Description                                      |
 |--------------|--------------|-----------|-------------|--------------------------------------------------|
-| [appearance](#appearance) | `appearance` | `string`  | "'default'" | Defines whether the button is intended for lighter or darker backgrounds, or if it should use the brand color regardless of the background. |
+| [appearance](#appearance) | `appearance` | `string`  | "'default'" | Defines whether the loader is intended for lighter or darker backgrounds, or if it should use the brand color regardless of the background. |
 | [laser](#laser)      | `laser`      | `boolean` | false       | Sets loader to laser type.                       |
 | [orbit](#orbit)      | `orbit`      | `boolean` | false       | Sets loader to orbit type.                       |
 | [pulse](#pulse)      | `pulse`      | `boolean` | false       | Sets loader to pulse type.                       |

@@ -10,10 +10,21 @@ import colorCss from "./styles/color.scss";
 import styleCss from "./styles/style.scss";
 import tokensCss from "./styles/tokens.scss";
 
+/**
+ * @attr {Boolean} ondark - DEPRECATED - use `appearance="inverse"`.
+ * @attr {Boolean} onlight - DEPRECATED - use `appearance="brand"`.
+ * @attr {Boolean} xs - Sets size to extra small.
+ * @attr {Boolean} sm - Sets size to small.
+ * @attr {Boolean} md - Sets size to medium.
+ * @attr {Boolean} lg - Sets size to large.
+ * @csspart element - Apply style to adjust speed of animation.
+ */
 export class AuroLoader extends LitElement {
   constructor() {
     super();
 
+
+    this.appearance = "default";
     /**
      * @private
      */
@@ -43,6 +54,17 @@ export class AuroLoader extends LitElement {
   // function to define props used within the scope of this component
   static get properties() {
     return {
+
+      /**
+       * Defines whether the loader is intended for lighter or darker backgrounds, or if it should use the brand color regardless of the background.
+       * @property {'default', 'inverse', 'brand'}
+       * @default 'default'
+       */
+      appearance: {
+        type: String,
+        reflect: true
+      },
+
       /**
        * Sets loader to laser type.
        */

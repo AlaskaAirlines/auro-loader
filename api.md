@@ -5,32 +5,39 @@
 
 The auro-loader element is an easy to use animated loader component.
 
-## Attributes
+### Properties & Attributes
 
-| Attribute | Type      | Description                              |
-|-----------|-----------|------------------------------------------|
-| [lg](#lg)      | `Boolean` | Sets size to large.                      |
-| [md](#md)      | `Boolean` | Sets size to medium.                     |
-| [ondark](#ondark)  | `Boolean` | DEPRECATED - use `appearance="inverse"`. |
-| [onlight](#onlight) | `Boolean` | DEPRECATED - use `appearance="brand"`.   |
-| [sm](#sm)      | `Boolean` | Sets size to small.                      |
-| [xs](#xs)      | `Boolean` | Sets size to extra small.                |
+| Properties | Attributes | Type    | Default   | Description                                                                                                                                 |
+| ---------- | ---------- | ------- | --------- | ------------------------------------------------------------------------------------------------------------------------------------------- |
+| appearance | appearance | string  | "default" | Defines whether the loader is intended for lighter or darker backgrounds, or if it should use the brand color regardless of the background. |
+| laser      | laser      | boolean | false     | Sets loader to laser type.                                                                                                                  |
+| orbit      | orbit      | boolean | false     | Sets loader to orbit type.                                                                                                                  |
+| pulse      | pulse      | boolean | false     | Sets loader to pulse type.                                                                                                                  |
+| ringworm   | ringworm   | boolean | false     | Sets loader to ringworm type.                                                                                                               |
+|            | lg         | Boolean |           | Sets size to large.                                                                                                                         |
+|            | md         | Boolean |           | Sets size to medium.                                                                                                                        |
+|            | ondark     | Boolean |           | DEPRECATED - use `appearance="inverse"`.                                                                                                    |
+|            | onlight    | Boolean |           | DEPRECATED - use `appearance="brand"`.                                                                                                      |
+|            | sm         | Boolean |           | Sets size to small.                                                                                                                         |
+|            | xs         | Boolean |           | Sets size to extra small.                                                                                                                   |
 
-## Properties
+### Methods
 
-| Property     | Attribute    | Type      | Default     | Description                                      |
-|--------------|--------------|-----------|-------------|--------------------------------------------------|
-| [appearance](#appearance) | `appearance` | `string`  | "'default'" | Defines whether the loader is intended for lighter or darker backgrounds, or if it should use the brand color regardless of the background. |
-| [laser](#laser)      | `laser`      | `boolean` | false       | Sets loader to laser type.                       |
-| [orbit](#orbit)      | `orbit`      | `boolean` | false       | Sets loader to orbit type.                       |
-| [pulse](#pulse)      | `pulse`      | `boolean` | false       | Sets loader to pulse type.                       |
-| [ringworm](#ringworm)   | `ringworm`   | `boolean` | false       | Sets loader to ringworm type.                    |
+| Name     | Parameters                                                          | Return | Description                                       |
+| -------- | ------------------------------------------------------------------- | ------ | ------------------------------------------------- |
+| register | `name` (string) - The name of element that you want to register to. |        | This will register this element with the browser. |
 
-## CSS Shadow Parts
+### Slots
 
-| Part      | Description                               |
-|-----------|-------------------------------------------|
-| [element](#element) | Apply style to adjust speed of animation. |
+| Name      | Description                                                                                                         |
+| --------- | ------------------------------------------------------------------------------------------------------------------- |
+| (default) | Default slot for text that replaces `auro-loader` component when user has the "Reduce Motion" a11y feature enabled. |
+
+### CSS Shadow Parts
+
+| Name    | Description                               |
+| ------- | ----------------------------------------- |
+| element | Apply style to adjust speed of animation. |
 <!-- AURO-GENERATED-CONTENT:END -->
 
 ## API Examples
@@ -160,7 +167,7 @@ Use the `lg` boolean attribute for a pre-defined size. Type `laser` does not sup
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>
 
-### Appearance examples <a name="appearance"></a>
+### Appearance Examples <a name="appearance"></a>
 
 #### `appearance="brand"`
 
@@ -292,6 +299,37 @@ Use the `ringworm` property for the desired animated loader.
 
 ```html
 <auro-loader ringworm></auro-loader>
+```
+<!-- AURO-GENERATED-CONTENT:END -->
+</auro-accordion>
+
+### Slot Examples
+
+#### <a name="staticLabel"></a>`staticLabel`<a href="#" style="float: right; font-size: 1rem; font-weight: 100;">back to top</a>
+Use the `staticLabel` slot to provide custom text that replaces the `auro-loader` component when the user has the `prefers-reduced-motion` accessibility feature enabled.
+The default text is `Loading...`
+
+In order to see the example in action, please enable your system's "Reduce Motion" accessibility setting.
+
+<div class="exampleWrapper">
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=../apiExamples/staticLabel.html) -->
+  <!-- The below content is automatically added from ../apiExamples/staticLabel.html -->
+  <auro-loader ringworm>Ringworm</auro-loader>
+  <auro-loader orbit>Orbit</auro-loader>
+  <auro-loader pulse>Pulse</auro-loader>
+  <auro-loader laser>Laser</auro-loader>
+  <!-- AURO-GENERATED-CONTENT:END -->
+</div>
+<auro-accordion alignRight>
+  <span slot="trigger">See code</span>
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=../apiExamples/staticLabel.html) -->
+<!-- The below code snippet is automatically added from ../apiExamples/staticLabel.html -->
+
+```html
+<auro-loader ringworm>Ringworm</auro-loader>
+<auro-loader orbit>Orbit</auro-loader>
+<auro-loader pulse>Pulse</auro-loader>
+<auro-loader laser>Laser</auro-loader>
 ```
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>

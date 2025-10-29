@@ -85,7 +85,7 @@ Use the `lg` boolean attribute for a pre-defined size. Type `laser` does not sup
 
 </auro-accordion>
 
-### Appearance examples <a name="appearance"></a>
+### Appearance Examples <a name="appearance"></a>
 
 #### `appearance="brand"`
 
@@ -183,6 +183,27 @@ Use the `ringworm` property for the desired animated loader.
   <span slot="trigger">See code</span>
 
 <!-- AURO-GENERATED-CONTENT:START (CODE:src=../apiExamples/property_ringworm.html) -->
+<!-- AURO-GENERATED-CONTENT:END -->
+
+</auro-accordion>
+
+### Slot Examples
+
+#### `staticLabel`
+
+Use the `staticLabel` slot to provide custom text that replaces the `auro-loader` component when the user has the `prefers-reduced-motion` accessibility feature enabled.
+The default text is `Loading...`
+
+In order to see the example in action, please enable your system's "Reduce Motion" accessibility setting.
+
+<div class="exampleWrapper">
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=../apiExamples/staticLabel.html) -->
+  <!-- AURO-GENERATED-CONTENT:END -->
+</div>
+<auro-accordion alignRight>
+  <span slot="trigger">See code</span>
+
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=../apiExamples/staticLabel.html) -->
 <!-- AURO-GENERATED-CONTENT:END -->
 
 </auro-accordion>

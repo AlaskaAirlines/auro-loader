@@ -18,8 +18,8 @@
           "customElement": true,
           "slots": [
             {
-              "description": "Slot for text that replaces `auro-loader` component when user has `prefers-reduced-motion` a11y feature enabled.",
-              "name": "staticLabel",
+              "description": "Default slot for text that replaces `auro-loader` component when user has the \"Reduce Motion\" a11y feature enabled.",
+              "name": "",
               "inheritedFrom": {
                 "name": "AuroLoader",
                 "module": "src/auro-loader.js"
@@ -364,8 +364,8 @@
           ],
           "slots": [
             {
-              "description": "Slot for text that replaces `auro-loader` component when user has `prefers-reduced-motion` a11y feature enabled.",
-              "name": "staticLabel"
+              "description": "Default slot for text that replaces `auro-loader` component when user has the \"Reduce Motion\" a11y feature enabled.",
+              "name": ""
             }
           ],
           "members": [

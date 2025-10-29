@@ -1,0 +1,664 @@
+{
+  "schemaVersion": "1.0.0",
+  "readme": "",
+  "modules": [
+    {
+      "kind": "javascript-module",
+      "path": "scripts/wca/auro-loader.js",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "The auro-loader element is an easy to use animated loader component.",
+          "name": "AuroLoaderWCA",
+          "superclass": {
+            "name": "AuroLoader",
+            "module": "/src/auro-loader.js"
+          },
+          "tagName": "auro-loader",
+          "customElement": true,
+          "slots": [
+            {
+              "description": "Slot for text that replaces `auro-loader` component when user has `prefers-reduced-motion` a11y feature enabled.",
+              "name": "staticLabel",
+              "inheritedFrom": {
+                "name": "AuroLoader",
+                "module": "src/auro-loader.js"
+              }
+            }
+          ],
+          "cssParts": [
+            {
+              "description": "Apply style to adjust speed of animation.",
+              "name": "element",
+              "inheritedFrom": {
+                "name": "AuroLoader",
+                "module": "src/auro-loader.js"
+              }
+            }
+          ],
+          "attributes": [
+            {
+              "name": "appearance",
+              "type": {
+                "text": "string"
+              },
+              "description": "Defines whether the loader is intended for lighter or darker backgrounds, or if it should use the brand color regardless of the background.",
+              "default": "\"default\"",
+              "fieldName": "appearance",
+              "inheritedFrom": {
+                "name": "AuroLoader",
+                "module": "src/auro-loader.js"
+              }
+            },
+            {
+              "name": "laser",
+              "type": {
+                "text": "boolean"
+              },
+              "description": "Sets loader to laser type.",
+              "default": "false",
+              "fieldName": "laser",
+              "inheritedFrom": {
+                "name": "AuroLoader",
+                "module": "src/auro-loader.js"
+              }
+            },
+            {
+              "type": {
+                "text": "Boolean"
+              },
+              "description": "Sets size to large.",
+              "name": "lg",
+              "inheritedFrom": {
+                "name": "AuroLoader",
+                "module": "src/auro-loader.js"
+              }
+            },
+            {
+              "type": {
+                "text": "Boolean"
+              },
+              "description": "Sets size to medium.",
+              "name": "md",
+              "inheritedFrom": {
+                "name": "AuroLoader",
+                "module": "src/auro-loader.js"
+              }
+            },
+            {
+              "type": {
+                "text": "Boolean"
+              },
+              "description": "DEPRECATED - use `appearance=\"inverse\"`.",
+              "name": "ondark",
+              "inheritedFrom": {
+                "name": "AuroLoader",
+                "module": "src/auro-loader.js"
+              }
+            },
+            {
+              "type": {
+                "text": "Boolean"
+              },
+              "description": "DEPRECATED - use `appearance=\"brand\"`.",
+              "name": "onlight",
+              "inheritedFrom": {
+                "name": "AuroLoader",
+                "module": "src/auro-loader.js"
+              }
+            },
+            {
+              "name": "orbit",
+              "type": {
+                "text": "boolean"
+              },
+              "description": "Sets loader to orbit type.",
+              "default": "false",
+              "fieldName": "orbit",
+              "inheritedFrom": {
+                "name": "AuroLoader",
+                "module": "src/auro-loader.js"
+              }
+            },
+            {
+              "name": "pulse",
+              "type": {
+                "text": "boolean"
+              },
+              "description": "Sets loader to pulse type.",
+              "default": "false",
+              "fieldName": "pulse",
+              "inheritedFrom": {
+                "name": "AuroLoader",
+                "module": "src/auro-loader.js"
+              }
+            },
+            {
+              "name": "ringworm",
+              "type": {
+                "text": "boolean"
+              },
+              "description": "Sets loader to ringworm type.",
+              "default": "false",
+              "fieldName": "ringworm",
+              "inheritedFrom": {
+                "name": "AuroLoader",
+                "module": "src/auro-loader.js"
+              }
+            },
+            {
+              "type": {
+                "text": "Boolean"
+              },
+              "description": "Sets size to small.",
+              "name": "sm",
+              "inheritedFrom": {
+                "name": "AuroLoader",
+                "module": "src/auro-loader.js"
+              }
+            },
+            {
+              "type": {
+                "text": "Boolean"
+              },
+              "description": "Sets size to extra small.",
+              "name": "xs",
+              "inheritedFrom": {
+                "name": "AuroLoader",
+                "module": "src/auro-loader.js"
+              }
+            }
+          ],
+          "members": [
+            {
+              "kind": "field",
+              "name": "appearance",
+              "privacy": "public",
+              "type": {
+                "text": "string"
+              },
+              "description": "Defines whether the loader is intended for lighter or darker backgrounds, or if it should use the brand color regardless of the background.",
+              "default": "\"default\"",
+              "attribute": "appearance",
+              "reflects": true,
+              "inheritedFrom": {
+                "name": "AuroLoader",
+                "module": "src/auro-loader.js"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "defineTemplate",
+              "privacy": "private",
+              "return": {
+                "type": {
+                  "text": "Array"
+                }
+              },
+              "inheritedFrom": {
+                "name": "AuroLoader",
+                "module": "src/auro-loader.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "keys",
+              "type": {
+                "text": "array"
+              },
+              "privacy": "private",
+              "default": "[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]",
+              "inheritedFrom": {
+                "name": "AuroLoader",
+                "module": "src/auro-loader.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "laser",
+              "privacy": "public",
+              "type": {
+                "text": "boolean"
+              },
+              "description": "Sets loader to laser type.",
+              "default": "false",
+              "attribute": "laser",
+              "reflects": true,
+              "inheritedFrom": {
+                "name": "AuroLoader",
+                "module": "src/auro-loader.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "mdCount",
+              "type": {
+                "text": "number"
+              },
+              "privacy": "private",
+              "default": "3",
+              "inheritedFrom": {
+                "name": "AuroLoader",
+                "module": "src/auro-loader.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "orbit",
+              "privacy": "public",
+              "type": {
+                "text": "boolean"
+              },
+              "description": "Sets loader to orbit type.",
+              "default": "false",
+              "attribute": "orbit",
+              "reflects": true,
+              "inheritedFrom": {
+                "name": "AuroLoader",
+                "module": "src/auro-loader.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "pulse",
+              "privacy": "public",
+              "type": {
+                "text": "boolean"
+              },
+              "description": "Sets loader to pulse type.",
+              "default": "false",
+              "attribute": "pulse",
+              "reflects": true,
+              "inheritedFrom": {
+                "name": "AuroLoader",
+                "module": "src/auro-loader.js"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "register",
+              "static": true,
+              "parameters": [
+                {
+                  "name": "name",
+                  "default": "\"auro-loader\"",
+                  "description": "The name of element that you want to register to.",
+                  "optional": true,
+                  "type": {
+                    "text": "string"
+                  }
+                }
+              ],
+              "description": "This will register this element with the browser.",
+              "inheritedFrom": {
+                "name": "AuroLoader",
+                "module": "src/auro-loader.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "ringworm",
+              "privacy": "public",
+              "type": {
+                "text": "boolean"
+              },
+              "description": "Sets loader to ringworm type.",
+              "default": "false",
+              "attribute": "ringworm",
+              "reflects": true,
+              "inheritedFrom": {
+                "name": "AuroLoader",
+                "module": "src/auro-loader.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "runtimeUtils",
+              "privacy": "private",
+              "default": "new AuroLibraryRuntimeUtils()",
+              "inheritedFrom": {
+                "name": "AuroLoader",
+                "module": "src/auro-loader.js"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "smCount",
+              "type": {
+                "text": "number"
+              },
+              "privacy": "private",
+              "default": "2",
+              "inheritedFrom": {
+                "name": "AuroLoader",
+                "module": "src/auro-loader.js"
+              }
+            }
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "kind": "custom-element-definition",
+          "name": "auro-loader",
+          "declaration": {
+            "name": "AuroLoaderWCA",
+            "module": "scripts/wca/auro-loader.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/auro-loader.js",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "AuroLoader",
+          "cssParts": [
+            {
+              "description": "Apply style to adjust speed of animation.",
+              "name": "element"
+            }
+          ],
+          "slots": [
+            {
+              "description": "Slot for text that replaces `auro-loader` component when user has `prefers-reduced-motion` a11y feature enabled.",
+              "name": "staticLabel"
+            }
+          ],
+          "members": [
+            {
+              "kind": "field",
+              "name": "appearance",
+              "privacy": "public",
+              "type": {
+                "text": "string"
+              },
+              "description": "Defines whether the loader is intended for lighter or darker backgrounds, or if it should use the brand color regardless of the background.",
+              "default": "\"default\"",
+              "attribute": "appearance",
+              "reflects": true
+            },
+            {
+              "kind": "method",
+              "name": "defineTemplate",
+              "privacy": "private",
+              "return": {
+                "type": {
+                  "text": "Array"
+                }
+              }
+            },
+            {
+              "kind": "field",
+              "name": "keys",
+              "type": {
+                "text": "array"
+              },
+              "privacy": "private",
+              "default": "[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]"
+            },
+            {
+              "kind": "field",
+              "name": "laser",
+              "privacy": "public",
+              "type": {
+                "text": "boolean"
+              },
+              "description": "Sets loader to laser type.",
+              "default": "false",
+              "attribute": "laser",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "mdCount",
+              "type": {
+                "text": "number"
+              },
+              "privacy": "private",
+              "default": "3"
+            },
+            {
+              "kind": "field",
+              "name": "orbit",
+              "privacy": "public",
+              "type": {
+                "text": "boolean"
+              },
+              "description": "Sets loader to orbit type.",
+              "default": "false",
+              "attribute": "orbit",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "pulse",
+              "privacy": "public",
+              "type": {
+                "text": "boolean"
+              },
+              "description": "Sets loader to pulse type.",
+              "default": "false",
+              "attribute": "pulse",
+              "reflects": true
+            },
+            {
+              "kind": "method",
+              "name": "register",
+              "static": true,
+              "parameters": [
+                {
+                  "name": "name",
+                  "default": "\"auro-loader\"",
+                  "description": "The name of element that you want to register to.",
+                  "optional": true,
+                  "type": {
+                    "text": "string"
+                  }
+                }
+              ],
+              "description": "This will register this element with the browser."
+            },
+            {
+              "kind": "field",
+              "name": "ringworm",
+              "privacy": "public",
+              "type": {
+                "text": "boolean"
+              },
+              "description": "Sets loader to ringworm type.",
+              "default": "false",
+              "attribute": "ringworm",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "runtimeUtils",
+              "privacy": "private",
+              "default": "new AuroLibraryRuntimeUtils()"
+            },
+            {
+              "kind": "field",
+              "name": "smCount",
+              "type": {
+                "text": "number"
+              },
+              "privacy": "private",
+              "default": "2"
+            }
+          ],
+          "attributes": [
+            {
+              "name": "appearance",
+              "type": {
+                "text": "string"
+              },
+              "description": "Defines whether the loader is intended for lighter or darker backgrounds, or if it should use the brand color regardless of the background.",
+              "default": "\"default\"",
+              "fieldName": "appearance"
+            },
+            {
+              "name": "laser",
+              "type": {
+                "text": "boolean"
+              },
+              "description": "Sets loader to laser type.",
+              "default": "false",
+              "fieldName": "laser"
+            },
+            {
+              "type": {
+                "text": "Boolean"
+              },
+              "description": "Sets size to large.",
+              "name": "lg"
+            },
+            {
+              "type": {
+                "text": "Boolean"
+              },
+              "description": "Sets size to medium.",
+              "name": "md"
+            },
+            {
+              "type": {
+                "text": "Boolean"
+              },
+              "description": "DEPRECATED - use `appearance=\"inverse\"`.",
+              "name": "ondark"
+            },
+            {
+              "type": {
+                "text": "Boolean"
+              },
+              "description": "DEPRECATED - use `appearance=\"brand\"`.",
+              "name": "onlight"
+            },
+            {
+              "name": "orbit",
+              "type": {
+                "text": "boolean"
+              },
+              "description": "Sets loader to orbit type.",
+              "default": "false",
+              "fieldName": "orbit"
+            },
+            {
+              "name": "pulse",
+              "type": {
+                "text": "boolean"
+              },
+              "description": "Sets loader to pulse type.",
+              "default": "false",
+              "fieldName": "pulse"
+            },
+            {
+              "name": "ringworm",
+              "type": {
+                "text": "boolean"
+              },
+              "description": "Sets loader to ringworm type.",
+              "default": "false",
+              "fieldName": "ringworm"
+            },
+            {
+              "type": {
+                "text": "Boolean"
+              },
+              "description": "Sets size to small.",
+              "name": "sm"
+            },
+            {
+              "type": {
+                "text": "Boolean"
+              },
+              "description": "Sets size to extra small.",
+              "name": "xs"
+            }
+          ],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "AuroLoader",
+          "declaration": {
+            "name": "AuroLoader",
+            "module": "src/auro-loader.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/color-css.js",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "module": "src/color-css.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/index.js",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "AuroLoader",
+          "declaration": {
+            "name": "AuroLoader",
+            "module": "src/index.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/registered.js",
+      "declarations": [],
+      "exports": []
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/style-css.js",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "module": "src/style-css.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/tokens-css.js",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "module": "src/tokens-css.js"
+          }
+        }
+      ]
+    }
+  ]
+}

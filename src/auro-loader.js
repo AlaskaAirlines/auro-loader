@@ -17,6 +17,7 @@ import tokensCss from "./styles/tokens.scss";
  * @attr {Boolean} sm - Sets size to small.
  * @attr {Boolean} md - Sets size to medium.
  * @attr {Boolean} lg - Sets size to large.
+ * @slot - Default slot for text that replaces `auro-loader` component when user has the "Reduce Motion" a11y feature enabled.
  * @csspart element - Apply style to adjust speed of animation.
  */
 export class AuroLoader extends LitElement {
@@ -152,7 +153,9 @@ export class AuroLoader extends LitElement {
       `,
       )}
 
-      <div class="no-animation body-default">Loading...</div>
+      <div class="no-animation body-default">
+        <slot>Loading...</slot>
+      </div>
 
       ${
         this.ringworm

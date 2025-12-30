@@ -11,12 +11,9 @@ import styleCss from "./styles/style.scss";
 import tokensCss from "./styles/tokens.scss";
 
 /**
- * @attr {Boolean} ondark - DEPRECATED - use `appearance="inverse"`.
- * @attr {Boolean} onlight - DEPRECATED - use `appearance="brand"`.
- * @attr {Boolean} xs - Sets size to extra small.
- * @attr {Boolean} sm - Sets size to small.
- * @attr {Boolean} md - Sets size to medium.
- * @attr {Boolean} lg - Sets size to large.
+ * The `auro-loader` element displays a loading animation to indicate a loading state to users.
+ * @customElement auro-loader
+ *
  * @slot - Default slot for text that replaces `auro-loader` component when user has the "Reduce Motion" a11y feature enabled.
  * @csspart element - Apply style to adjust speed of animation.
  */
@@ -24,8 +21,16 @@ export class AuroLoader extends LitElement {
   constructor() {
     super();
 
+    this._initializeDefaults();
+  }
 
+  _initializeDefaults() {
+    this.orbit = false;
+    this.ringworm = false;
+    this.laser = false;
+    this.pulse = false;
     this.appearance = "default";
+    
     /**
      * @private
      */
@@ -45,11 +50,6 @@ export class AuroLoader extends LitElement {
      * @private
      */
     this.runtimeUtils = new AuroLibraryRuntimeUtils();
-
-    this.orbit = false;
-    this.ringworm = false;
-    this.laser = false;
-    this.pulse = false;
   }
 
   // function to define props used within the scope of this component
@@ -58,7 +58,7 @@ export class AuroLoader extends LitElement {
 
       /**
        * Defines whether the loader is intended for lighter or darker backgrounds, or if it should use the brand color regardless of the background.
-       * @property {'default', 'inverse', 'brand'}
+       * @type {'default' | 'inverse' | 'brand'}
        * @default 'default'
        */
       appearance: {
@@ -72,6 +72,38 @@ export class AuroLoader extends LitElement {
       laser: {
         type: Boolean,
         reflect: true,
+      },
+
+      /**
+       * Sets size to large.
+       */
+      lg: {
+        type: Boolean,
+        reflect: true
+      },
+
+      /**
+       * Sets size to medium.
+       */
+      md: {
+        type: Boolean,
+        reflect: true,
+      },
+
+      /**
+       * DEPRECATED - use `appearance="inverse"`.
+       */
+      onDark: {
+        type: Boolean,
+        reflect: true
+      },
+
+      /**
+       * DEPRECATED - use `appearance="brand"`.
+       */
+      onLight: {
+        type: Boolean,
+        reflect: true
       },
 
       /**
@@ -97,6 +129,23 @@ export class AuroLoader extends LitElement {
         type: Boolean,
         reflect: true,
       },
+
+
+      /**
+       * Sets size to small.
+       */
+      sm: {
+        type: Boolean,
+        reflect: true,
+      },
+
+      /**
+       * Sets size to extra small.
+       */
+      xs: {
+        type: Boolean,
+        reflect: true,
+      }
     };
   }
 
@@ -106,7 +155,7 @@ export class AuroLoader extends LitElement {
 
   /**
    * This will register this element with the browser.
-   * @param {string} [name="auro-loader"] - The name of element that you want to register to.
+   * @param {string} [name="auro-loader"] - The name of the element that you want to register.
    *
    * @example
    * AuroLoader.register("custom-loader") // this will register this element to <custom-loader/>

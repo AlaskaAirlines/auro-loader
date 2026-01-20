@@ -1,31 +1,31 @@
-<!-- AURO-GENERATED-CONTENT:START (FILE:src=../docs/api.md) -->
-<!-- The below content is automatically added from ../docs/api.md -->
+<!-- AURO-GENERATED-CONTENT:START (FILE:src=./../docs/api.md) -->
+<!-- The below content is automatically added from ./../docs/api.md -->
 
 # auro-loader
 
-The auro-loader element is an easy to use animated loader component.
+The `auro-loader` element displays a loading animation to indicate a loading state to users.
 
 ### Properties & Attributes
 
-| Properties | Attributes | Type    | Default   | Description                                                                                                                                 |
-| ---------- | ---------- | ------- | --------- | ------------------------------------------------------------------------------------------------------------------------------------------- |
-| appearance | appearance | string  | "default" | Defines whether the loader is intended for lighter or darker backgrounds, or if it should use the brand color regardless of the background. |
-| laser      | laser      | boolean | false     | Sets loader to laser type.                                                                                                                  |
-| orbit      | orbit      | boolean | false     | Sets loader to orbit type.                                                                                                                  |
-| pulse      | pulse      | boolean | false     | Sets loader to pulse type.                                                                                                                  |
-| ringworm   | ringworm   | boolean | false     | Sets loader to ringworm type.                                                                                                               |
-|            | lg         | Boolean |           | Sets size to large.                                                                                                                         |
-|            | md         | Boolean |           | Sets size to medium.                                                                                                                        |
-|            | ondark     | Boolean |           | DEPRECATED - use `appearance="inverse"`.                                                                                                    |
-|            | onlight    | Boolean |           | DEPRECATED - use `appearance="brand"`.                                                                                                      |
-|            | sm         | Boolean |           | Sets size to small.                                                                                                                         |
-|            | xs         | Boolean |           | Sets size to extra small.                                                                                                                   |
+| Properties | Attributes | Modifiers | Type                              | Default   | Description                                                                                                                                 |
+| ---------- | ---------- | --------- | --------------------------------- | --------- | ------------------------------------------------------------------------------------------------------------------------------------------- |
+| appearance | appearance |           | `default` \| `inverse` \| `brand` | `default` | Defines whether the loader is intended for lighter or darker backgrounds, or if it should use the brand color regardless of the background. |
+| laser      | laser      |           | boolean                           |           | Sets loader to laser type.                                                                                                                  |
+| lg         | lg         |           | boolean                           |           | Sets size to large.                                                                                                                         |
+| md         | md         |           | boolean                           |           | Sets size to medium.                                                                                                                        |
+| onDark     | onDark     |           | boolean                           |           | DEPRECATED - use `appearance="inverse"`.                                                                                                    |
+| onLight    | onLight    |           | boolean                           |           | DEPRECATED - use `appearance="brand"`.                                                                                                      |
+| orbit      | orbit      |           | boolean                           |           | Sets loader to orbit type.                                                                                                                  |
+| pulse      | pulse      |           | boolean                           |           | Sets loader to pulse type.                                                                                                                  |
+| ringworm   | ringworm   |           | boolean                           |           | Sets loader to ringworm type.                                                                                                               |
+| sm         | sm         |           | boolean                           |           | Sets size to small.                                                                                                                         |
+| xs         | xs         |           | boolean                           |           | Sets size to extra small.                                                                                                                   |
 
 ### Methods
 
-| Name     | Parameters                                                          | Return | Description                                       |
-| -------- | ------------------------------------------------------------------- | ------ | ------------------------------------------------- |
-| register | `name` (string) - The name of element that you want to register to. |        | This will register this element with the browser. |
+| Name     | Parameters                                                           | Return | Description                                       |
+| -------- | -------------------------------------------------------------------- | ------ | ------------------------------------------------- |
+| register | `name` (string) - The name of the element that you want to register. |        | This will register this element with the browser. |
 
 ### Slots
 
@@ -40,15 +40,13 @@ The auro-loader element is an easy to use animated loader component.
 | element | Apply style to adjust speed of animation. |
 <!-- AURO-GENERATED-CONTENT:END -->
 
-## API Examples
+## Basic Loaders
 
-### Default examples
-
-The following illustrates the use of the base elements with default output. The `laser` example is shown at the top of the page due to its fixed positioning.
+The following example illustrates the different loader types that the `<auro-loader>` element supports. The `laser` example is shown at the top of the page due to its fixed positioning.
 
 <div class="exampleWrapper">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=../apiExamples/basic.html) -->
-  <!-- The below content is automatically added from ../apiExamples/basic.html -->
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/basic.html) -->
+  <!-- The below content is automatically added from ./../apiExamples/basic.html -->
   <auro-loader ringworm></auro-loader>
   <auro-loader orbit></auro-loader>
   <auro-loader pulse></auro-loader>
@@ -57,8 +55,8 @@ The following illustrates the use of the base elements with default output. The 
 </div>
 <auro-accordion alignRight>
   <span slot="trigger">See code</span>
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=../apiExamples/basic.html) -->
-<!-- The below code snippet is automatically added from ../apiExamples/basic.html -->
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/basic.html) -->
+<!-- The below code snippet is automatically added from ./../apiExamples/basic.html -->
 
 ```html
 <auro-loader ringworm></auro-loader>
@@ -69,113 +67,21 @@ The following illustrates the use of the base elements with default output. The 
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>
 
-### Attribute Examples
+## Property & Attribute Examples
 
-#### <a name="xs"></a>`xs`<a href="#" style="float: right; font-size: 1rem; font-weight: 100;">back to top</a>
-Use the `xs` boolean attribute for a pre-defined size. Type `laser` does not support a size attribute.
+### Appearance
 
-<div class="exampleWrapper">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=../apiExamples/api_xs.html) -->
-  <!-- The below content is automatically added from ../apiExamples/api_xs.html -->
-  <auro-loader ringworm xs></auro-loader>
-  <auro-loader orbit xs></auro-loader>
-  <auro-loader pulse xs></auro-loader>
-  <!-- AURO-GENERATED-CONTENT:END -->
-</div>
-<auro-accordion alignRight>
-  <span slot="trigger">See code</span>
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=../apiExamples/api_xs.html) -->
-<!-- The below code snippet is automatically added from ../apiExamples/api_xs.html -->
+The `<auro-loader>` element supports three appearance options via the `appearance` attribute. Options are `default`, `inverse` and `brand`. 
 
-```html
-<auro-loader ringworm xs></auro-loader>
-<auro-loader orbit xs></auro-loader>
-<auro-loader pulse xs></auro-loader>
-```
-<!-- AURO-GENERATED-CONTENT:END -->
-</auro-accordion>
+**Note**: Type `laser` is supported, but not shown due to fixed positioning.
 
-#### <a name="sm"></a>`sm`<a href="#" style="float: right; font-size: 1rem; font-weight: 100;">back to top</a>
-Use the `sm` boolean attribute for a pre-defined size. Type `laser` does not support a size attribute.
-
-<div class="exampleWrapper">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=../apiExamples/api_small.html) -->
-  <!-- The below content is automatically added from ../apiExamples/api_small.html -->
-  <auro-loader ringworm sm></auro-loader>
-  <auro-loader orbit sm></auro-loader>
-  <auro-loader pulse sm></auro-loader>
-  <!-- AURO-GENERATED-CONTENT:END -->
-</div>
-<auro-accordion alignRight>
-  <span slot="trigger">See code</span>
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=../apiExamples/api_small.html) -->
-<!-- The below code snippet is automatically added from ../apiExamples/api_small.html -->
-
-```html
-<auro-loader ringworm sm></auro-loader>
-<auro-loader orbit sm></auro-loader>
-<auro-loader pulse sm></auro-loader>
-```
-<!-- AURO-GENERATED-CONTENT:END -->
-</auro-accordion>
-
-#### <a name="md"></a>`md`<a href="#" style="float: right; font-size: 1rem; font-weight: 100;">back to top</a>
-Use the `md` boolean attribute for a pre-defined size. Type `laser` does not support a size attribute.
-
-<div class="exampleWrapper">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=../apiExamples/api_medium.html) -->
-  <!-- The below content is automatically added from ../apiExamples/api_medium.html -->
-  <auro-loader ringworm md></auro-loader>
-  <auro-loader orbit md></auro-loader>
-  <auro-loader pulse md></auro-loader>
-  <!-- AURO-GENERATED-CONTENT:END -->
-</div>
-<auro-accordion alignRight>
-  <span slot="trigger">See code</span>
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=../apiExamples/api_medium.html) -->
-<!-- The below code snippet is automatically added from ../apiExamples/api_medium.html -->
-
-```html
-<auro-loader ringworm md></auro-loader>
-<auro-loader orbit md></auro-loader>
-<auro-loader pulse md></auro-loader>
-```
-<!-- AURO-GENERATED-CONTENT:END -->
-</auro-accordion>
-
-#### <a name="lg"></a>`lg`<a href="#" style="float: right; font-size: 1rem; font-weight: 100;">back to top</a>
-Use the `lg` boolean attribute for a pre-defined size. Type `laser` does not support a size attribute.
-
-<div class="exampleWrapper">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=../apiExamples/api_large.html) -->
-  <!-- The below content is automatically added from ../apiExamples/api_large.html -->
-  <auro-loader ringworm lg></auro-loader>
-  <auro-loader orbit lg></auro-loader>
-  <auro-loader pulse lg></auro-loader>
-  <!-- AURO-GENERATED-CONTENT:END -->
-</div>
-<auro-accordion alignRight>
-  <span slot="trigger">See code</span>
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=../apiExamples/api_large.html) -->
-<!-- The below code snippet is automatically added from ../apiExamples/api_large.html -->
-
-```html
-<auro-loader ringworm lg></auro-loader>
-<auro-loader orbit lg></auro-loader>
-<auro-loader pulse lg></auro-loader>
-```
-<!-- AURO-GENERATED-CONTENT:END -->
-</auro-accordion>
-
-### Appearance Examples <a name="appearance"></a>
-
-#### `appearance="brand"`
+#### Brand
 
 Use the `appearance="brand"` attribute for a brand color. Type `laser` is supported, but not shown due to fixed positioning.
 
 <div class="exampleWrapper">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=../apiExamples/brandAppearance.html) -->
-  <!-- The below content is automatically added from ../apiExamples/brandAppearance.html -->
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=../apiExamples/brand-appearance.html) -->
+  <!-- The below content is automatically added from ../apiExamples/brand-appearance.html -->
   <auro-loader ringworm appearance="brand"></auro-loader>
   <auro-loader orbit appearance="brand"></auro-loader>
   <auro-loader pulse appearance="brand"></auro-loader>
@@ -183,8 +89,8 @@ Use the `appearance="brand"` attribute for a brand color. Type `laser` is suppor
 </div>
 <auro-accordion alignRight>
   <span slot="trigger">See code</span>
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=../apiExamples/brandAppearance.html) -->
-<!-- The below code snippet is automatically added from ../apiExamples/brandAppearance.html -->
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=../apiExamples/brand-appearance.html) -->
+<!-- The below code snippet is automatically added from ../apiExamples/brand-appearance.html -->
 
 ```html
 <auro-loader ringworm appearance="brand"></auro-loader>
@@ -194,13 +100,13 @@ Use the `appearance="brand"` attribute for a brand color. Type `laser` is suppor
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>
 
-#### `appearance="inverse"`
+#### Inverse
 
-Use the `appearance="inverse"` attribute for a pre-defined color. Type `laser` is supported, but not shown due to fixed positioning.
+Use the `appearance="inverse"` attribute for a pre-defined color.
 
 <div class="exampleWrapper--ondark">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=../apiExamples/inverseAppearance.html) -->
-  <!-- The below content is automatically added from ../apiExamples/inverseAppearance.html -->
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=../apiExamples/inverse-appearance.html) -->
+  <!-- The below content is automatically added from ../apiExamples/inverse-appearance.html -->
   <auro-loader ringworm appearance="inverse"></auro-loader>
   <auro-loader orbit appearance="inverse"></auro-loader>
   <auro-loader pulse appearance="inverse"></auro-loader>
@@ -208,8 +114,8 @@ Use the `appearance="inverse"` attribute for a pre-defined color. Type `laser` i
 </div>
 <auro-accordion alignRight>
   <span slot="trigger">See code</span>
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=../apiExamples/inverseAppearance.html) -->
-<!-- The below code snippet is automatically added from ../apiExamples/inverseAppearance.html -->
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=../apiExamples/inverse-appearance.html) -->
+<!-- The below code snippet is automatically added from ../apiExamples/inverse-appearance.html -->
 
 ```html
 <auro-loader ringworm appearance="inverse"></auro-loader>
@@ -219,101 +125,124 @@ Use the `appearance="inverse"` attribute for a pre-defined color. Type `laser` i
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>
 
-### Property Examples
+### Size
 
-Use the following `orbit`, `laser`, `ringworm`, and `pulse` properties as illustrated.
+The `<auro-loader>` element supports a scale of sizes. Options are `[xs, sm, md, lg]`. 
 
-#### <a name="orbit"></a>`orbit`<a href="#" style="float: right; font-size: 1rem; font-weight: 100;">back to top</a>
-Use the `orbit` property for the desired animated loader.
+**Note**: Type `laser` does not support a size attribute.
+
+#### Extra Small
+
+Use the `xs` boolean attribute for a pre-defined size.
 
 <div class="exampleWrapper">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=../apiExamples/property_orbit.html) -->
-  <!-- The below content is automatically added from ../apiExamples/property_orbit.html -->
-  <auro-loader orbit></auro-loader>
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=../apiExamples/xs.html) -->
+  <!-- The below content is automatically added from ../apiExamples/xs.html -->
+  <auro-loader ringworm xs></auro-loader>
+  <auro-loader orbit xs></auro-loader>
+  <auro-loader pulse xs></auro-loader>
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
 <auro-accordion alignRight>
   <span slot="trigger">See code</span>
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=../apiExamples/property_orbit.html) -->
-<!-- The below code snippet is automatically added from ../apiExamples/property_orbit.html -->
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=../apiExamples/xs.html) -->
+<!-- The below code snippet is automatically added from ../apiExamples/xs.html -->
 
 ```html
-<auro-loader orbit></auro-loader>
+<auro-loader ringworm xs></auro-loader>
+<auro-loader orbit xs></auro-loader>
+<auro-loader pulse xs></auro-loader>
 ```
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>
 
-#### <a name="laser"></a>`laser`<a href="#" style="float: right; font-size: 1rem; font-weight: 100;">back to top</a>
-Use the `laser` property for the desired animated loader. Example is shown at the top of the page due its fixed positioning.
+#### Small
+
+Use the `sm` boolean attribute for a pre-defined size.
 
 <div class="exampleWrapper">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=../apiExamples/property_laser.html) -->
-  <!-- The below content is automatically added from ../apiExamples/property_laser.html -->
-  <auro-loader laser></auro-loader>
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=../apiExamples/sm.html) -->
+  <!-- The below content is automatically added from ../apiExamples/sm.html -->
+  <auro-loader ringworm sm></auro-loader>
+  <auro-loader orbit sm></auro-loader>
+  <auro-loader pulse sm></auro-loader>
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
 <auro-accordion alignRight>
   <span slot="trigger">See code</span>
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=../apiExamples/property_laser.html) -->
-<!-- The below code snippet is automatically added from ../apiExamples/property_laser.html -->
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=../apiExamples/sm.html) -->
+<!-- The below code snippet is automatically added from ../apiExamples/sm.html -->
 
 ```html
-<auro-loader laser></auro-loader>
+<auro-loader ringworm sm></auro-loader>
+<auro-loader orbit sm></auro-loader>
+<auro-loader pulse sm></auro-loader>
 ```
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>
 
-#### <a name="pulse"></a>`pulse`<a href="#" style="float: right; font-size: 1rem; font-weight: 100;">back to top</a>
-Use the `pulse` property for the desired animated loader.
+#### Medium
+
+Use the `md` boolean attribute for a pre-defined size.
 
 <div class="exampleWrapper">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=../apiExamples/property_pulse.html) -->
-  <!-- The below content is automatically added from ../apiExamples/property_pulse.html -->
-  <auro-loader pulse></auro-loader>
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=../apiExamples/md.html) -->
+  <!-- The below content is automatically added from ../apiExamples/md.html -->
+  <auro-loader ringworm md></auro-loader>
+  <auro-loader orbit md></auro-loader>
+  <auro-loader pulse md></auro-loader>
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
 <auro-accordion alignRight>
   <span slot="trigger">See code</span>
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=../apiExamples/property_pulse.html) -->
-<!-- The below code snippet is automatically added from ../apiExamples/property_pulse.html -->
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=../apiExamples/md.html) -->
+<!-- The below code snippet is automatically added from ../apiExamples/md.html -->
 
 ```html
-<auro-loader pulse></auro-loader>
+<auro-loader ringworm md></auro-loader>
+<auro-loader orbit md></auro-loader>
+<auro-loader pulse md></auro-loader>
 ```
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>
 
-#### <a name="ringworm"></a>`ringworm`<a href="#" style="float: right; font-size: 1rem; font-weight: 100;">back to top</a>
-Use the `ringworm` property for the desired animated loader.
+#### Large
+
+Use the `lg` boolean attribute for a pre-defined size.
 
 <div class="exampleWrapper">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=../apiExamples/property_ringworm.html) -->
-  <!-- The below content is automatically added from ../apiExamples/property_ringworm.html -->
-  <auro-loader ringworm></auro-loader>
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=../apiExamples/lg.html) -->
+  <!-- The below content is automatically added from ../apiExamples/lg.html -->
+  <auro-loader ringworm lg></auro-loader>
+  <auro-loader orbit lg></auro-loader>
+  <auro-loader pulse lg></auro-loader>
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
 <auro-accordion alignRight>
   <span slot="trigger">See code</span>
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=../apiExamples/property_ringworm.html) -->
-<!-- The below code snippet is automatically added from ../apiExamples/property_ringworm.html -->
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=../apiExamples/lg.html) -->
+<!-- The below code snippet is automatically added from ../apiExamples/lg.html -->
 
 ```html
-<auro-loader ringworm></auro-loader>
+<auro-loader ringworm lg></auro-loader>
+<auro-loader orbit lg></auro-loader>
+<auro-loader pulse lg></auro-loader>
 ```
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>
 
-### Slot Examples
+## Slot Examples
 
-#### <a name="staticLabel"></a>`staticLabel`<a href="#" style="float: right; font-size: 1rem; font-weight: 100;">back to top</a>
+### Static Label
+
 Use the `staticLabel` slot to provide custom text that replaces the `auro-loader` component when the user has the `prefers-reduced-motion` accessibility feature enabled.
 The default text is `Loading...`
 
 In order to see the example in action, please enable your system's "Reduce Motion" accessibility setting.
 
 <div class="exampleWrapper">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=../apiExamples/staticLabel.html) -->
-  <!-- The below content is automatically added from ../apiExamples/staticLabel.html -->
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=../apiExamples/static-label.html) -->
+  <!-- The below content is automatically added from ../apiExamples/static-label.html -->
   <auro-loader ringworm>Ringworm</auro-loader>
   <auro-loader orbit>Orbit</auro-loader>
   <auro-loader pulse>Pulse</auro-loader>
@@ -322,8 +251,8 @@ In order to see the example in action, please enable your system's "Reduce Motio
 </div>
 <auro-accordion alignRight>
   <span slot="trigger">See code</span>
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=../apiExamples/staticLabel.html) -->
-<!-- The below code snippet is automatically added from ../apiExamples/staticLabel.html -->
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=../apiExamples/static-label.html) -->
+<!-- The below code snippet is automatically added from ../apiExamples/static-label.html -->
 
 ```html
 <auro-loader ringworm>Ringworm</auro-loader>
@@ -334,14 +263,15 @@ In order to see the example in action, please enable your system's "Reduce Motio
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>
 
-### CSS Shadow Parts Examples
+## CSS Shadow Part Examples
 
-#### <a name="element"></a>`element`<a href="#" style="float: right; font-size: 1rem; font-weight: 100;">back to top</a>
-Use the `element` CSS Part with your CSS as illustrated to effect things like the speed of the animation.
+### Element
+
+Use the `::part(element)` with your CSS as illustrated to effect things like the speed of the animation.
 
 <div class="exampleWrapper">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=../apiExamples/custom_speed.html) -->
-  <!-- The below content is automatically added from ../apiExamples/custom_speed.html -->
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=../apiExamples/custom-speed.html) -->
+  <!-- The below content is automatically added from ../apiExamples/custom-speed.html -->
   <style>
     .slow::part(element) {
       animation-duration: 8s;
@@ -356,8 +286,8 @@ Use the `element` CSS Part with your CSS as illustrated to effect things like th
 </div>
 <auro-accordion alignRight>
   <span slot="trigger">See code</span>
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=../apiExamples/custom_speed.html) -->
-<!-- The below code snippet is automatically added from ../apiExamples/custom_speed.html -->
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=../apiExamples/custom-speed.html) -->
+<!-- The below code snippet is automatically added from ../apiExamples/custom-speed.html -->
 
 ```html
 <style>
@@ -374,10 +304,38 @@ Use the `element` CSS Part with your CSS as illustrated to effect things like th
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>
 
-### Theme Support
+## Common Usage Patterns & Functional Examples
 
-The component may be restyled using the following code sample and changing the values of the following token(s).
+### Custom Color Support
 
+The `<auro-loader>` element supports any custom color defined at the root level of the element.
+
+<div class="exampleWrapper">
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=../apiExamples/custom-color.html) -->
+  <!-- The below content is automatically added from ../apiExamples/custom-color.html -->
+  <auro-loader style="color: var(--ds-color-brand-tropical-300)" ringworm md></auro-loader>
+  <auro-loader style="color: var(--ds-color-brand-goldcoast-300)" orbit md></auro-loader>
+  <auro-loader style="color: var(--ds-color-brand-alpine-400)" pulse md></auro-loader>
+  <!-- AURO-GENERATED-CONTENT:END -->
+</div>
+<auro-accordion alignRight>
+  <span slot="trigger">See code</span>
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=../apiExamples/custom-color.html) -->
+<!-- The below code snippet is automatically added from ../apiExamples/custom-color.html -->
+
+```html
+<auro-loader style="color: var(--ds-color-brand-tropical-300)" ringworm md></auro-loader>
+<auro-loader style="color: var(--ds-color-brand-goldcoast-300)" orbit md></auro-loader>
+<auro-loader style="color: var(--ds-color-brand-alpine-400)" pulse md></auro-loader>
+```
+<!-- AURO-GENERATED-CONTENT:END -->
+</auro-accordion>
+
+## Restyle Component with CSS Variables
+
+The component may be restyled by changing the values of the following token(s).
+
+<!-- Remove section if component does not have any component specific tokens -->
 <!-- AURO-GENERATED-CONTENT:START (CODE:src=./../src/styles/tokens.scss) -->
 <!-- The below code snippet is automatically added from ./../src/styles/tokens.scss -->
 

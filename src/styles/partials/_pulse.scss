@@ -7,75 +7,75 @@
 }
 
 :host([pulse]),
-:host([pulse]) > span {
+:host([pulse]) > .loader-shape > span {
   position: relative;
 }
 
-:host([pulse]) {
+:host([pulse]) > .loader-shape {
   width: calc((3 * 1rem) + (var(--margin) * 6));
   height: calc((1rem) + (var(--margin) * 2));
 }
 
-:host([pulse]) > span {
+:host([pulse]) > .loader-shape > span {
   width: 1rem;
   height: 1rem;
   margin: var(--margin);
   animation: pulse 1.5s ease infinite;
 }
 
-:host([pulse][xs]) {
+:host([pulse][xs]) > .loader-shape {
   width: calc((3 * .65rem) + (var(--margin-xs) * 6));
   height: calc((.65rem) + (var(--margin-xs) * 2));
 }
 
-:host([pulse][xs]) > span {
+:host([pulse][xs]) > .loader-shape > span {
   margin: var(--margin-xs);
   width: .65rem;
   height: .65rem;
 }
 
-:host([pulse][sm]) {
+:host([pulse][sm]) > .loader-shape {
   width: calc((3 * 2rem) + (var(--margin-sm) * 6));
   height: calc((2rem) + (var(--margin-sm) * 2));
 }
 
-:host([pulse][sm]) > span {
+:host([pulse][sm]) > .loader-shape > span {
   margin: var(--margin-sm);
   width: 2rem;
   height: 2rem;
 }
 
-:host([pulse][md]) {
+:host([pulse][md]) > .loader-shape {
   width: calc((3 * 3rem) + (var(--margin-md) * 6));
   height: calc((3rem) + (var(--margin-md) * 2));
 }
 
-:host([pulse][md]) > span {
+:host([pulse][md]) > .loader-shape > span {
   margin: var(--margin-md);
   width: 3rem;
   height: 3rem;
 }
 
-:host([pulse][lg]) {
+:host([pulse][lg]) > .loader-shape {
   width: calc((3 * 5rem) + (var(--margin-lg) * 6));
   height: calc((5rem) + (var(--margin-lg) * 2));
 }
 
-:host([pulse][lg]) > span {
+:host([pulse][lg]) > .loader-shape > span {
   margin: var(--margin-lg);
   width: 5rem;
   height: 5rem;
 }
 
-:host([pulse]) > span:nth-child(1) {
+:host([pulse]) > .loader-shape > span:nth-child(1) {
   animation-delay: -400ms;
 }
 
-:host([pulse]) > span:nth-child(2) {
+:host([pulse]) > .loader-shape > span:nth-child(2) {
   animation-delay: -200ms;
 }
 
-:host([pulse]) > span:nth-child(3) {
+:host([pulse]) > .loader-shape > span:nth-child(3) {
   animation-delay: 0ms;
 }
 

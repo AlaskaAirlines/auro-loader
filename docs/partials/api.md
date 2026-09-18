@@ -131,12 +131,72 @@ Use the `lg` boolean attribute for a pre-defined size.
 
 ## Slot Examples
 
-### Static Label
+### Cycling Messages
 
-Use the `staticLabel` slot to provide custom text that replaces the `auro-loader` component when the user has the `prefers-reduced-motion` accessibility feature enabled.
+Use the `message` slot to display one or more messages alongside the animation. Any element type is supported. When more than one is slotted, they rotate at the interval (in milliseconds) set by the `message-interval` attribute (default `5000`).
+
+**Note**: Typography, spacing and color for this slot are placeholder values pending Design sign-off.
+
+**Note**: not supported on the `laser` type — no room for accompanying text in any motion state.
+
+A few things to know:
+
+- The component toggles `hidden` on your slotted elements to rotate them — don't also manage `hidden` on those elements yourself.
+- An invalid `message-interval` (`0`, negative, or non-numeric) falls back to `5000`.
+- Rotation stops under `prefers-reduced-motion: reduce`; only the first message shows, so each message should be able to stand on its own.
+
+<div class="exampleWrapper">
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=../apiExamples/cycling-messages.html) -->
+  <!-- AURO-GENERATED-CONTENT:END -->
+</div>
+<auro-accordion alignRight>
+  <span slot="trigger">See code</span>
+
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=../apiExamples/cycling-messages.html) -->
+<!-- AURO-GENERATED-CONTENT:END -->
+
+</auro-accordion>
+
+### Message Position
+
+Use the `message-position` attribute to control where the `message` slot content renders relative to the animation. Options are `top`, `right`, `bottom` and `left`. Default is `bottom`.
+
+#### Static Message
+
+<div class="exampleWrapper">
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=../apiExamples/message-position-static.html) -->
+  <!-- AURO-GENERATED-CONTENT:END -->
+</div>
+<auro-accordion alignRight>
+  <span slot="trigger">See code</span>
+
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=../apiExamples/message-position-static.html) -->
+<!-- AURO-GENERATED-CONTENT:END -->
+
+</auro-accordion>
+
+#### Cycling Messages
+
+<div class="exampleWrapper">
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=../apiExamples/message-position-cycling.html) -->
+  <!-- AURO-GENERATED-CONTENT:END -->
+</div>
+<auro-accordion alignRight>
+  <span slot="trigger">See code</span>
+
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=../apiExamples/message-position-cycling.html) -->
+<!-- AURO-GENERATED-CONTENT:END -->
+
+</auro-accordion>
+
+### Reduced Motion
+
+The following examples relate to the `prefers-reduced-motion` accessibility feature. In order to see them in action, please enable your system's "Reduce Motion" accessibility setting.
+
+#### Static Label
+
+Use the default slot to provide custom text that replaces the `auro-loader` animation when the user has the `prefers-reduced-motion` accessibility feature enabled.
 The default text is `Loading...`
-
-In order to see the example in action, please enable your system's "Reduce Motion" accessibility setting.
 
 <div class="exampleWrapper">
   <!-- AURO-GENERATED-CONTENT:START (FILE:src=../apiExamples/static-label.html) -->
@@ -146,6 +206,38 @@ In order to see the example in action, please enable your system's "Reduce Motio
   <span slot="trigger">See code</span>
 
 <!-- AURO-GENERATED-CONTENT:START (CODE:src=../apiExamples/static-label.html) -->
+<!-- AURO-GENERATED-CONTENT:END -->
+
+</auro-accordion>
+
+#### Message Slot Only
+
+If only the `message` slot is populated, `prefers-reduced-motion: reduce` shows its content instead of the generic `Loading...` fallback (frozen on whichever message was active).
+
+<div class="exampleWrapper">
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=../apiExamples/reduced-motion-message-only.html) -->
+  <!-- AURO-GENERATED-CONTENT:END -->
+</div>
+<auro-accordion alignRight>
+  <span slot="trigger">See code</span>
+
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=../apiExamples/reduced-motion-message-only.html) -->
+<!-- AURO-GENERATED-CONTENT:END -->
+
+</auro-accordion>
+
+#### Default Slot and Message Slot Together
+
+If both slots are populated, only `message` shows under normal motion. Under `prefers-reduced-motion: reduce`, the default slot's content takes over and `message` is hidden — only one piece of text is ever shown at a time.
+
+<div class="exampleWrapper">
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=../apiExamples/reduced-motion-combined.html) -->
+  <!-- AURO-GENERATED-CONTENT:END -->
+</div>
+<auro-accordion alignRight>
+  <span slot="trigger">See code</span>
+
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=../apiExamples/reduced-motion-combined.html) -->
 <!-- AURO-GENERATED-CONTENT:END -->
 
 </auro-accordion>

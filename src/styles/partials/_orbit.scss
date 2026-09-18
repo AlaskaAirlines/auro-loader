@@ -1,25 +1,25 @@
 :host([orbit]),
-:host([orbit]) > span {
+:host([orbit]) > .loader-shape > span {
     opacity: 1;
 }
 
-:host([orbit]) > span {
+:host([orbit]) > .loader-shape > span {
     border-width: 5px;
 }
 
-:host([orbit]) > span:nth-child(2) {
+:host([orbit]) > .loader-shape > span:nth-child(2) {
   animation: orbit 2s linear infinite;
 }
 
-:host([orbit][sm]) > span {
+:host([orbit][sm]) > .loader-shape > span {
   border-width: 8px;
 }
 
-:host([orbit][md]) > span {
+:host([orbit][md]) > .loader-shape > span {
   border-width: 13px;
 }
 
-:host([orbit][lg]) > span {
+:host([orbit][lg]) > .loader-shape > span {
   border-width: 21px;
 }
 

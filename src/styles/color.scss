@@ -10,7 +10,7 @@
   color: var(--ds-auro-loader-color);
 }
 
-:host > span {
+:host > .loader-shape > span {
   background-color: var(--ds-auro-loader-background-color);
   border-color: var(--ds-auro-loader-border-color);
 }
@@ -25,19 +25,19 @@
   --ds-auro-loader-color: var(--ds-basic-color-texticon-inverse, #{v.$ds-basic-color-texticon-inverse});
 }
 
-:host([orbit]) > span {
+:host([orbit]) > .loader-shape > span {
   --ds-auro-loader-background-color: transparent;
 }
 
-:host([orbit]) > span:nth-child(1) {
+:host([orbit]) > .loader-shape > span:nth-child(1) {
   --ds-auro-loader-border-color: currentcolor;
 
   opacity: 0.25;
 }
 
-:host([orbit]) > span:nth-child(2) {
+:host([orbit]) > .loader-shape > span:nth-child(2) {
   --ds-auro-loader-border-color: currentcolor;
-  
+
   border-right-color: transparent;
   border-bottom-color: transparent;
   border-left-color: transparent;

@@ -1,4 +1,4 @@
-:host([ringworm]) > svg {
+:host([ringworm]) > .loader-shape > svg {
   animation: rotate 2s linear infinite;
   height: 100%;
   width: 100%;

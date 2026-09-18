@@ -15,11 +15,13 @@
 @use "./partials/orbit";
 @use "./partials/ringworm";
 @use "./partials/laser";
+@use "./partials/message";
 
 // a11y support for reduced motion
 :host {
   > .no-animation {
     display: none;
+    min-width: 0;
   }
 }
 
@@ -31,19 +33,13 @@
   }
 
   :host {
-    > span {
+    >.loader-shape>span {
       opacity: 1;
     }
   }
 
   :host {
-    > .loader {
-      display: none;
-    }
-  }
-
-  :host {
-    > svg {
+    >.loader-shape {
       display: none;
     }
   }
@@ -51,6 +47,27 @@
   :host {
     > .no-animation {
       display: block;
+    }
+  }
+
+  :host([has-default-content]) {
+    > .message-region {
+      display: none;
+    }
+  }
+
+  // Only one piece of text is ever shown. When the `message` slot is populated
+  // but the default slot was left on its built-in `Loading...` fallback, the
+  // message is the meaningful text, so the fallback is suppressed.
+  // Without this rule the fallback's visibility depends on whether the
+  // consumer's markup happens to put whitespace between the tags: whitespace
+  // text nodes are assigned to the default slot, and *any* assigned node
+  // suppresses a slot's fallback. So multi-line HTML hid `Loading...` by
+  // accident while single-line (and JSX-compiled) markup painted it next to
+  // the message.
+  :host([has-message]:not([has-default-content])) {
+    > .no-animation {
+      display: none;
     }
   }
 }

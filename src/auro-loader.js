@@ -146,18 +146,22 @@ export class AuroLoader extends LitElement {
 
       /**
        * DEPRECATED - use `appearance="inverse"`.
+       * @deprecated Use `appearance="inverse"` instead.
        */
       onDark: {
         type: Boolean,
         reflect: true,
+        attribute: "ondark",
       },
 
       /**
        * DEPRECATED - use `appearance="brand"`.
+       * @deprecated Use `appearance="brand"` instead.
        */
       onLight: {
         type: Boolean,
         reflect: true,
+        attribute: "onlight",
       },
 
       /**

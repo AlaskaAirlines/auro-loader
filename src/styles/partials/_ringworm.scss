@@ -1,16 +1,30 @@
-:host([ringworm]) > .loader-shape > svg {
-  animation: rotate 2s linear infinite;
-  height: 100%;
-  width: 100%;
-  stroke: currentcolor;
-  stroke-width: 8;
-}
+// `.loader-shape` sits between `:host` and `svg` so the animation can lay out
+// alongside the `message` slot, which pushes this rule one level past what
+// `selector-max-combinators`/`selector-max-compound-selectors` normally
+// allow. There's no way to style the svg without going through its
+// ancestors here; disabled deliberately rather than worked around.
+// `selector-class-pattern` is also disabled: this project uses kebab-case
+// class names (the standard CSS convention), not the config's default
+// camelCase pattern.
+// stylelint-disable selector-max-combinators, selector-max-compound-selectors, selector-class-pattern
+:host([ringworm]) {
+  > .loader-shape {
+    > svg {
+      width: 100%;
+      height: 100%;
+      animation: rotate 2s linear infinite;
+      stroke: currentcolor;
+      stroke-width: 8;
+    }
+  }
 
-:host([ringworm]) .path {
-  stroke-dashoffset: 0;
-  animation: ringworm 1.5s ease-in-out infinite;
-  stroke-linecap: round;
+  .path {
+    animation: ringworm 1.5s ease-in-out infinite;
+    stroke-dashoffset: 0;
+    stroke-linecap: round;
+  }
 }
+// stylelint-enable selector-max-combinators, selector-max-compound-selectors, selector-class-pattern
 
 @keyframes rotate {
   100% {

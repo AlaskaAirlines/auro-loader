@@ -1,55 +1,75 @@
-:host([laser]) {
-  position: static;
-  width: 100%;
-  display: block;
-  height: 0;
-  overflow: hidden;
-  font-size: unset;
-}
-
 // `laser` has no room for accompanying text in any motion state (matches the
 // pre-existing behavior of the default/static-label slot for this type).
-:host([laser])>.message-region {
-  display: none;
-}
-
-:host([laser])>.loader-shape>span {
-  position: fixed;
+// `.loader-shape` sits between `:host` and `span` so the animation can lay
+// out alongside the `message` slot, which pushes these rules one level past
+// what `selector-max-combinators`/`selector-max-compound-selectors` normally
+// allow, and puts `:nth-child` a level deeper than `max-nesting-depth`
+// allows on top of that. There's no way to style the span without going
+// through its ancestors here; disabled deliberately rather than worked
+// around.
+// `selector-class-pattern` is also disabled: this project uses kebab-case
+// class names (the standard CSS convention), not the config's default
+// camelCase pattern.
+// stylelint-disable selector-max-combinators, selector-max-compound-selectors, scss/selector-nest-combinators, selector-class-pattern
+:host([laser]) {
+  position: static;
+  display: block;
+  overflow: hidden;
   width: 100%;
-  height: 0.25rem;
-  border-radius: 0;
-  z-index: 100;
+  height: 0;
+  font-size: unset;
+
+  > .message-region {
+    display: none;
+  }
+
+  > .loader-shape > span {
+    position: fixed;
+    z-index: 100;
+    width: 100%;
+    height: 0.25rem;
+    border-radius: 0;
+  }
+
+  > .loader-shape > span:nth-child(1) {
+    border-color: currentcolor;
+    opacity: 0.25;
+  }
+
+  > .loader-shape > span:nth-child(2) {
+    width: 50%;
+    border-color: currentcolor;
+    animation: laser 2s linear infinite;
+    opacity: 1;
+  }
 }
 
-:host([laser])>.loader-shape>span:nth-child(1) {
-  border-color: currentcolor;
-  opacity: 0.25;
+:host([laser][sm]) {
+  > .loader-shape > span:nth-child(2) {
+    width: 20%;
+  }
 }
 
-:host([laser])>.loader-shape>span:nth-child(2) {
-  border-color: currentcolor;
-  animation: laser 2s linear infinite;
-  opacity: 1;
-  width: 50%;
+:host([laser][md]) {
+  > .loader-shape > span:nth-child(2) {
+    width: 30%;
+  }
 }
 
-:host([laser][sm])>.loader-shape>span:nth-child(2) {
-  width: 20%;
+:host([laser][lg]) {
+  > .loader-shape > span:nth-child(2) {
+    width: 50%;
+    animation-duration: 1.5s;
+  }
 }
 
-:host([laser][md])>.loader-shape>span:nth-child(2) {
-  width: 30%;
+:host([laser][xl]) {
+  > .loader-shape > span:nth-child(2) {
+    width: 80%;
+    animation-duration: 1.5s;
+  }
 }
-
-:host([laser][lg])>.loader-shape>span:nth-child(2) {
-  width: 50%;
-  animation-duration: 1.5s;
-}
-
-:host([laser][xl])>.loader-shape>span:nth-child(2) {
-  width: 80%;
-  animation-duration: 1.5s;
-}
+// stylelint-enable selector-max-combinators, selector-max-compound-selectors, scss/selector-nest-combinators, selector-class-pattern
 
 @keyframes laser {
   0% {

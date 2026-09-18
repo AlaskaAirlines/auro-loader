@@ -1,4 +1,8 @@
 // Placeholder styling pending Design/Figma sign-off on typography, spacing and color for this slot.
+// This project uses kebab-case class names (the standard CSS convention),
+// not the config's default camelCase pattern; disabled deliberately rather
+// than renamed.
+// stylelint-disable selector-class-pattern
 .message-region {
   min-width: 0;
   color: var(--ds-auro-loader-message-color);
@@ -8,6 +12,7 @@
   padding: 0;
   margin: 0;
 }
+// stylelint-enable selector-class-pattern
 
 // Rotation works by toggling the native `hidden` attribute on consumer-owned
 // light-DOM elements. `[hidden]`'s `display: none` comes from the UA
@@ -20,9 +25,11 @@
 // document styles beat `::slotted()` at any specificity, so only `!important`
 // wins. Disabled deliberately rather than worked around.
 // stylelint-disable selector-no-qualifying-type, declaration-no-important
-slot[name="message"] {
-  &::slotted([hidden]) {
-    display: none !important;
+slot {
+  &[name="message"] {
+    &::slotted([hidden]) {
+      display: none !important;
+    }
   }
 }
 // stylelint-enable selector-no-qualifying-type, declaration-no-important

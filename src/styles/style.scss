@@ -17,6 +17,11 @@
 @use "./partials/laser";
 @use "./partials/message";
 
+// This project uses kebab-case class names (the standard CSS convention),
+// not the config's default camelCase pattern; disabled deliberately rather
+// than renamed for the rest of this file.
+// stylelint-disable selector-class-pattern
+
 // a11y support for reduced motion
 :host {
   > .no-animation {
@@ -26,29 +31,31 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
+  // `.loader-shape` sits between `:host` and `span` so the animation can lay
+  // out alongside the `message` slot, which pushes the `> span` rule below
+  // one level past what `selector-max-combinators`/
+  // `selector-max-compound-selectors` normally allow. There's no way to
+  // style the span without going through its ancestors here; disabled
+  // deliberately rather than worked around.
+  // stylelint-disable selector-max-combinators, selector-max-compound-selectors
   :host {
     display: flex;
     align-items: center;
     justify-content: center;
-  }
 
-  :host {
-    >.loader-shape>span {
-      opacity: 1;
-    }
-  }
-
-  :host {
-    >.loader-shape {
+    > .loader-shape {
       display: none;
-    }
-  }
 
-  :host {
+      > span {
+        opacity: 1;
+      }
+    }
+
     > .no-animation {
       display: block;
     }
   }
+  // stylelint-enable selector-max-combinators, selector-max-compound-selectors
 
   :host([has-default-content]) {
     > .message-region {
@@ -71,3 +78,4 @@
     }
   }
 }
+// stylelint-enable selector-class-pattern

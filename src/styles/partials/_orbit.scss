@@ -1,27 +1,47 @@
-:host([orbit]),
-:host([orbit]) > .loader-shape > span {
-    opacity: 1;
+// `.loader-shape` sits between `:host` and `span` so the animation can lay
+// out alongside the `message` slot, which pushes these rules one level past
+// what `selector-max-combinators`/`selector-max-compound-selectors` normally
+// allow, and puts `:nth-child` a level deeper than `max-nesting-depth`
+// allows on top of that. There's no way to style the span without going
+// through its ancestors here; disabled deliberately rather than worked
+// around.
+// `selector-class-pattern` is also disabled: this project uses kebab-case
+// class names (the standard CSS convention), not the config's default
+// camelCase pattern.
+// stylelint-disable selector-max-combinators, selector-max-compound-selectors, scss/selector-nest-combinators, selector-class-pattern
+:host([orbit]) {
+  opacity: 1;
+
+  > .loader-shape {
+    > span {
+      border-width: 5px;
+      opacity: 1;
+    }
+
+    > span:nth-child(2) {
+      animation: orbit 2s linear infinite;
+    }
+  }
 }
 
-:host([orbit]) > .loader-shape > span {
-    border-width: 5px;
+:host([orbit][sm]) {
+  > .loader-shape > span {
+    border-width: 8px;
+  }
 }
 
-:host([orbit]) > .loader-shape > span:nth-child(2) {
-  animation: orbit 2s linear infinite;
+:host([orbit][md]) {
+  > .loader-shape > span {
+    border-width: 13px;
+  }
 }
 
-:host([orbit][sm]) > .loader-shape > span {
-  border-width: 8px;
+:host([orbit][lg]) {
+  > .loader-shape > span {
+    border-width: 21px;
+  }
 }
-
-:host([orbit][md]) > .loader-shape > span {
-  border-width: 13px;
-}
-
-:host([orbit][lg]) > .loader-shape > span {
-  border-width: 21px;
-}
+// stylelint-enable selector-max-combinators, selector-max-compound-selectors, scss/selector-nest-combinators, selector-class-pattern
 
 @keyframes orbit {
   0% {

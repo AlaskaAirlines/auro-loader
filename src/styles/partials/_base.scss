@@ -24,53 +24,86 @@
   gap: var(--ds-auro-loader-message-spacing);
 }
 
-.loader-shape,
-.loader-shape > span {
-  position: relative;
-}
-
+// This project uses kebab-case class names (the standard CSS convention),
+// not the config's default camelCase pattern; disabled deliberately rather
+// than renamed for the rest of this file.
+// stylelint-disable selector-class-pattern
 .loader-shape {
+  position: relative;
   display: inline-block;
   width: 2rem;
   height: 2rem;
   flex-shrink: 0;
   font-size: 0;
+
+  > span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: inline-block;
+    width: 2rem;
+    height: 2rem;
+    box-sizing: border-box;
+    border-width: 0;
+    border-style: solid;
+    border-radius: 100%;
+    float: none;
+  }
 }
 
-.loader-shape > span {
-  position: absolute;
-  top: 0;
-  left: 0;
-  display: inline-block;
-  width: 2rem;
-  height: 2rem;
-  box-sizing: border-box;
-  border-width: 0;
-  border-style: solid;
-  border-radius: 100%;
-  float: none;
+// The `.loader-shape` wrapper (added so `:host` can lay the animation out
+// alongside the `message` slot) means sizing the inner `span` per size
+// variant necessarily resolves to a 3-part, 2-combinator selector
+// (`:host([size]) > .loader-shape > span`) — one level deeper than these
+// rules allow. There's no way to size the span without going through its
+// ancestors here; disabled deliberately rather than worked around.
+// stylelint-disable selector-max-combinators, selector-max-compound-selectors
+:host([xs]) {
+  > .loader-shape {
+    width: 1.2rem;
+    height: 1.2rem;
+
+    > span {
+      width: 1.2rem;
+      height: 1.2rem;
+    }
+  }
 }
 
-:host([xs]) > .loader-shape,
-:host([xs]) > .loader-shape > span {
-  width: 1.2rem;
-  height: 1.2rem;
+:host([sm]) {
+  > .loader-shape {
+    width: 3rem;
+    height: 3rem;
+
+    > span {
+      width: 3rem;
+      height: 3rem;
+    }
+  }
 }
 
-:host([sm]) > .loader-shape,
-:host([sm]) > .loader-shape > span {
-  width: 3rem;
-  height: 3rem;
+:host([md]) {
+  > .loader-shape {
+    width: 5rem;
+    height: 5rem;
+
+    > span {
+      width: 5rem;
+      height: 5rem;
+    }
+  }
 }
 
-:host([md]) > .loader-shape,
-:host([md]) > .loader-shape > span {
-  width: 5rem;
-  height: 5rem;
-}
+:host([lg]) {
+  > .loader-shape {
+    width: 8rem;
+    height: 8rem;
 
-:host([lg]) > .loader-shape,
-:host([lg]) > .loader-shape > span {
-  width: 8rem;
-  height: 8rem;
+    > span {
+      width: 8rem;
+      height: 8rem;
+    }
+  }
 }
+// stylelint-enable selector-max-combinators, selector-max-compound-selectors
+// stylelint-enable selector-class-pattern

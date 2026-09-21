@@ -23,13 +23,14 @@
 // linted away: the rule has to be scoped to this slot so it does not override
 // a `hidden` the consumer set on default-slot content themselves, and outer
 // document styles beat `::slotted()` at any specificity, so only `!important`
-// wins. Disabled deliberately rather than worked around.
-// stylelint-disable selector-no-qualifying-type, declaration-no-important
-slot {
-  &[name="message"] {
-    &::slotted([hidden]) {
-      display: none !important;
-    }
+// wins. `scss/selector-nest-combinators` is also disabled: nesting the
+// attribute selector too (`slot { &[name="message"] { ... } } }`) is
+// noisier to read for no benefit over writing it directly. All disabled
+// deliberately rather than worked around.
+// stylelint-disable selector-no-qualifying-type, declaration-no-important, scss/selector-nest-combinators
+slot[name="message"] {
+  &::slotted([hidden]) {
+    display: none !important;
   }
 }
-// stylelint-enable selector-no-qualifying-type, declaration-no-important
+// stylelint-enable selector-no-qualifying-type, declaration-no-important, scss/selector-nest-combinators

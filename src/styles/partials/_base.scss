@@ -24,9 +24,21 @@
   gap: var(--ds-auro-loader-message-spacing);
 }
 
-// This project uses kebab-case class names (the standard CSS convention),
-// not the config's default camelCase pattern; disabled deliberately rather
-// than renamed for the rest of this file.
+// Canonical explanation for the `.loader-shape`-related stylelint-disable
+// blocks in this file and in color.scss/_laser.scss/_orbit.scss/_pulse.scss/
+// _ringworm.scss (which just link back here instead of repeating this):
+// - `selector-class-pattern`: this project uses kebab-case class names (the
+//   standard CSS convention), not the config's default camelCase pattern.
+// - `selector-max-combinators`/`selector-max-compound-selectors`:
+//   `.loader-shape` sits between `:host` and `span`/`svg` so the animation
+//   can lay out alongside the `message` slot, which makes every rule that
+//   reaches through it one level deeper than these rules allow. There's no
+//   way to style the span/svg without going through its ancestors.
+// - `scss/selector-nest-combinators`: nesting `:nth-child` inside its own
+//   block (as this rule otherwise wants) would put it a level deeper than
+//   `max-nesting-depth` allows on top of the `.loader-shape` wrapper, so
+//   it's written flat instead in the files that need it.
+// All three are disabled deliberately rather than worked around.
 // stylelint-disable selector-class-pattern
 .loader-shape {
   position: relative;
@@ -51,12 +63,7 @@
   }
 }
 
-// The `.loader-shape` wrapper (added so `:host` can lay the animation out
-// alongside the `message` slot) means sizing the inner `span` per size
-// variant necessarily resolves to a 3-part, 2-combinator selector
-// (`:host([size]) > .loader-shape > span`) — one level deeper than these
-// rules allow. There's no way to size the span without going through its
-// ancestors here; disabled deliberately rather than worked around.
+// See the canonical explanation above.
 // stylelint-disable selector-max-combinators, selector-max-compound-selectors
 :host([xs]) {
   > .loader-shape {

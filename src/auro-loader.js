@@ -16,11 +16,21 @@ import tokensCss from "./styles/tokens.scss";
 const DEFAULT_MESSAGE_INTERVAL_MS = 5000;
 
 /**
+ * @private
+ */
+const DEFAULT_MESSAGE_POSITION = "bottom";
+
+/**
+ * @private
+ */
+const VALID_MESSAGE_POSITIONS = new Set(["top", "right", "bottom", "left"]);
+
+/**
  * The `auro-loader` element displays a loading animation to indicate a loading state to users.
  * @customElement auro-loader
  *
  * @slot - Default slot for text that replaces `auro-loader` component when user has the "Reduce Motion" a11y feature enabled. Not shown for the `laser` type, in any motion state — `laser` has no room for accompanying text.
- * @slot message - Optional slot for one or more elements to display alongside the loading animation. When more than one is provided, they rotate automatically at the interval set by `messageInterval`. This component toggles the native `hidden` attribute on the slotted elements it owns the rotation for. Not shown for the `laser` type, in any motion state — `laser` has no room for accompanying text. Under "Reduce Motion", rotation stops entirely (only the first message is shown) and this slot is hidden in favor of the default slot's content only when the default slot has consumer-provided content of its own; if the default slot is left to its built-in fallback text, this slot is shown instead of that fallback.
+ * @slot message - Optional slot for one or more elements to display alongside the loading animation. When more than one is provided, they rotate automatically at the interval set by `messageInterval`. This component toggles the native `hidden` attribute on the slotted elements it owns the rotation for. Not shown for the `laser` type, in any motion state — `laser` has no room for accompanying text. Under "Reduce Motion", rotation stops entirely (frozen on whichever message was active when the preference took effect) and this slot is hidden in favor of the default slot's content only when the default slot has consumer-provided content of its own; if the default slot is left to its built-in fallback text, this slot is shown instead of that fallback.
  * @csspart element - Apply style to adjust speed of animation.
  * @csspart message - Apply style to the message region wrapping the `message` slot.
  */
@@ -42,7 +52,7 @@ export class AuroLoader extends LitElement {
     this.pulse = false;
     this.appearance = "default";
     this.messageInterval = DEFAULT_MESSAGE_INTERVAL_MS;
-    this.messagePosition = "bottom";
+    this.messagePosition = DEFAULT_MESSAGE_POSITION;
 
     /**
      * @private
@@ -118,7 +128,7 @@ export class AuroLoader extends LitElement {
       },
 
       /**
-       * Sets the position of the `message` slot content relative to the loading animation.
+       * Sets the position of the `message` slot content relative to the loading animation. An invalid value falls back to `bottom`.
        * @type {'top' | 'right' | 'bottom' | 'left'}
        * @default 'bottom'
        */
@@ -250,6 +260,31 @@ export class AuroLoader extends LitElement {
       "change",
       this._handleReducedMotionChange,
     );
+  }
+
+  willUpdate(changedProperties) {
+    super.willUpdate(changedProperties);
+
+    // Self-correct invalid values back to their defaults *before* this
+    // render, rather than leaving e.g. `message-interval="NaN"` or
+    // `message-position="buttom"` (a typo) reflected into the DOM
+    // indefinitely. Doing this in `updated()` instead would mutate a
+    // property after the update already completed, triggering Lit's
+    // "scheduled an update ... after an update completed" warning and an
+    // extra, unnecessary render pass (https://lit.dev/msg/change-in-update).
+    if (
+      changedProperties.has("messageInterval") &&
+      !(Number.isFinite(this.messageInterval) && this.messageInterval > 0)
+    ) {
+      this.messageInterval = DEFAULT_MESSAGE_INTERVAL_MS;
+    }
+
+    if (
+      changedProperties.has("messagePosition") &&
+      !VALID_MESSAGE_POSITIONS.has(this.messagePosition)
+    ) {
+      this.messagePosition = DEFAULT_MESSAGE_POSITION;
+    }
   }
 
   updated(changedProperties) {

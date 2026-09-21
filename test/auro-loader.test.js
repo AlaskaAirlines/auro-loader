@@ -88,6 +88,18 @@ describe("auro-loader", () => {
     await expect(root.length).to.equal(length);
   });
 
+  it("positions pulse dots in normal flow rather than stacked absolutely", async () => {
+    const el = await fixture(html`
+      <auro-loader pulse></auro-loader>
+    `);
+
+    const spans = el.shadowRoot.querySelectorAll(".loader-shape > span");
+
+    for (const span of spans) {
+      await expect(getComputedStyle(span).position).to.equal("relative");
+    }
+  });
+
   it("auro-loader custom element is defined", async () => {
     const el = await !!customElements.get("auro-loader");
 
@@ -445,6 +457,11 @@ describe("auro-loader", () => {
 
       await expect(items[0].hidden).to.be.false;
       await expect(items[1].hidden).to.be.true;
+
+      // The invalid value should not linger in the DOM as `message-interval="NaN"`.
+      await el.updateComplete;
+      await expect(el.messageInterval).to.equal(5000);
+      await expect(el.getAttribute("message-interval")).to.equal("5000");
     });
 
     it("does not cycle for the laser type", async () => {
@@ -469,6 +486,17 @@ describe("auro-loader", () => {
       const el = await fixture(html`
         <auro-loader><li slot="message">Loading...</li></auro-loader>
       `);
+
+      await expect(el.messagePosition).to.equal("bottom");
+      await expect(el.getAttribute("message-position")).to.equal("bottom");
+    });
+
+    it("falls back to bottom for an invalid value", async () => {
+      const el = await fixture(html`
+        <auro-loader message-position="buttom"><li slot="message">Loading...</li></auro-loader>
+      `);
+
+      await el.updateComplete;
 
       await expect(el.messagePosition).to.equal("bottom");
       await expect(el.getAttribute("message-position")).to.equal("bottom");

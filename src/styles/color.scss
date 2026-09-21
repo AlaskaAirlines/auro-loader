@@ -6,14 +6,7 @@
 // Import Auro tokens
 @use "@aurodesignsystem/design-tokens/dist/themes/alaska/SCSSVariables--alaska" as v;
 
-// `.loader-shape` sits between `:host` and `span` so the animation can lay
-// out alongside the `message` slot, which pushes these color rules one
-// level past what `selector-max-combinators`/`selector-max-compound-selectors`
-// normally allow. There's no way to color the span without going through its
-// ancestors here; disabled deliberately rather than worked around.
-// `selector-class-pattern` is also disabled: this project uses kebab-case
-// class names (the standard CSS convention), not the config's default
-// camelCase pattern.
+// See `_base.scss` for why `.loader-shape` requires disabling these rules.
 // stylelint-disable selector-max-combinators, selector-max-compound-selectors, selector-class-pattern
 :host {
   color: var(--ds-auro-loader-color);

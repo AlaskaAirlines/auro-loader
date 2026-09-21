@@ -1,13 +1,4 @@
-// `.loader-shape` sits between `:host` and `span` so the animation can lay
-// out alongside the `message` slot, which pushes these rules one level past
-// what `selector-max-combinators`/`selector-max-compound-selectors` normally
-// allow, and puts `:nth-child` a level deeper than `max-nesting-depth`
-// allows on top of that. There's no way to style the span without going
-// through its ancestors here; disabled deliberately rather than worked
-// around.
-// `selector-class-pattern` is also disabled: this project uses kebab-case
-// class names (the standard CSS convention), not the config's default
-// camelCase pattern.
+// See `_base.scss` for why `.loader-shape` requires disabling these rules.
 // stylelint-disable selector-max-combinators, selector-max-compound-selectors, scss/selector-nest-combinators, selector-class-pattern
 :host([orbit]) {
   opacity: 1;

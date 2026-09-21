@@ -1,11 +1,4 @@
-// `.loader-shape` sits between `:host` and `svg` so the animation can lay out
-// alongside the `message` slot, which pushes this rule one level past what
-// `selector-max-combinators`/`selector-max-compound-selectors` normally
-// allow. There's no way to style the svg without going through its
-// ancestors here; disabled deliberately rather than worked around.
-// `selector-class-pattern` is also disabled: this project uses kebab-case
-// class names (the standard CSS convention), not the config's default
-// camelCase pattern.
+// See `_base.scss` for why `.loader-shape` requires disabling these rules.
 // stylelint-disable selector-max-combinators, selector-max-compound-selectors, selector-class-pattern
 :host([ringworm]) {
   > .loader-shape {

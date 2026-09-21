@@ -143,7 +143,7 @@ A few things to know:
 
 - The component toggles `hidden` on your slotted elements to rotate them — don't also manage `hidden` on those elements yourself.
 - An invalid `message-interval` (`0`, negative, or non-numeric) falls back to `5000`.
-- Rotation stops under `prefers-reduced-motion: reduce`; only the first message shows, so each message should be able to stand on its own.
+- Rotation stops under `prefers-reduced-motion: reduce`; it freezes on whichever message was active when the preference took effect, so each message should be able to stand on its own.
 
 <div class="exampleWrapper">
   <!-- AURO-GENERATED-CONTENT:START (FILE:src=../apiExamples/cycling-messages.html) -->
@@ -159,7 +159,7 @@ A few things to know:
 
 ### Message Position
 
-Use the `message-position` attribute to control where the `message` slot content renders relative to the animation. Options are `top`, `right`, `bottom` and `left`. Default is `bottom`.
+Use the `message-position` attribute to control where the `message` slot content renders relative to the animation. Options are `top`, `right`, `bottom` and `left`; an invalid value falls back to `bottom`.
 
 #### Static Message
 

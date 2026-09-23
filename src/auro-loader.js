@@ -34,13 +34,21 @@ const VALID_MESSAGE_POSITIONS = new Set(["top", "right", "bottom", "left"]);
 const MAX_MESSAGE_INTERVAL_MS = 2147483647;
 
 /**
+ * Coerces first, since a numeric string is a realistic `messageInterval`
+ * value from a framework wrapper setting the property directly (e.g.
+ * `el.messageInterval = inputEl.value`) rather than through the attribute,
+ * which already coerces via its `fromAttribute` converter.
  * @private
- * @param {number} value - Candidate `messageInterval` value.
+ * @param {number|string} value - Candidate `messageInterval` value.
  * @returns {boolean} - Whether the value is usable as a timer duration.
  */
 function isValidMessageInterval(value) {
+  const numericValue = Number(value);
+
   return (
-    Number.isFinite(value) && value > 0 && value <= MAX_MESSAGE_INTERVAL_MS
+    Number.isFinite(numericValue) &&
+    numericValue > 0 &&
+    numericValue <= MAX_MESSAGE_INTERVAL_MS
   );
 }
 
@@ -307,11 +315,13 @@ export class AuroLoader extends LitElement {
     // property after the update already completed, triggering Lit's
     // "scheduled an update ... after an update completed" warning and an
     // extra, unnecessary render pass (https://lit.dev/msg/change-in-update).
-    if (
-      changedProperties.has("messageInterval") &&
-      !isValidMessageInterval(this.messageInterval)
-    ) {
-      this.messageInterval = DEFAULT_MESSAGE_INTERVAL_MS;
+    if (changedProperties.has("messageInterval")) {
+      // Normalizes a numeric string set directly on the property (e.g. by a
+      // framework wrapper) to a real number, matching the attribute path's
+      // own `fromAttribute` coercion.
+      this.messageInterval = isValidMessageInterval(this.messageInterval)
+        ? Number(this.messageInterval)
+        : DEFAULT_MESSAGE_INTERVAL_MS;
     }
 
     if (

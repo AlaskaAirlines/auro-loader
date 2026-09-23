@@ -330,6 +330,59 @@ Use the `message-position` attribute to control where the `message` slot content
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>
 
+### Message Size
+
+The `message` slot and default slot text scale with the loader's animation size: `xs` uses `body-xs`, the default size uses `body-sm`, `sm` uses `body-default`, and `md` and `lg` use `body-lg`. Note that the default (unsized) loader is smaller than `sm`.
+
+<div class="exampleWrapper">
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=../apiExamples/message-size.html) -->
+  <!-- The below content is automatically added from ../apiExamples/message-size.html -->
+  <div style="display: flex; flex-wrap: wrap; align-items: flex-end; gap: var(--ds-size-400, 2rem);">
+    <auro-loader orbit xs>
+      <span slot="message">Extra small</span>
+    </auro-loader>
+    <auro-loader orbit>
+      <span slot="message">Default</span>
+    </auro-loader>
+    <auro-loader orbit sm>
+      <span slot="message">Small</span>
+    </auro-loader>
+    <auro-loader orbit md>
+      <span slot="message">Medium</span>
+    </auro-loader>
+    <auro-loader orbit lg>
+      <span slot="message">Large</span>
+    </auro-loader>
+  </div>
+  <!-- AURO-GENERATED-CONTENT:END -->
+</div>
+<auro-accordion alignRight>
+  <span slot="trigger">See code</span>
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=../apiExamples/message-size.html) -->
+<!-- The below code snippet is automatically added from ../apiExamples/message-size.html -->
+
+```html
+<div style="display: flex; flex-wrap: wrap; align-items: flex-end; gap: var(--ds-size-400, 2rem);">
+  <auro-loader orbit xs>
+    <span slot="message">Extra small</span>
+  </auro-loader>
+  <auro-loader orbit>
+    <span slot="message">Default</span>
+  </auro-loader>
+  <auro-loader orbit sm>
+    <span slot="message">Small</span>
+  </auro-loader>
+  <auro-loader orbit md>
+    <span slot="message">Medium</span>
+  </auro-loader>
+  <auro-loader orbit lg>
+    <span slot="message">Large</span>
+  </auro-loader>
+</div>
+```
+<!-- AURO-GENERATED-CONTENT:END -->
+</auro-accordion>
+
 ### Reduced Motion
 
 The following examples relate to the `prefers-reduced-motion` accessibility feature. In order to see them in action, please enable your system's "Reduce Motion" accessibility setting.
@@ -505,8 +558,12 @@ The component may be restyled by changing the values of the following token(s).
   // an empty fallback — the concrete value (450) moved to that package's
   // theme stylesheet, which this component does not import. Without this,
   // consumers who don't load that theme get the browser's default
-  // font-weight on the fallback/message text instead of 450.
+  // font-weight on the fallback/message text instead of 450. The text uses
+  // the size-matched body class, so every size's weight needs the fallback.
+  --wcss-body-xs-weight: 450;
+  --wcss-body-sm-weight: 450;
   --wcss-body-default-weight: 450;
+  --wcss-body-lg-weight: 450;
 
   // TODO(design): placeholder pending Figma/typography sign-off
   --ds-auro-loader-message-color: currentcolor;

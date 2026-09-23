@@ -3,18 +3,6 @@
   --ds-auro-loader-border-color: currentcolor;
   --ds-auro-loader-color: currentcolor;
 
-  // Safety net for `@aurodesignsystem/webcorestylesheets` >=11, where
-  // `.body-default`'s `font-weight: var(--wcss-body-default-weight, )` has
-  // an empty fallback — the concrete value (450) moved to that package's
-  // theme stylesheet, which this component does not import. Without this,
-  // consumers who don't load that theme get the browser's default
-  // font-weight on the fallback/message text instead of 450. The text uses
-  // the size-matched body class, so every size's weight needs the fallback.
-  --wcss-body-xs-weight: 450;
-  --wcss-body-sm-weight: 450;
-  --wcss-body-default-weight: 450;
-  --wcss-body-lg-weight: 450;
-
   // TODO(design): placeholder pending Figma/typography sign-off
   --ds-auro-loader-message-color: currentcolor;
 

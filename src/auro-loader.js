@@ -26,12 +26,22 @@ const DEFAULT_MESSAGE_POSITION = "bottom";
 const VALID_MESSAGE_POSITIONS = new Set(["top", "right", "bottom", "left"]);
 
 /**
+ * The largest delay `setInterval`/`setTimeout` support (2^31 - 1). Browsers
+ * silently clamp/overflow larger values, firing near-immediately instead of
+ * after the requested delay.
+ * @private
+ */
+const MAX_MESSAGE_INTERVAL_MS = 2147483647;
+
+/**
  * @private
  * @param {number} value - Candidate `messageInterval` value.
  * @returns {boolean} - Whether the value is usable as a timer duration.
  */
 function isValidMessageInterval(value) {
-  return Number.isFinite(value) && value > 0;
+  return (
+    Number.isFinite(value) && value > 0 && value <= MAX_MESSAGE_INTERVAL_MS
+  );
 }
 
 /**
@@ -127,6 +137,7 @@ export class AuroLoader extends LitElement {
 
       /**
        * Sets the interval, in milliseconds, between automatic rotations of the messages slotted into the `message` slot. Only applies when more than one message is slotted.
+       * Not reflected to the `message-interval` attribute while at its default, so a loader that never customizes this stays DOM-unchanged.
        * @type {number}
        * @default 5000
        */
@@ -134,10 +145,16 @@ export class AuroLoader extends LitElement {
         type: Number,
         reflect: true,
         attribute: "message-interval",
+        converter: {
+          fromAttribute: (value) => Number(value),
+          toAttribute: (value) =>
+            value === DEFAULT_MESSAGE_INTERVAL_MS ? null : String(value),
+        },
       },
 
       /**
        * Sets the position of the `message` slot content relative to the loading animation. An invalid value falls back to `bottom`.
+       * Not reflected to the `message-position` attribute while at its default, so a loader that never customizes this stays DOM-unchanged.
        * @type {'top' | 'right' | 'bottom' | 'left'}
        * @default 'bottom'
        */
@@ -145,6 +162,11 @@ export class AuroLoader extends LitElement {
         type: String,
         reflect: true,
         attribute: "message-position",
+        converter: {
+          fromAttribute: (value) => value,
+          toAttribute: (value) =>
+            value === DEFAULT_MESSAGE_POSITION ? null : value,
+        },
       },
 
       /**
@@ -249,14 +271,18 @@ export class AuroLoader extends LitElement {
   connectedCallback() {
     super.connectedCallback();
 
-    this._reducedMotionQuery = window.matchMedia(
-      "(prefers-reduced-motion: reduce)",
-    );
-    this._prefersReducedMotion = this._reducedMotionQuery.matches;
-    this._reducedMotionQuery.addEventListener(
-      "change",
-      this._handleReducedMotionChange,
-    );
+    // `matchMedia` is absent in some consumer test environments (e.g. jsdom
+    // without a polyfill); this component previously had no such dependency.
+    if (typeof window.matchMedia === "function") {
+      this._reducedMotionQuery = window.matchMedia(
+        "(prefers-reduced-motion: reduce)",
+      );
+      this._prefersReducedMotion = this._reducedMotionQuery.matches;
+      this._reducedMotionQuery.addEventListener(
+        "change",
+        this._handleReducedMotionChange,
+      );
+    }
 
     this._startMessageCycle();
   }
@@ -419,6 +445,13 @@ export class AuroLoader extends LitElement {
    */
   _startMessageCycle() {
     this._stopMessageCycle();
+
+    // A `slotchange` microtask queued before disconnect can still call this
+    // after `disconnectedCallback` already ran, which would otherwise arm a
+    // timer with no remaining lifecycle hook left to clear it.
+    if (!this.isConnected) {
+      return;
+    }
 
     // `laser` hides the message region outright, so cycling there would burn a
     // timer and mutate consumer-owned nodes with no visible or audible effect.

@@ -470,10 +470,12 @@ describe("auro-loader", () => {
       await expect(items[0].hidden).to.be.false;
       await expect(items[1].hidden).to.be.true;
 
-      // The invalid value should not linger in the DOM as `message-interval="NaN"`.
+      // The invalid value should not linger in the DOM as `message-interval="NaN"`;
+      // correcting back to the default removes the attribute entirely, since a
+      // loader at the default interval reflects no attribute at all.
       await el.updateComplete;
       await expect(el.messageInterval).to.equal(5000);
-      await expect(el.getAttribute("message-interval")).to.equal("5000");
+      await expect(el.getAttribute("message-interval")).to.be.null;
     });
 
     it("does not cycle for the laser type", async () => {
@@ -499,8 +501,10 @@ describe("auro-loader", () => {
         <auro-loader><span slot="message">Loading...</span></auro-loader>
       `);
 
+      // A loader at the default position reflects no attribute at all, so
+      // existing plain loaders stay DOM-unchanged.
       await expect(el.messagePosition).to.equal("bottom");
-      await expect(el.getAttribute("message-position")).to.equal("bottom");
+      await expect(el.getAttribute("message-position")).to.be.null;
     });
 
     it("falls back to bottom for an invalid value", async () => {
@@ -511,7 +515,7 @@ describe("auro-loader", () => {
       await el.updateComplete;
 
       await expect(el.messagePosition).to.equal("bottom");
-      await expect(el.getAttribute("message-position")).to.equal("bottom");
+      await expect(el.getAttribute("message-position")).to.be.null;
     });
 
     it("stacks the message below the animation by default", async () => {

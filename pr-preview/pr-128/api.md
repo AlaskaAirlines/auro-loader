@@ -255,9 +255,9 @@ A few things to know:
   <!-- AURO-GENERATED-CONTENT:START (FILE:src=../apiExamples/cycling-messages.html) -->
   <!-- The below content is automatically added from ../apiExamples/cycling-messages.html -->
   <auro-loader orbit message-interval="4000">
-    <span slot="message">Checking your bags...</span>
-    <span slot="message">Confirming your seat...</span>
-    <span slot="message">Almost there...</span>
+    <span slot="message">Hang tight...</span>
+    <span slot="message">Thanks for your patience...</span>
+    <span slot="message">This may take a moment...</span>
   </auro-loader>
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
@@ -268,9 +268,9 @@ A few things to know:
 
 ```html
 <auro-loader orbit message-interval="4000">
-  <span slot="message">Checking your bags...</span>
-  <span slot="message">Confirming your seat...</span>
-  <span slot="message">Almost there...</span>
+  <span slot="message">Hang tight...</span>
+  <span slot="message">Thanks for your patience...</span>
+  <span slot="message">This may take a moment...</span>
 </auro-loader>
 ```
 <!-- AURO-GENERATED-CONTENT:END -->
@@ -309,9 +309,9 @@ Use the `message-position` attribute to control where the `message` slot content
   <!-- AURO-GENERATED-CONTENT:START (FILE:src=../apiExamples/message-position-cycling.html) -->
   <!-- The below content is automatically added from ../apiExamples/message-position-cycling.html -->
   <auro-loader orbit message-position="top" message-interval="4000">
-    <span slot="message">Checking your bags...</span>
-    <span slot="message">Confirming your seat...</span>
-    <span slot="message">Almost there...</span>
+    <span slot="message">Hang tight...</span>
+    <span slot="message">Thanks for your patience...</span>
+    <span slot="message">This may take a moment...</span>
   </auro-loader>
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
@@ -322,9 +322,9 @@ Use the `message-position` attribute to control where the `message` slot content
 
 ```html
 <auro-loader orbit message-position="top" message-interval="4000">
-  <span slot="message">Checking your bags...</span>
-  <span slot="message">Confirming your seat...</span>
-  <span slot="message">Almost there...</span>
+  <span slot="message">Hang tight...</span>
+  <span slot="message">Thanks for your patience...</span>
+  <span slot="message">This may take a moment...</span>
 </auro-loader>
 ```
 <!-- AURO-GENERATED-CONTENT:END -->
@@ -423,8 +423,8 @@ If only the `message` slot is populated, `prefers-reduced-motion: reduce` shows 
   <!-- AURO-GENERATED-CONTENT:START (FILE:src=../apiExamples/reduced-motion-message-only.html) -->
   <!-- The below content is automatically added from ../apiExamples/reduced-motion-message-only.html -->
   <auro-loader orbit>
-    <span slot="message">Checking your bags...</span>
-    <span slot="message">Confirming your seat...</span>
+    <span slot="message">Hang tight...</span>
+    <span slot="message">Thanks for your patience...</span>
   </auro-loader>
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
@@ -435,8 +435,8 @@ If only the `message` slot is populated, `prefers-reduced-motion: reduce` shows 
 
 ```html
 <auro-loader orbit>
-  <span slot="message">Checking your bags...</span>
-  <span slot="message">Confirming your seat...</span>
+  <span slot="message">Hang tight...</span>
+  <span slot="message">Thanks for your patience...</span>
 </auro-loader>
 ```
 <!-- AURO-GENERATED-CONTENT:END -->
@@ -451,8 +451,8 @@ If both slots are populated, only `message` shows under normal motion. Under `pr
   <!-- The below content is automatically added from ../apiExamples/reduced-motion-combined.html -->
   <auro-loader orbit>
     Please wait while we retrieve your reservation.
-    <span slot="message">Checking your bags...</span>
-    <span slot="message">Confirming your seat...</span>
+    <span slot="message">Hang tight...</span>
+    <span slot="message">Thanks for your patience...</span>
   </auro-loader>
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
@@ -464,8 +464,8 @@ If both slots are populated, only `message` shows under normal motion. Under `pr
 ```html
 <auro-loader orbit>
   Please wait while we retrieve your reservation.
-  <span slot="message">Checking your bags...</span>
-  <span slot="message">Confirming your seat...</span>
+  <span slot="message">Hang tight...</span>
+  <span slot="message">Thanks for your patience...</span>
 </auro-loader>
 ```
 <!-- AURO-GENERATED-CONTENT:END -->
@@ -552,18 +552,6 @@ The component may be restyled by changing the values of the following token(s).
   --ds-auro-loader-background-color: currentcolor;
   --ds-auro-loader-border-color: currentcolor;
   --ds-auro-loader-color: currentcolor;
-
-  // Safety net for `@aurodesignsystem/webcorestylesheets` >=11, where
-  // `.body-default`'s `font-weight: var(--wcss-body-default-weight, )` has
-  // an empty fallback — the concrete value (450) moved to that package's
-  // theme stylesheet, which this component does not import. Without this,
-  // consumers who don't load that theme get the browser's default
-  // font-weight on the fallback/message text instead of 450. The text uses
-  // the size-matched body class, so every size's weight needs the fallback.
-  --wcss-body-xs-weight: 450;
-  --wcss-body-sm-weight: 450;
-  --wcss-body-default-weight: 450;
-  --wcss-body-lg-weight: 450;
 
   // TODO(design): placeholder pending Figma/typography sign-off
   --ds-auro-loader-message-color: currentcolor;

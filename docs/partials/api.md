@@ -189,6 +189,22 @@ Use the `message-position` attribute to control where the `message` slot content
 
 </auro-accordion>
 
+### Message Size
+
+The `message` slot and default slot text scale with the loader's animation size: `xs` uses `body-xs`, the default size uses `body-sm`, `sm` uses `body-default`, and `md` and `lg` use `body-lg`. Note that the default (unsized) loader is smaller than `sm`.
+
+<div class="exampleWrapper">
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=../apiExamples/message-size.html) -->
+  <!-- AURO-GENERATED-CONTENT:END -->
+</div>
+<auro-accordion alignRight>
+  <span slot="trigger">See code</span>
+
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=../apiExamples/message-size.html) -->
+<!-- AURO-GENERATED-CONTENT:END -->
+
+</auro-accordion>
+
 ### Reduced Motion
 
 The following examples relate to the `prefers-reduced-motion` accessibility feature. In order to see them in action, please enable your system's "Reduce Motion" accessibility setting.

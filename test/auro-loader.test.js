@@ -109,7 +109,7 @@ describe("auro-loader", () => {
   describe("message slot", () => {
     it("renders a single slotted message statically without hiding it", async () => {
       const el = await fixture(html`
-        <auro-loader><li slot="message">Loading...</li></auro-loader>
+        <auro-loader><span slot="message">Loading...</span></auro-loader>
       `);
 
       const items = el.querySelectorAll('[slot="message"]');
@@ -121,8 +121,8 @@ describe("auro-loader", () => {
     it("shows only the first of multiple messages initially", async () => {
       const el = await fixture(html`
         <auro-loader>
-          <li slot="message">First</li>
-          <li slot="message">Second</li>
+          <span slot="message">First</span>
+          <span slot="message">Second</span>
         </auro-loader>
       `);
 
@@ -135,8 +135,8 @@ describe("auro-loader", () => {
     it("cycles to the next message after the interval elapses", async () => {
       const el = await fixture(html`
         <auro-loader message-interval="20">
-          <li slot="message">First</li>
-          <li slot="message">Second</li>
+          <span slot="message">First</span>
+          <span slot="message">Second</span>
         </auro-loader>
       `);
 
@@ -155,8 +155,8 @@ describe("auro-loader", () => {
     it("wraps around to the first message after the last one", async () => {
       const el = await fixture(html`
         <auro-loader message-interval="20">
-          <li slot="message">First</li>
-          <li slot="message">Second</li>
+          <span slot="message">First</span>
+          <span slot="message">Second</span>
         </auro-loader>
       `);
 
@@ -180,8 +180,8 @@ describe("auro-loader", () => {
     it("stops cycling once the element is removed", async () => {
       const el = await fixture(html`
         <auro-loader message-interval="20">
-          <li slot="message">First</li>
-          <li slot="message">Second</li>
+          <span slot="message">First</span>
+          <span slot="message">Second</span>
         </auro-loader>
       `);
 
@@ -197,14 +197,14 @@ describe("auro-loader", () => {
     it("resets to the first message when slotted content changes mid-cycle", async () => {
       const el = await fixture(html`
         <auro-loader message-interval="20">
-          <li slot="message">First</li>
-          <li slot="message">Second</li>
+          <span slot="message">First</span>
+          <span slot="message">Second</span>
         </auro-loader>
       `);
 
       await aTimeout(30);
 
-      const replacement = document.createElement("li");
+      const replacement = document.createElement("span");
       replacement.slot = "message";
       replacement.textContent = "Third";
       el.querySelectorAll('[slot="message"]').forEach((node) => {
@@ -221,14 +221,26 @@ describe("auro-loader", () => {
       await expect(replacement.hidden).to.be.false;
     });
 
+    // These reduced-motion tests only prove the JS cycling timer respects
+    // the preference — they do not assert the CSS
+    // `@media (prefers-reduced-motion: reduce)` gating in
+    // src/styles/style.scss that actually swaps in `.no-animation` and
+    // hides `.message-region`. That gating has regressed twice already
+    // (see Root Cause #1 in docs/post-mortem/1391812.md) but can't be
+    // exercised here: `auro test` runs against auro-cli's bundled
+    // web-test-runner config, which doesn't register
+    // `@web/test-runner-commands`'s `emulateMediaPlugin` needed to force
+    // real reduced-motion rendering in headless Chrome. Real coverage of
+    // this invariant needs a Playwright/CDP-based test setup — tracked as
+    // a follow-up, not something fixable from this test file alone.
     it("does not cycle when the user prefers reduced motion", async () => {
       const reducedMotion = stubReducedMotion(true);
 
       try {
         const el = await fixture(html`
           <auro-loader message-interval="20">
-            <li slot="message">First</li>
-            <li slot="message">Second</li>
+            <span slot="message">First</span>
+            <span slot="message">Second</span>
           </auro-loader>
         `);
 
@@ -249,8 +261,8 @@ describe("auro-loader", () => {
       try {
         const el = await fixture(html`
           <auro-loader message-interval="20">
-            <li slot="message">First</li>
-            <li slot="message">Second</li>
+            <span slot="message">First</span>
+            <span slot="message">Second</span>
           </auro-loader>
         `);
 
@@ -277,8 +289,8 @@ describe("auro-loader", () => {
       try {
         const el = await fixture(html`
           <auro-loader message-interval="20">
-            <li slot="message">First</li>
-            <li slot="message">Second</li>
+            <span slot="message">First</span>
+            <span slot="message">Second</span>
           </auro-loader>
         `);
 
@@ -311,7 +323,7 @@ describe("auro-loader", () => {
 
     it("never shows the message region for the laser type", async () => {
       const el = await fixture(html`
-        <auro-loader laser><li slot="message">Loading...</li></auro-loader>
+        <auro-loader laser><span slot="message">Loading...</span></auro-loader>
       `);
 
       const region = el.shadowRoot.querySelector(".message-region");
@@ -322,7 +334,7 @@ describe("auro-loader", () => {
     it("does not mark has-default-content when relying on the built-in fallback text", async () => {
       const el = await fixture(html`
         <auro-loader>
-          <li slot="message">Loading...</li>
+          <span slot="message">Loading...</span>
         </auro-loader>
       `);
 
@@ -331,7 +343,7 @@ describe("auro-loader", () => {
 
     it("marks has-default-content when the default slot has consumer-provided content", async () => {
       const el = await fixture(html`
-        <auro-loader>Custom fallback text<li slot="message">Loading...</li></auro-loader>
+        <auro-loader>Custom fallback text<span slot="message">Loading...</span></auro-loader>
       `);
 
       await expect(el.hasAttribute("has-default-content")).to.be.true;
@@ -339,7 +351,7 @@ describe("auro-loader", () => {
 
     it("clears has-default-content when the consumer removes that content again", async () => {
       const el = await fixture(html`
-        <auro-loader>Custom fallback text<li slot="message">Loading...</li></auro-loader>
+        <auro-loader>Custom fallback text<span slot="message">Loading...</span></auro-loader>
       `);
 
       await expect(el.hasAttribute("has-default-content")).to.be.true;
@@ -355,7 +367,7 @@ describe("auro-loader", () => {
 
     it("toggles has-message as message content comes and goes", async () => {
       const el = await fixture(html`
-        <auro-loader><li slot="message">Loading...</li></auro-loader>
+        <auro-loader><span slot="message">Loading...</span></auro-loader>
       `);
 
       await expect(el.hasAttribute("has-message")).to.be.true;
@@ -366,7 +378,7 @@ describe("auro-loader", () => {
       await expect(el.hasAttribute("has-message")).to.be.false;
     });
 
-    it("rotates non-li content slotted into the message slot", async () => {
+    it("rotates content slotted into the message slot regardless of element type", async () => {
       const el = await fixture(html`
         <auro-loader message-interval="20">
           <span slot="message">First</span>
@@ -395,8 +407,8 @@ describe("auro-loader", () => {
     it("restarts cycling after the element is detached and re-attached", async () => {
       const el = await fixture(html`
         <auro-loader message-interval="20">
-          <li slot="message">First</li>
-          <li slot="message">Second</li>
+          <span slot="message">First</span>
+          <span slot="message">Second</span>
         </auro-loader>
       `);
 
@@ -421,8 +433,8 @@ describe("auro-loader", () => {
     it("reschedules a running cycle when messageInterval changes", async () => {
       const el = await fixture(html`
         <auro-loader message-interval="10000">
-          <li slot="message">First</li>
-          <li slot="message">Second</li>
+          <span slot="message">First</span>
+          <span slot="message">Second</span>
         </auro-loader>
       `);
 
@@ -444,8 +456,8 @@ describe("auro-loader", () => {
     it("falls back to the default interval when messageInterval is not a positive finite number", async () => {
       const el = await fixture(html`
         <auro-loader message-interval="abc">
-          <li slot="message">First</li>
-          <li slot="message">Second</li>
+          <span slot="message">First</span>
+          <span slot="message">Second</span>
         </auro-loader>
       `);
 
@@ -467,8 +479,8 @@ describe("auro-loader", () => {
     it("does not cycle for the laser type", async () => {
       const el = await fixture(html`
         <auro-loader laser message-interval="20">
-          <li slot="message">First</li>
-          <li slot="message">Second</li>
+          <span slot="message">First</span>
+          <span slot="message">Second</span>
         </auro-loader>
       `);
 
@@ -484,7 +496,7 @@ describe("auro-loader", () => {
   describe("message position", () => {
     it("defaults to bottom", async () => {
       const el = await fixture(html`
-        <auro-loader><li slot="message">Loading...</li></auro-loader>
+        <auro-loader><span slot="message">Loading...</span></auro-loader>
       `);
 
       await expect(el.messagePosition).to.equal("bottom");
@@ -493,7 +505,7 @@ describe("auro-loader", () => {
 
     it("falls back to bottom for an invalid value", async () => {
       const el = await fixture(html`
-        <auro-loader message-position="buttom"><li slot="message">Loading...</li></auro-loader>
+        <auro-loader message-position="buttom"><span slot="message">Loading...</span></auro-loader>
       `);
 
       await el.updateComplete;
@@ -504,7 +516,7 @@ describe("auro-loader", () => {
 
     it("stacks the message below the animation by default", async () => {
       const el = await fixture(html`
-        <auro-loader><li slot="message">Loading...</li></auro-loader>
+        <auro-loader><span slot="message">Loading...</span></auro-loader>
       `);
 
       const shape = el.shadowRoot.querySelector(".loader-shape");
@@ -518,7 +530,7 @@ describe("auro-loader", () => {
 
     it("moves the message above the animation when set to top", async () => {
       const el = await fixture(html`
-        <auro-loader message-position="top"><li slot="message">Loading...</li></auro-loader>
+        <auro-loader message-position="top"><span slot="message">Loading...</span></auro-loader>
       `);
 
       const shape = el.shadowRoot.querySelector(".loader-shape");
@@ -532,7 +544,7 @@ describe("auro-loader", () => {
 
     it("moves the message to the left of the animation when set to left", async () => {
       const el = await fixture(html`
-        <auro-loader message-position="left"><li slot="message">Loading...</li></auro-loader>
+        <auro-loader message-position="left"><span slot="message">Loading...</span></auro-loader>
       `);
 
       const shape = el.shadowRoot.querySelector(".loader-shape");
@@ -546,7 +558,7 @@ describe("auro-loader", () => {
 
     it("moves the message to the right of the animation when set to right", async () => {
       const el = await fixture(html`
-        <auro-loader message-position="right"><li slot="message">Loading...</li></auro-loader>
+        <auro-loader message-position="right"><span slot="message">Loading...</span></auro-loader>
       `);
 
       const shape = el.shadowRoot.querySelector(".loader-shape");

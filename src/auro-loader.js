@@ -437,6 +437,20 @@ export class AuroLoader extends LitElement {
     this._startMessageCycle();
   }
 
+  /**
+   * Gets a type class for the fallback/message text based on the loader's size.
+   * The unsized loader (2rem) sits between `xs` (1.2rem) and `sm` (3rem), so
+   * the text scale steps up in that same order to track the animation.
+   * @private
+   * @returns {string} - The type class name.
+   */
+  getFontSize() {
+    if (this.xs) return "body-xs";
+    if (this.sm) return "body-default";
+    if (this.md || this.lg) return "body-lg";
+    return "body-sm";
+  }
+
   // When using auroElement, use the following attribute and function when hiding content from screen readers.
   // aria-hidden="${this.hideAudible(this.hiddenAudible)}"
 
@@ -460,11 +474,11 @@ export class AuroLoader extends LitElement {
         }
       </div>
 
-      <div class="no-animation body-default">
+      <div class="no-animation ${this.getFontSize()}">
         <slot @slotchange="${this.handleDefaultSlotChange}">Loading...</slot>
       </div>
 
-      <div class="message-region body-default" part="message" role="status" aria-live="polite" aria-atomic="false">
+      <div class="message-region ${this.getFontSize()}" part="message" role="status" aria-live="polite" aria-atomic="false">
         <div class="message-list">
           <slot name="message" @slotchange="${this.handleMessageSlotChange}"></slot>
         </div>

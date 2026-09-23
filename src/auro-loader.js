@@ -26,6 +26,15 @@ const DEFAULT_MESSAGE_POSITION = "bottom";
 const VALID_MESSAGE_POSITIONS = new Set(["top", "right", "bottom", "left"]);
 
 /**
+ * @private
+ * @param {number} value - Candidate `messageInterval` value.
+ * @returns {boolean} - Whether the value is usable as a timer duration.
+ */
+function isValidMessageInterval(value) {
+  return Number.isFinite(value) && value > 0;
+}
+
+/**
  * The `auro-loader` element displays a loading animation to indicate a loading state to users.
  * @customElement auro-loader
  *
@@ -274,7 +283,7 @@ export class AuroLoader extends LitElement {
     // extra, unnecessary render pass (https://lit.dev/msg/change-in-update).
     if (
       changedProperties.has("messageInterval") &&
-      !(Number.isFinite(this.messageInterval) && this.messageInterval > 0)
+      !isValidMessageInterval(this.messageInterval)
     ) {
       this.messageInterval = DEFAULT_MESSAGE_INTERVAL_MS;
     }
@@ -418,10 +427,9 @@ export class AuroLoader extends LitElement {
       !this._prefersReducedMotion &&
       !this.laser
     ) {
-      const interval =
-        Number.isFinite(this.messageInterval) && this.messageInterval > 0
-          ? this.messageInterval
-          : DEFAULT_MESSAGE_INTERVAL_MS;
+      const interval = isValidMessageInterval(this.messageInterval)
+        ? this.messageInterval
+        : DEFAULT_MESSAGE_INTERVAL_MS;
 
       this._messageCycleTimer = setInterval(this._advanceMessage, interval);
     }
@@ -440,14 +448,17 @@ export class AuroLoader extends LitElement {
   /**
    * Gets a type class for the fallback/message text based on the loader's size.
    * The unsized loader (2rem) sits between `xs` (1.2rem) and `sm` (3rem), so
-   * the text scale steps up in that same order to track the animation.
+   * the text scale steps up in that same order to track the animation. Checked
+   * in the reverse of that order (largest first) to mirror `_base.scss`, where
+   * the size attribute selectors share specificity and the last-declared one
+   * (`lg`) wins the animation's actual size when more than one is set.
    * @private
    * @returns {string} - The type class name.
    */
   getFontSize() {
-    if (this.xs) return "body-xs";
+    if (this.lg || this.md) return "body-lg";
     if (this.sm) return "body-default";
-    if (this.md || this.lg) return "body-lg";
+    if (this.xs) return "body-xs";
     return "body-sm";
   }
 
@@ -456,6 +467,8 @@ export class AuroLoader extends LitElement {
 
   // function that renders the HTML and CSS into  the scope of the component
   render() {
+    const fontSize = this.getFontSize();
+
     return html`
       <div class="loader-shape">
         ${this.defineTemplate().map(
@@ -474,11 +487,11 @@ export class AuroLoader extends LitElement {
         }
       </div>
 
-      <div class="no-animation ${this.getFontSize()}">
+      <div class="no-animation ${fontSize}">
         <slot @slotchange="${this.handleDefaultSlotChange}">Loading...</slot>
       </div>
 
-      <div class="message-region ${this.getFontSize()}" part="message" role="status" aria-live="polite" aria-atomic="false">
+      <div class="message-region ${fontSize}" part="message" role="status" aria-live="polite" aria-atomic="false">
         <div class="message-list">
           <slot name="message" @slotchange="${this.handleMessageSlotChange}"></slot>
         </div>

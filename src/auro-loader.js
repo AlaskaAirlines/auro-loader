@@ -11,17 +11,65 @@ import styleCss from "./styles/style.scss";
 import tokensCss from "./styles/tokens.scss";
 
 /**
+ * @private
+ */
+const DEFAULT_MESSAGE_INTERVAL_MS = 5000;
+
+/**
+ * @private
+ */
+const DEFAULT_MESSAGE_POSITION = "bottom";
+
+/**
+ * @private
+ */
+const VALID_MESSAGE_POSITIONS = new Set(["top", "right", "bottom", "left"]);
+
+/**
+ * The largest delay `setInterval`/`setTimeout` support (2^31 - 1). Browsers
+ * silently clamp/overflow larger values, firing near-immediately instead of
+ * after the requested delay.
+ * @private
+ */
+const MAX_MESSAGE_INTERVAL_MS = 2147483647;
+
+/**
+ * Coerces first, since a numeric string is a realistic `messageInterval`
+ * value from a framework wrapper setting the property directly (e.g.
+ * `el.messageInterval = inputEl.value`) rather than through the attribute,
+ * which already coerces via its `fromAttribute` converter.
+ * @private
+ * @param {number|string} value - Candidate `messageInterval` value.
+ * @returns {boolean} - Whether the value is usable as a timer duration.
+ */
+function isValidMessageInterval(value) {
+  const numericValue = Number(value);
+
+  return (
+    Number.isFinite(numericValue) &&
+    numericValue > 0 &&
+    numericValue <= MAX_MESSAGE_INTERVAL_MS
+  );
+}
+
+/**
  * The `auro-loader` element displays a loading animation to indicate a loading state to users.
  * @customElement auro-loader
  *
- * @slot - Default slot for text that replaces `auro-loader` component when user has the "Reduce Motion" a11y feature enabled.
+ * @slot - Fallback text shown under `prefers-reduced-motion: reduce`. Not shown for the `laser` type.
+ * @slot message - Optional message(s) to show alongside the animation, rotating at `messageInterval` when more than one is provided. Not shown for `laser`. See the docs for reduced-motion behavior.
  * @csspart element - Apply style to adjust speed of animation.
+ * @csspart message - Apply style to the message region wrapping the `message` slot.
  */
 export class AuroLoader extends LitElement {
   constructor() {
     super();
 
     this._initializeDefaults();
+
+    this._advanceMessage = this._advanceMessage.bind(this);
+    this._handleReducedMotionChange =
+      this._handleReducedMotionChange.bind(this);
   }
 
   _initializeDefaults() {
@@ -30,7 +78,9 @@ export class AuroLoader extends LitElement {
     this.laser = false;
     this.pulse = false;
     this.appearance = "default";
-    
+    this.messageInterval = DEFAULT_MESSAGE_INTERVAL_MS;
+    this.messagePosition = DEFAULT_MESSAGE_POSITION;
+
     /**
      * @private
      */
@@ -50,12 +100,31 @@ export class AuroLoader extends LitElement {
      * @private
      */
     this.runtimeUtils = new AuroLibraryRuntimeUtils();
+
+    /**
+     * @private
+     */
+    this._messages = [];
+
+    /**
+     * @private
+     */
+    this._activeMessageIndex = 0;
+
+    /**
+     * @private
+     */
+    this._messageCycleTimer = undefined;
+
+    /**
+     * @private
+     */
+    this._prefersReducedMotion = false;
   }
 
   // function to define props used within the scope of this component
   static get properties() {
     return {
-
       /**
        * Defines whether the loader is intended for lighter or darker backgrounds, or if it should use the brand color regardless of the background.
        * @type {'default' | 'inverse' | 'brand'}
@@ -63,11 +132,11 @@ export class AuroLoader extends LitElement {
        */
       appearance: {
         type: String,
-        reflect: true
+        reflect: true,
       },
 
       /**
-       * Sets loader to laser type.
+       * Sets loader to laser type. Note: the default and `message` slots are not shown for this type, in any motion state — `laser` has no room for accompanying text.
        */
       laser: {
         type: Boolean,
@@ -75,11 +144,45 @@ export class AuroLoader extends LitElement {
       },
 
       /**
+       * Sets the interval, in milliseconds, between automatic rotations of the messages slotted into the `message` slot. Only applies when more than one message is slotted.
+       * Not reflected to the `message-interval` attribute while at its default, so a loader that never customizes this stays DOM-unchanged.
+       * @type {number}
+       * @default 5000
+       */
+      messageInterval: {
+        type: Number,
+        reflect: true,
+        attribute: "message-interval",
+        converter: {
+          fromAttribute: (value) => Number(value),
+          toAttribute: (value) =>
+            value === DEFAULT_MESSAGE_INTERVAL_MS ? null : String(value),
+        },
+      },
+
+      /**
+       * Sets the position of the `message` slot content relative to the loading animation. An invalid value falls back to `bottom`.
+       * Not reflected to the `message-position` attribute while at its default, so a loader that never customizes this stays DOM-unchanged.
+       * @type {'top' | 'right' | 'bottom' | 'left'}
+       * @default 'bottom'
+       */
+      messagePosition: {
+        type: String,
+        reflect: true,
+        attribute: "message-position",
+        converter: {
+          fromAttribute: (value) => value,
+          toAttribute: (value) =>
+            value === DEFAULT_MESSAGE_POSITION ? null : value,
+        },
+      },
+
+      /**
        * Sets size to large.
        */
       lg: {
         type: Boolean,
-        reflect: true
+        reflect: true,
       },
 
       /**
@@ -92,18 +195,22 @@ export class AuroLoader extends LitElement {
 
       /**
        * DEPRECATED - use `appearance="inverse"`.
+       * @deprecated Use `appearance="inverse"` instead.
        */
       onDark: {
         type: Boolean,
-        reflect: true
+        reflect: true,
+        attribute: "ondark",
       },
 
       /**
        * DEPRECATED - use `appearance="brand"`.
+       * @deprecated Use `appearance="brand"` instead.
        */
       onLight: {
         type: Boolean,
-        reflect: true
+        reflect: true,
+        attribute: "onlight",
       },
 
       /**
@@ -130,7 +237,6 @@ export class AuroLoader extends LitElement {
         reflect: true,
       },
 
-
       /**
        * Sets size to small.
        */
@@ -145,7 +251,7 @@ export class AuroLoader extends LitElement {
       xs: {
         type: Boolean,
         reflect: true,
-      }
+      },
     };
   }
 
@@ -172,6 +278,75 @@ export class AuroLoader extends LitElement {
 
   connectedCallback() {
     super.connectedCallback();
+
+    // `matchMedia` is absent in some consumer test environments (e.g. jsdom
+    // without a polyfill); this component previously had no such dependency.
+    if (typeof window.matchMedia === "function") {
+      this._reducedMotionQuery = window.matchMedia(
+        "(prefers-reduced-motion: reduce)",
+      );
+      this._prefersReducedMotion = this._reducedMotionQuery.matches;
+      this._reducedMotionQuery.addEventListener(
+        "change",
+        this._handleReducedMotionChange,
+      );
+    }
+
+    this._startMessageCycle();
+  }
+
+  disconnectedCallback() {
+    super.disconnectedCallback();
+
+    this._stopMessageCycle();
+    this._reducedMotionQuery?.removeEventListener(
+      "change",
+      this._handleReducedMotionChange,
+    );
+  }
+
+  willUpdate(changedProperties) {
+    super.willUpdate(changedProperties);
+
+    // Self-correct invalid values back to their defaults *before* this
+    // render, rather than leaving e.g. `message-interval="NaN"` or
+    // `message-position="buttom"` (a typo) reflected into the DOM
+    // indefinitely. Doing this in `updated()` instead would mutate a
+    // property after the update already completed, triggering Lit's
+    // "scheduled an update ... after an update completed" warning and an
+    // extra, unnecessary render pass (https://lit.dev/msg/change-in-update).
+    if (changedProperties.has("messageInterval")) {
+      // Normalizes a numeric string set directly on the property (e.g. by a
+      // framework wrapper) to a real number, matching the attribute path's
+      // own `fromAttribute` coercion.
+      this.messageInterval = isValidMessageInterval(this.messageInterval)
+        ? Number(this.messageInterval)
+        : DEFAULT_MESSAGE_INTERVAL_MS;
+    }
+
+    if (
+      changedProperties.has("messagePosition") &&
+      !VALID_MESSAGE_POSITIONS.has(this.messagePosition)
+    ) {
+      this.messagePosition = DEFAULT_MESSAGE_POSITION;
+    }
+  }
+
+  updated(changedProperties) {
+    super.updated(changedProperties);
+
+    // `messageInterval` only reschedules a cycle that is *already* running.
+    // A cycle that is not running is started by `handleMessageSlotChange` or
+    // `connectedCallback` instead — starting one here would begin rotating
+    // before any message has been slotted.
+    const rescheduleRunningCycle =
+      changedProperties.has("messageInterval") && this._messageCycleTimer;
+
+    // `laser` never renders the message region, so entering or leaving that
+    // type has to stop or restart the cycle outright rather than reschedule it.
+    if (rescheduleRunningCycle || changedProperties.has("laser")) {
+      this._startMessageCycle();
+    }
   }
 
   /**
@@ -190,30 +365,180 @@ export class AuroLoader extends LitElement {
     return nodes;
   }
 
+  /**
+   * Tracks whether the default slot has consumer-provided content (as opposed to its fallback text), so the reduced-motion fallback only takes priority over the `message` slot when it has real content of its own.
+   * @private
+   * @param {Event} event - The `slotchange` event from the default slot.
+   * @returns {void}
+   */
+  handleDefaultSlotChange(event) {
+    const slot = event.target;
+
+    // `assignedNodes({ flatten: true })` returns the slot's own *fallback*
+    // content (the built-in "Loading..." text) whenever nothing is assigned, so
+    // reading it unconditionally would report consumer content even when the
+    // consumer has none — including after a framework removes content it had
+    // previously rendered. Only flatten once something is actually assigned,
+    // which keeps nested-slot forwarding working without the fallback leaking in.
+    const assignedNodes = slot.assignedNodes();
+    const nodes = assignedNodes.length
+      ? slot.assignedNodes({ flatten: true })
+      : [];
+
+    // Whitespace-only text nodes exist between tags in virtually every
+    // multi-line usage, so they must not count as consumer content.
+    // (Comment nodes, which some frameworks leave behind as placeholders,
+    // are never assigned to a slot in the first place — only Element and
+    // Text nodes are slottable per spec — so they don't need handling here.)
+    const hasContent = nodes.some(
+      (node) =>
+        node.nodeType !== Node.TEXT_NODE || node.textContent.trim() !== "",
+    );
+
+    this.toggleAttribute("has-default-content", hasContent);
+  }
+
+  /**
+   * Reads the elements assigned to the `message` slot and (re)starts message cycling from the beginning.
+   * @private
+   * @param {Event} event - The `slotchange` event from the `message` slot.
+   * @returns {void}
+   */
+  handleMessageSlotChange(event) {
+    this._messages = event.target.assignedElements({ flatten: true });
+
+    this.toggleAttribute("has-message", this._messages.length > 0);
+
+    this._activeMessageIndex = 0;
+    this._syncMessageVisibility();
+    this._startMessageCycle();
+  }
+
+  /**
+   * @private
+   * @returns {void}
+   */
+  _syncMessageVisibility() {
+    this._messages.forEach((message, index) => {
+      message.hidden = index !== this._activeMessageIndex;
+    });
+  }
+
+  /**
+   * @private
+   * @returns {void}
+   */
+  _advanceMessage() {
+    // Defensive: a modulo against an empty list yields `NaN`, which would stick
+    // as the active index and permanently hide every message.
+    if (this._messages.length === 0) {
+      return;
+    }
+
+    this._activeMessageIndex =
+      (this._activeMessageIndex + 1) % this._messages.length;
+    this._syncMessageVisibility();
+  }
+
+  /**
+   * @private
+   * @returns {void}
+   */
+  _stopMessageCycle() {
+    clearInterval(this._messageCycleTimer);
+    this._messageCycleTimer = undefined;
+  }
+
+  /**
+   * @private
+   * @returns {void}
+   */
+  _startMessageCycle() {
+    this._stopMessageCycle();
+
+    // A `slotchange` microtask queued before disconnect can still call this
+    // after `disconnectedCallback` already ran, which would otherwise arm a
+    // timer with no remaining lifecycle hook left to clear it.
+    if (!this.isConnected) {
+      return;
+    }
+
+    // `laser` hides the message region outright, so cycling there would burn a
+    // timer and mutate consumer-owned nodes with no visible or audible effect.
+    if (
+      this._messages.length > 1 &&
+      !this._prefersReducedMotion &&
+      !this.laser
+    ) {
+      const interval = isValidMessageInterval(this.messageInterval)
+        ? this.messageInterval
+        : DEFAULT_MESSAGE_INTERVAL_MS;
+
+      this._messageCycleTimer = setInterval(this._advanceMessage, interval);
+    }
+  }
+
+  /**
+   * @private
+   * @param {MediaQueryListEvent} event - The `change` event from the reduced-motion media query.
+   * @returns {void}
+   */
+  _handleReducedMotionChange(event) {
+    this._prefersReducedMotion = event.matches;
+    this._startMessageCycle();
+  }
+
+  /**
+   * Gets a type class for the fallback/message text based on the loader's size.
+   * The unsized loader (2rem) sits between `xs` (1.2rem) and `sm` (3rem), so
+   * the text scale steps up in that same order to track the animation. Checked
+   * in the reverse of that order (largest first) to mirror `_base.scss`, where
+   * the size attribute selectors share specificity and the last-declared one
+   * (`lg`) wins the animation's actual size when more than one is set.
+   * @private
+   * @returns {string} - The type class name.
+   */
+  getFontSize() {
+    if (this.lg || this.md) return "body-lg";
+    if (this.sm) return "body-default";
+    if (this.xs) return "body-xs";
+    return "body-sm";
+  }
+
   // When using auroElement, use the following attribute and function when hiding content from screen readers.
   // aria-hidden="${this.hideAudible(this.hiddenAudible)}"
 
   // function that renders the HTML and CSS into  the scope of the component
   render() {
-    return html`
-      ${this.defineTemplate().map(
-        (idx) => html`
-        <span part="element" class="loader node-${idx}"></span>
-      `,
-      )}
+    const fontSize = this.getFontSize();
 
-      <div class="no-animation body-default">
-        <slot>Loading...</slot>
+    return html`
+      <div class="loader-shape">
+        ${this.defineTemplate().map(
+          (idx) => html`
+          <span part="element" class="loader node-${idx}"></span>
+        `,
+        )}
+
+        ${
+          this.ringworm
+            ? html`
+          <svg part="element" class="circular" viewBox="25 25 50 50">
+            <circle class="path" cx="50" cy="50" r="20" fill="none"/>
+          </svg>`
+            : ""
+        }
       </div>
 
-      ${
-        this.ringworm
-          ? html`
-        <svg  part="element" class="circular" viewBox="25 25 50 50">
-          <circle class="path" cx="50" cy="50" r="20" fill="none"/>
-        </svg>`
-          : ""
-      }
+      <div class="no-animation ${fontSize}">
+        <slot @slotchange="${this.handleDefaultSlotChange}">Loading...</slot>
+      </div>
+
+      <div class="message-region ${fontSize}" part="message" role="status" aria-live="polite" aria-atomic="false">
+        <div class="message-list">
+          <slot name="message" @slotchange="${this.handleMessageSlotChange}"></slot>
+        </div>
+      </div>
     `;
   }
 }

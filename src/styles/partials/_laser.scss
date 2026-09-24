@@ -1,49 +1,67 @@
+// `laser` has no room for accompanying text in any motion state (matches the
+// pre-existing behavior of the default/static-label slot for this type).
+// See `_base.scss` for why `.loader-shape` requires disabling these rules.
+// stylelint-disable selector-max-combinators, selector-max-compound-selectors, scss/selector-nest-combinators, selector-class-pattern
 :host([laser]) {
   position: static;
-  width: 100%;
   display: block;
-  height: 0;
   overflow: hidden;
-  font-size: unset;
-}
-
-:host([laser]) > span {
-  position: fixed;
   width: 100%;
-  height: 0.25rem;
-  border-radius: 0;
-  z-index: 100;
+  height: 0;
+  font-size: unset;
+
+  > .no-animation,
+  > .message-region {
+    display: none;
+  }
+
+  > .loader-shape > span {
+    position: fixed;
+    z-index: 100;
+    width: 100%;
+    height: 0.25rem;
+    border-radius: 0;
+  }
+
+  > .loader-shape > span:nth-child(1) {
+    border-color: currentcolor;
+    opacity: 0.25;
+  }
+
+  > .loader-shape > span:nth-child(2) {
+    width: 50%;
+    border-color: currentcolor;
+    animation: laser 2s linear infinite;
+    opacity: 1;
+  }
 }
 
-:host([laser]) > span:nth-child(1) {
-  border-color: currentcolor;
-  opacity: 0.25;
+:host([laser][sm]) {
+  > .loader-shape > span:nth-child(2) {
+    width: 20%;
+  }
 }
 
-:host([laser]) > span:nth-child(2) {
-  border-color: currentcolor;
-  animation: laser 2s linear infinite;
-  opacity: 1;
-  width: 50%;
+:host([laser][md]) {
+  > .loader-shape > span:nth-child(2) {
+    width: 30%;
+  }
 }
 
-:host([laser][sm]) > span:nth-child(2) {
-  width: 20%;
+:host([laser][lg]) {
+  > .loader-shape > span:nth-child(2) {
+    width: 50%;
+    animation-duration: 1.5s;
+  }
 }
 
-:host([laser][md]) > span:nth-child(2) {
-  width: 30%;
+:host([laser][xl]) {
+  > .loader-shape > span:nth-child(2) {
+    width: 80%;
+    animation-duration: 1.5s;
+  }
 }
-
-:host([laser][lg]) > span:nth-child(2) {
-  width: 50%;
-  animation-duration: 1.5s;
-}
-
-:host([laser][xl]) > span:nth-child(2) {
-  width: 80%;
-  animation-duration: 1.5s;
-}
+// stylelint-enable selector-max-combinators, selector-max-compound-selectors, scss/selector-nest-combinators, selector-class-pattern
 
 @keyframes laser {
   0% {

@@ -1,16 +1,23 @@
-:host([ringworm]) > svg {
-  animation: rotate 2s linear infinite;
-  height: 100%;
-  width: 100%;
-  stroke: currentcolor;
-  stroke-width: 8;
-}
+// See `_base.scss` for why `.loader-shape` requires disabling these rules.
+// stylelint-disable selector-max-combinators, selector-max-compound-selectors, selector-class-pattern
+:host([ringworm]) {
+  > .loader-shape {
+    > svg {
+      width: 100%;
+      height: 100%;
+      animation: rotate 2s linear infinite;
+      stroke: currentcolor;
+      stroke-width: 8;
+    }
+  }
 
-:host([ringworm]) .path {
-  stroke-dashoffset: 0;
-  animation: ringworm 1.5s ease-in-out infinite;
-  stroke-linecap: round;
+  .path {
+    animation: ringworm 1.5s ease-in-out infinite;
+    stroke-dashoffset: 0;
+    stroke-linecap: round;
+  }
 }
+// stylelint-enable selector-max-combinators, selector-max-compound-selectors, selector-class-pattern
 
 @keyframes rotate {
   100% {

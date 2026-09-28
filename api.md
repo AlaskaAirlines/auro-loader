@@ -7,19 +7,21 @@ The `auro-loader` element displays a loading animation to indicate a loading sta
 
 ### Properties & Attributes
 
-| Properties | Attributes | Modifiers | Type                              | Default   | Description                                                                                                                                 |
-| ---------- | ---------- | --------- | --------------------------------- | --------- | ------------------------------------------------------------------------------------------------------------------------------------------- |
-| appearance | appearance |           | `default` \| `inverse` \| `brand` | `default` | Defines whether the loader is intended for lighter or darker backgrounds, or if it should use the brand color regardless of the background. |
-| laser      | laser      |           | boolean                           |           | Sets loader to laser type.                                                                                                                  |
-| lg         | lg         |           | boolean                           |           | Sets size to large.                                                                                                                         |
-| md         | md         |           | boolean                           |           | Sets size to medium.                                                                                                                        |
-| onDark     | onDark     |           | boolean                           |           | DEPRECATED - use `appearance="inverse"`.                                                                                                    |
-| onLight    | onLight    |           | boolean                           |           | DEPRECATED - use `appearance="brand"`.                                                                                                      |
-| orbit      | orbit      |           | boolean                           |           | Sets loader to orbit type.                                                                                                                  |
-| pulse      | pulse      |           | boolean                           |           | Sets loader to pulse type.                                                                                                                  |
-| ringworm   | ringworm   |           | boolean                           |           | Sets loader to ringworm type.                                                                                                               |
-| sm         | sm         |           | boolean                           |           | Sets size to small.                                                                                                                         |
-| xs         | xs         |           | boolean                           |           | Sets size to extra small.                                                                                                                   |
+| Properties      | Attributes       | Modifiers | Type                                   | Default   | Description                                                                                                                                                                                                                                                                                                 |
+| --------------- | ---------------- | --------- | -------------------------------------- | --------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| appearance      | appearance       |           | `default` \| `inverse` \| `brand`      | `default` | Defines whether the loader is intended for lighter or darker backgrounds, or if it should use the brand color regardless of the background.                                                                                                                                                                 |
+| laser           | laser            |           | boolean                                |           | Sets loader to laser type. Note: the default and `message` slots are not shown for this type, in any motion state — `laser` has no room for accompanying text.                                                                                                                                              |
+| lg              | lg               |           | boolean                                |           | Sets size to large.                                                                                                                                                                                                                                                                                         |
+| md              | md               |           | boolean                                |           | Sets size to medium.                                                                                                                                                                                                                                                                                        |
+| messageInterval | message-interval |           | number                                 | `5000`    | Sets the interval, in milliseconds, between automatic rotations of the messages slotted into the `message` slot. Only applies when more than one message is slotted.<br>Not reflected to the `message-interval` attribute while at its default, so a loader that never customizes this stays DOM-unchanged. |
+| messagePosition | message-position |           | `top` \| `right` \| `bottom` \| `left` | `bottom`  | Sets the position of the `message` slot content relative to the loading animation. An invalid value falls back to `bottom`.<br>Not reflected to the `message-position` attribute while at its default, so a loader that never customizes this stays DOM-unchanged.                                          |
+| orbit           | orbit            |           | boolean                                |           | Sets loader to orbit type.                                                                                                                                                                                                                                                                                  |
+| pulse           | pulse            |           | boolean                                |           | Sets loader to pulse type.                                                                                                                                                                                                                                                                                  |
+| ringworm        | ringworm         |           | boolean                                |           | Sets loader to ringworm type.                                                                                                                                                                                                                                                                               |
+| sm              | sm               |           | boolean                                |           | Sets size to small.                                                                                                                                                                                                                                                                                         |
+| xs              | xs               |           | boolean                                |           | Sets size to extra small.                                                                                                                                                                                                                                                                                   |
+| onDark          | ondark           |           | boolean                                |           | DEPRECATED - use `appearance="inverse"`.                                                                                                                                                                                                                                                                    |
+| onLight         | onlight          |           | boolean                                |           | DEPRECATED - use `appearance="brand"`.                                                                                                                                                                                                                                                                      |
 
 ### Methods
 
@@ -29,15 +31,17 @@ The `auro-loader` element displays a loading animation to indicate a loading sta
 
 ### Slots
 
-| Name      | Description                                                                                                         |
-| --------- | ------------------------------------------------------------------------------------------------------------------- |
-| (default) | Default slot for text that replaces `auro-loader` component when user has the "Reduce Motion" a11y feature enabled. |
+| Name      | Description                                                                                                                                                                         |
+| --------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| (default) | Fallback text shown under `prefers-reduced-motion: reduce`. Not shown for the `laser` type.                                                                                         |
+| message   | Optional message(s) to show alongside the animation, rotating at `messageInterval` when more than one is provided. Not shown for `laser`. See the docs for reduced-motion behavior. |
 
 ### CSS Shadow Parts
 
-| Name    | Description                               |
-| ------- | ----------------------------------------- |
-| element | Apply style to adjust speed of animation. |
+| Name    | Description                                                    |
+| ------- | -------------------------------------------------------------- |
+| element | Apply style to adjust speed of animation.                      |
+| message | Apply style to the message region wrapping the `message` slot. |
 <!-- AURO-GENERATED-CONTENT:END -->
 
 ## Basic Loaders
@@ -233,12 +237,160 @@ Use the `lg` boolean attribute for a pre-defined size.
 
 ## Slot Examples
 
-### Static Label
+### Cycling Messages
 
-Use the `staticLabel` slot to provide custom text that replaces the `auro-loader` component when the user has the `prefers-reduced-motion` accessibility feature enabled.
+Use the `message` slot to display one or more messages alongside the animation. Any element type is supported. When more than one is slotted, they rotate at the interval (in milliseconds) set by the `message-interval` attribute (default `5000`).
+
+**Note**: Typography, spacing and color for this slot are placeholder values pending Design sign-off.
+
+**Note**: not supported on the `laser` type — no room for accompanying text in any motion state.
+
+A few things to know:
+
+- The component toggles `hidden` on your slotted elements to rotate them — don't also manage `hidden` on those elements yourself.
+- An invalid `message-interval` (`0`, negative, or non-numeric) falls back to `5000`.
+- Rotation stops under `prefers-reduced-motion: reduce`; it freezes on whichever message was active when the preference took effect, so each message should be able to stand on its own.
+
+<div class="exampleWrapper">
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=../apiExamples/cycling-messages.html) -->
+  <!-- The below content is automatically added from ../apiExamples/cycling-messages.html -->
+  <auro-loader orbit message-interval="4000">
+    <span slot="message">Hang tight...</span>
+    <span slot="message">Thanks for your patience...</span>
+    <span slot="message">This may take a moment...</span>
+  </auro-loader>
+  <!-- AURO-GENERATED-CONTENT:END -->
+</div>
+<auro-accordion alignRight>
+  <span slot="trigger">See code</span>
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=../apiExamples/cycling-messages.html) -->
+<!-- The below code snippet is automatically added from ../apiExamples/cycling-messages.html -->
+
+```html
+<auro-loader orbit message-interval="4000">
+  <span slot="message">Hang tight...</span>
+  <span slot="message">Thanks for your patience...</span>
+  <span slot="message">This may take a moment...</span>
+</auro-loader>
+```
+<!-- AURO-GENERATED-CONTENT:END -->
+</auro-accordion>
+
+### Message Position
+
+Use the `message-position` attribute to control where the `message` slot content renders relative to the animation. Options are `top`, `right`, `bottom` and `left`; an invalid value falls back to `bottom`.
+
+#### Static Message
+
+<div class="exampleWrapper">
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=../apiExamples/message-position-static.html) -->
+  <!-- The below content is automatically added from ../apiExamples/message-position-static.html -->
+  <auro-loader orbit message-position="left">
+    <span slot="message">Loading...</span>
+  </auro-loader>
+  <!-- AURO-GENERATED-CONTENT:END -->
+</div>
+<auro-accordion alignRight>
+  <span slot="trigger">See code</span>
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=../apiExamples/message-position-static.html) -->
+<!-- The below code snippet is automatically added from ../apiExamples/message-position-static.html -->
+
+```html
+<auro-loader orbit message-position="left">
+  <span slot="message">Loading...</span>
+</auro-loader>
+```
+<!-- AURO-GENERATED-CONTENT:END -->
+</auro-accordion>
+
+#### Cycling Messages
+
+<div class="exampleWrapper">
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=../apiExamples/message-position-cycling.html) -->
+  <!-- The below content is automatically added from ../apiExamples/message-position-cycling.html -->
+  <auro-loader orbit message-position="top" message-interval="4000">
+    <span slot="message">Hang tight...</span>
+    <span slot="message">Thanks for your patience...</span>
+    <span slot="message">This may take a moment...</span>
+  </auro-loader>
+  <!-- AURO-GENERATED-CONTENT:END -->
+</div>
+<auro-accordion alignRight>
+  <span slot="trigger">See code</span>
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=../apiExamples/message-position-cycling.html) -->
+<!-- The below code snippet is automatically added from ../apiExamples/message-position-cycling.html -->
+
+```html
+<auro-loader orbit message-position="top" message-interval="4000">
+  <span slot="message">Hang tight...</span>
+  <span slot="message">Thanks for your patience...</span>
+  <span slot="message">This may take a moment...</span>
+</auro-loader>
+```
+<!-- AURO-GENERATED-CONTENT:END -->
+</auro-accordion>
+
+### Message Size
+
+The `message` slot and default slot text scale with the loader's animation size: `xs` uses `body-xs`, the default size uses `body-sm`, `sm` uses `body-default`, and `md` and `lg` use `body-lg`. Note that the default (unsized) loader is smaller than `sm`.
+
+<div class="exampleWrapper">
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=../apiExamples/message-size.html) -->
+  <!-- The below content is automatically added from ../apiExamples/message-size.html -->
+  <div style="display: flex; flex-wrap: wrap; align-items: flex-end; gap: var(--ds-size-400, 2rem);">
+    <auro-loader orbit xs>
+      <span slot="message">Extra small</span>
+    </auro-loader>
+    <auro-loader orbit>
+      <span slot="message">Default</span>
+    </auro-loader>
+    <auro-loader orbit sm>
+      <span slot="message">Small</span>
+    </auro-loader>
+    <auro-loader orbit md>
+      <span slot="message">Medium</span>
+    </auro-loader>
+    <auro-loader orbit lg>
+      <span slot="message">Large</span>
+    </auro-loader>
+  </div>
+  <!-- AURO-GENERATED-CONTENT:END -->
+</div>
+<auro-accordion alignRight>
+  <span slot="trigger">See code</span>
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=../apiExamples/message-size.html) -->
+<!-- The below code snippet is automatically added from ../apiExamples/message-size.html -->
+
+```html
+<div style="display: flex; flex-wrap: wrap; align-items: flex-end; gap: var(--ds-size-400, 2rem);">
+  <auro-loader orbit xs>
+    <span slot="message">Extra small</span>
+  </auro-loader>
+  <auro-loader orbit>
+    <span slot="message">Default</span>
+  </auro-loader>
+  <auro-loader orbit sm>
+    <span slot="message">Small</span>
+  </auro-loader>
+  <auro-loader orbit md>
+    <span slot="message">Medium</span>
+  </auro-loader>
+  <auro-loader orbit lg>
+    <span slot="message">Large</span>
+  </auro-loader>
+</div>
+```
+<!-- AURO-GENERATED-CONTENT:END -->
+</auro-accordion>
+
+### Reduced Motion
+
+The following examples relate to the `prefers-reduced-motion` accessibility feature. In order to see them in action, please enable your system's "Reduce Motion" accessibility setting.
+
+#### Static Label
+
+Use the default slot to provide custom text that replaces the `auro-loader` animation when the user has the `prefers-reduced-motion` accessibility feature enabled.
 The default text is `Loading...`
-
-In order to see the example in action, please enable your system's "Reduce Motion" accessibility setting.
 
 <div class="exampleWrapper">
   <!-- AURO-GENERATED-CONTENT:START (FILE:src=../apiExamples/static-label.html) -->
@@ -259,6 +411,62 @@ In order to see the example in action, please enable your system's "Reduce Motio
 <auro-loader orbit>Orbit</auro-loader>
 <auro-loader pulse>Pulse</auro-loader>
 <auro-loader laser>Laser</auro-loader>
+```
+<!-- AURO-GENERATED-CONTENT:END -->
+</auro-accordion>
+
+#### Message Slot Only
+
+If only the `message` slot is populated, `prefers-reduced-motion: reduce` shows its content instead of the generic `Loading...` fallback (frozen on whichever message was active).
+
+<div class="exampleWrapper">
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=../apiExamples/reduced-motion-message-only.html) -->
+  <!-- The below content is automatically added from ../apiExamples/reduced-motion-message-only.html -->
+  <auro-loader orbit>
+    <span slot="message">Hang tight...</span>
+    <span slot="message">Thanks for your patience...</span>
+  </auro-loader>
+  <!-- AURO-GENERATED-CONTENT:END -->
+</div>
+<auro-accordion alignRight>
+  <span slot="trigger">See code</span>
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=../apiExamples/reduced-motion-message-only.html) -->
+<!-- The below code snippet is automatically added from ../apiExamples/reduced-motion-message-only.html -->
+
+```html
+<auro-loader orbit>
+  <span slot="message">Hang tight...</span>
+  <span slot="message">Thanks for your patience...</span>
+</auro-loader>
+```
+<!-- AURO-GENERATED-CONTENT:END -->
+</auro-accordion>
+
+#### Default Slot and Message Slot Together
+
+If both slots are populated, only `message` shows under normal motion. Under `prefers-reduced-motion: reduce`, the default slot's content takes over and `message` is hidden — only one piece of text is ever shown at a time.
+
+<div class="exampleWrapper">
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=../apiExamples/reduced-motion-combined.html) -->
+  <!-- The below content is automatically added from ../apiExamples/reduced-motion-combined.html -->
+  <auro-loader orbit>
+    Please wait while we retrieve your reservation.
+    <span slot="message">Hang tight...</span>
+    <span slot="message">Thanks for your patience...</span>
+  </auro-loader>
+  <!-- AURO-GENERATED-CONTENT:END -->
+</div>
+<auro-accordion alignRight>
+  <span slot="trigger">See code</span>
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=../apiExamples/reduced-motion-combined.html) -->
+<!-- The below code snippet is automatically added from ../apiExamples/reduced-motion-combined.html -->
+
+```html
+<auro-loader orbit>
+  Please wait while we retrieve your reservation.
+  <span slot="message">Hang tight...</span>
+  <span slot="message">Thanks for your patience...</span>
+</auro-loader>
 ```
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>
@@ -344,6 +552,12 @@ The component may be restyled by changing the values of the following token(s).
   --ds-auro-loader-background-color: currentcolor;
   --ds-auro-loader-border-color: currentcolor;
   --ds-auro-loader-color: currentcolor;
+
+  // TODO(design): placeholder pending Figma/typography sign-off
+  --ds-auro-loader-message-color: currentcolor;
+
+  // TODO(design): placeholder pending Figma/typography sign-off
+  --ds-auro-loader-message-spacing: 0.5rem;
 }
 ```
 <!-- AURO-GENERATED-CONTENT:END -->

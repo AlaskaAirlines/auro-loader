@@ -1,0 +1,36 @@
+// Placeholder styling pending Design/Figma sign-off on typography, spacing and color for this slot.
+// This project uses kebab-case class names (the standard CSS convention),
+// not the config's default camelCase pattern; disabled deliberately rather
+// than renamed.
+// stylelint-disable selector-class-pattern
+.message-region {
+  min-width: 0;
+  color: var(--ds-auro-loader-message-color);
+}
+
+.message-list {
+  padding: 0;
+  margin: 0;
+}
+// stylelint-enable selector-class-pattern
+
+// Rotation works by toggling the native `hidden` attribute on consumer-owned
+// light-DOM elements. `[hidden]`'s `display: none` comes from the UA
+// stylesheet, so any rule in the consumer's page that sets `display` on that
+// element would beat it and reveal every message at once. `!important` here
+// keeps the rotation intact against normal-weight consumer styles.
+// The type qualifier and `!important` are both required here and cannot be
+// linted away: the rule has to be scoped to this slot so it does not override
+// a `hidden` the consumer set on default-slot content themselves, and outer
+// document styles beat `::slotted()` at any specificity, so only `!important`
+// wins. `scss/selector-nest-combinators` is also disabled: nesting the
+// attribute selector too (`slot { &[name="message"] { ... } } }`) is
+// noisier to read for no benefit over writing it directly. All disabled
+// deliberately rather than worked around.
+// stylelint-disable selector-no-qualifying-type, declaration-no-important, scss/selector-nest-combinators
+slot[name="message"] {
+  &::slotted([hidden]) {
+    display: none !important;
+  }
+}
+// stylelint-enable selector-no-qualifying-type, declaration-no-important, scss/selector-nest-combinators

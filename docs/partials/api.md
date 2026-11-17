@@ -153,6 +153,12 @@ Use the `message` slot to display one or more messages alongside the animation. 
 
 </auro-accordion>
 
+### Screen reader announcements
+
+The animation itself is silent for screen reader users. The `message` slot is a polite live region (`role="status"`), so screen readers announce its content as it changes without interrupting what they're reading. The default slot isn't read under normal motion. It shows only when people turn on reduced motion. The `laser` type has no text, so it's silent too.
+
+Add a `message` so screen reader users know the loader is working.
+
 ### Message position
 
 Use the `message-position` attribute to control where the `message` slot content renders relative to the animation. Options are `top`, `right`, `bottom`, and `left`; an invalid value falls back to `bottom`.

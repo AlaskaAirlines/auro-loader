@@ -61,6 +61,7 @@ function isValidMessageInterval(value) {
  * - **Appearance**: Set `appearance="inverse"` for dark backgrounds or `appearance="brand"` for the brand color.
  * - **Rotating messages**: Slot more than one `message` to cycle through them every `message-interval` milliseconds.
  * - **Reduced motion**: Always replaces the animation with text for people who turn on reduced motion.
+ * - **Screen readers**: The animation is silent, and the `message` slot is announced politely as it changes.
  *
  * **Example**
  * ```html
@@ -71,8 +72,8 @@ function isValidMessageInterval(value) {
  * @summary An animated loading indicator with several types, sizes, appearances, and optional rotating messages.
  * @customElement auro-loader
  *
- * @slot - Text shown in place of the animation for people who turn on reduced motion, for example "Loading your reservation". Defaults to "Loading..." unless the `message` slot has content. Not shown for the `laser` type.
- * @slot message - Optional message(s) to show alongside the animation, rotating at `messageInterval` when more than one is provided. Not shown for `laser`. See the docs for reduced-motion behavior.
+ * @slot - Text shown in place of the animation for people who turn on reduced motion, for example "Loading your reservation". Defaults to "Loading..." unless the `message` slot has content. Screen readers read it only when reduced motion is on, and it isn't shown for the `laser` type.
+ * @slot message - Messages to show beside the animation, for example "Hang tight...". Screen readers politely announce them as they change, and when you slot more than one, they rotate every `messageInterval` milliseconds until someone turns on reduced motion. Not shown for `laser`.
  * @csspart element - Each animated shape of the loader, a `<span>` or, for `ringworm`, an `<svg>`. Use it to change things like the speed of the animation.
  * @csspart message - The region that wraps the `message` slot content. Hidden for the `laser` type.
  * @cssprop --ds-auro-loader-color - Color of the loader animation and the default slot text.

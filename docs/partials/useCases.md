@@ -1,1 +1,1 @@
-The `<auro-loader>` element should be used in situations where developers may need to illustrate a wait time for their users.
+Use `<auro-loader>` when people have to wait, for example while a page loads or a request is processing.

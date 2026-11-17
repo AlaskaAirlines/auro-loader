@@ -1,1 +1,1 @@
-`<auro-loader>` is a [HTML custom element](https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_custom_elements) for the purpose of illustrating animated loaders.
+An animated loading indicator that shows people a task is in progress.

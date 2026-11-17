@@ -35,12 +35,12 @@ const MAX_MESSAGE_INTERVAL_MS = 2147483647;
 
 /**
  * Coerces first, since a numeric string is a realistic `messageInterval`
- * value from a framework wrapper setting the property directly (e.g.
+ * value from a framework wrapper setting the property directly (for example
  * `el.messageInterval = inputEl.value`) rather than through the attribute,
  * which already coerces via its `fromAttribute` converter.
  * @private
- * @param {number|string} value - Candidate `messageInterval` value.
- * @returns {boolean} - Whether the value is usable as a timer duration.
+ * @param {number|string} value - A candidate `messageInterval` value.
+ * @returns {boolean} - True if the value is usable as a timer duration; false otherwise.
  */
 function isValidMessageInterval(value) {
   const numericValue = Number(value);
@@ -53,13 +53,33 @@ function isValidMessageInterval(value) {
 }
 
 /**
- * The `auro-loader` element displays a loading animation to indicate a loading state to users.
+ * An animated loading indicator that shows people a task is in progress, with optional messages that rotate beside the animation.
+ *
+ * **Key capabilities**
+ * - **Loader types**: Set `orbit`, `ringworm`, `pulse`, or `laser` to choose the animation.
+ * - **Sizes**: Set `xs`, `sm`, `md`, or `lg` to scale the loader and its text.
+ * - **Appearance**: Set `appearance="inverse"` for dark backgrounds or `appearance="brand"` for the brand color.
+ * - **Rotating messages**: Slot more than one `message` to cycle through them every `message-interval` milliseconds.
+ * - **Reduced motion**: Always replaces the animation with text for people who turn on reduced motion.
+ *
+ * **Example**
+ * ```html
+ * <auro-loader orbit>
+ *   <span slot="message">Hang tight...</span>
+ * </auro-loader>
+ * ```
+ * @summary An animated loading indicator with several types, sizes, appearances, and optional rotating messages.
  * @customElement auro-loader
  *
- * @slot - Fallback text shown under `prefers-reduced-motion: reduce`. Not shown for the `laser` type.
+ * @slot - Text shown in place of the animation for people who turn on reduced motion, for example "Loading your reservation". Defaults to "Loading..." unless the `message` slot has content. Not shown for the `laser` type.
  * @slot message - Optional message(s) to show alongside the animation, rotating at `messageInterval` when more than one is provided. Not shown for `laser`. See the docs for reduced-motion behavior.
- * @csspart element - Apply style to adjust speed of animation.
- * @csspart message - Apply style to the message region wrapping the `message` slot.
+ * @csspart element - Each animated shape of the loader, a `<span>` or, for `ringworm`, an `<svg>`. Use it to change things like the speed of the animation.
+ * @csspart message - The region that wraps the `message` slot content. Hidden for the `laser` type.
+ * @cssprop --ds-auro-loader-color - Color of the loader animation and the default slot text.
+ * @cssprop --ds-auro-loader-background-color - Fill color of the animation's shapes. Doesn't apply to `orbit` or `ringworm`.
+ * @cssprop --ds-auro-loader-border-color - Color of the animation's shape borders. Has no visible effect today, because `orbit`, the only type with visible borders, sets its own border colors.
+ * @cssprop --ds-auro-loader-message-color - Color of the text in the `message` slot.
+ * @cssprop --ds-auro-loader-message-spacing - Space between the animation and the `message` slot content.
  */
 export class AuroLoader extends LitElement {
   constructor() {
@@ -126,7 +146,7 @@ export class AuroLoader extends LitElement {
   static get properties() {
     return {
       /**
-       * Defines whether the loader is intended for lighter or darker backgrounds, or if it should use the brand color regardless of the background.
+       * Sets the loader's color. Use `default` to match the surrounding text color, `inverse` on dark backgrounds, and `brand` for the brand color on any background.
        * @type {'default' | 'inverse' | 'brand'}
        * @default 'default'
        */
@@ -136,7 +156,7 @@ export class AuroLoader extends LitElement {
       },
 
       /**
-       * Sets loader to laser type. Note: the default and `message` slots are not shown for this type, in any motion state — `laser` has no room for accompanying text.
+       * Shows a thin bar at the top of the page that moves across its width instead of a circular animation. The default and `message` slots aren't shown, because the bar has no room for text.
        */
       laser: {
         type: Boolean,
@@ -144,8 +164,8 @@ export class AuroLoader extends LitElement {
       },
 
       /**
-       * Sets the interval, in milliseconds, between automatic rotations of the messages slotted into the `message` slot. Only applies when more than one message is slotted.
-       * Not reflected to the `message-interval` attribute while at its default, so a loader that never customizes this stays DOM-unchanged.
+       * Sets how long each message shows before the next one appears, in milliseconds. Applies only when more than one message is in the `message` slot.
+       * Values that aren't a positive number up to 2147483647 fall back to the default.
        * @type {number}
        * @default 5000
        */
@@ -162,7 +182,6 @@ export class AuroLoader extends LitElement {
 
       /**
        * Sets the position of the `message` slot content relative to the loading animation. An invalid value falls back to `bottom`.
-       * Not reflected to the `message-position` attribute while at its default, so a loader that never customizes this stays DOM-unchanged.
        * @type {'top' | 'right' | 'bottom' | 'left'}
        * @default 'bottom'
        */
@@ -178,7 +197,7 @@ export class AuroLoader extends LitElement {
       },
 
       /**
-       * Sets size to large.
+       * Sets the loader to its largest size, bigger than `md`. The message text scales up with it.
        */
       lg: {
         type: Boolean,
@@ -186,7 +205,7 @@ export class AuroLoader extends LitElement {
       },
 
       /**
-       * Sets size to medium.
+       * Sets the loader to a medium size, bigger than `sm`. The message text scales up with it.
        */
       md: {
         type: Boolean,
@@ -194,7 +213,8 @@ export class AuroLoader extends LitElement {
       },
 
       /**
-       * DEPRECATED - use `appearance="inverse"`.
+       * Deprecated: Use `appearance="inverse"` instead.
+       * Sets the loader color for dark backgrounds.
        * @deprecated Use `appearance="inverse"` instead.
        */
       onDark: {
@@ -204,7 +224,8 @@ export class AuroLoader extends LitElement {
       },
 
       /**
-       * DEPRECATED - use `appearance="brand"`.
+       * Deprecated: Use `appearance="brand"` instead.
+       * Sets the loader to the brand color.
        * @deprecated Use `appearance="brand"` instead.
        */
       onLight: {
@@ -214,7 +235,7 @@ export class AuroLoader extends LitElement {
       },
 
       /**
-       * Sets loader to orbit type.
+       * Shows a faint ring with a brighter arc that circles it.
        */
       orbit: {
         type: Boolean,
@@ -222,7 +243,7 @@ export class AuroLoader extends LitElement {
       },
 
       /**
-       * Sets loader to pulse type.
+       * Shows three dots that pulse in turn.
        */
       pulse: {
         type: Boolean,
@@ -230,7 +251,7 @@ export class AuroLoader extends LitElement {
       },
 
       /**
-       * Sets loader to ringworm type.
+       * Shows a ring that rotates while its arc grows and shrinks.
        */
       ringworm: {
         type: Boolean,
@@ -238,7 +259,7 @@ export class AuroLoader extends LitElement {
       },
 
       /**
-       * Sets size to small.
+       * Sets the loader to a small size, bigger than the default. The message text scales up with it.
        */
       sm: {
         type: Boolean,
@@ -246,7 +267,7 @@ export class AuroLoader extends LitElement {
       },
 
       /**
-       * Sets size to extra small.
+       * Sets the loader to its smallest size, smaller than the default. The message text scales down with it.
        */
       xs: {
         type: Boolean,
@@ -260,11 +281,11 @@ export class AuroLoader extends LitElement {
   }
 
   /**
-   * This will register this element with the browser.
-   * @param {string} [name="auro-loader"] - The name of the element that you want to register.
+   * Registers the element with the browser under a tag name.
+   * @param {string} [name="auro-loader"] - The tag name to register the element under.
    *
    * @example
-   * AuroLoader.register("custom-loader") // this will register this element to <custom-loader/>
+   * AuroLoader.register("custom-loader"); // Registers the element as <custom-loader>
    *
    */
   static register(name = "auro-loader") {
@@ -351,7 +372,7 @@ export class AuroLoader extends LitElement {
 
   /**
    * @private
-   * @returns {Array} Numbered array for template map.
+   * @returns {Array} The numbered array for the template map.
    */
   defineTemplate() {
     let nodes = Array.from(Array(this.mdCount).keys());

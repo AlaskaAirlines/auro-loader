@@ -1,9 +1,9 @@
 <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../docs/api.md) -->
 <!-- AURO-GENERATED-CONTENT:END -->
 
-## Basic Loaders
+## Basic
 
-The following example illustrates the different loader types that the `<auro-loader>` element supports. The `laser` example is shown at the top of the page due to its fixed positioning.
+This example shows the `ringworm`, `orbit`, `pulse`, and `laser` loader types. The `laser` loader is fixed to the top of the page, so it doesn't sit beside the others.
 
 <div class="exampleWrapper">
   <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/basic.html) -->
@@ -18,17 +18,15 @@ The following example illustrates the different loader types that the `<auro-loa
 
 </auro-accordion>
 
-## Property & Attribute Examples
+## Property and attribute examples
 
 ### Appearance
 
-The `<auro-loader>` element supports three appearance options via the `appearance` attribute. Options are `default`, `inverse` and `brand`. 
-
-**Note**: Type `laser` is supported, but not shown due to fixed positioning.
+Set `appearance` to `default`, `inverse`, or `brand`. Type `laser` is supported but not shown, because it's fixed to the top of the page.
 
 #### Brand
 
-Use the `appearance="brand"` attribute for a brand color. Type `laser` is supported, but not shown due to fixed positioning.
+Use `appearance="brand"` to show the loader in the brand color on any background.
 
 <div class="exampleWrapper">
   <!-- AURO-GENERATED-CONTENT:START (FILE:src=../apiExamples/brand-appearance.html) -->
@@ -44,7 +42,7 @@ Use the `appearance="brand"` attribute for a brand color. Type `laser` is suppor
 
 #### Inverse
 
-Use the `appearance="inverse"` attribute for a pre-defined color.
+Use `appearance="inverse"` on dark backgrounds.
 
 <div class="exampleWrapper--ondark">
   <!-- AURO-GENERATED-CONTENT:START (FILE:src=../apiExamples/inverse-appearance.html) -->
@@ -60,13 +58,13 @@ Use the `appearance="inverse"` attribute for a pre-defined color.
 
 ### Size
 
-The `<auro-loader>` element supports a scale of sizes. Options are `[xs, sm, md, lg]`. 
+Options are `xs`, `sm`, `md`, and `lg`.
 
-**Note**: Type `laser` does not support a size attribute.
+**Note**: On `laser`, `sm`, `md`, and `lg` change the length of the moving bar, not the height of the loader.
 
-#### Extra Small
+#### Extra small
 
-Use the `xs` boolean attribute for a pre-defined size.
+Use `xs` for the smallest loader.
 
 <div class="exampleWrapper">
   <!-- AURO-GENERATED-CONTENT:START (FILE:src=../apiExamples/xs.html) -->
@@ -82,7 +80,7 @@ Use the `xs` boolean attribute for a pre-defined size.
 
 #### Small
 
-Use the `sm` boolean attribute for a pre-defined size.
+Use `sm` for a loader bigger than the default.
 
 <div class="exampleWrapper">
   <!-- AURO-GENERATED-CONTENT:START (FILE:src=../apiExamples/sm.html) -->
@@ -98,7 +96,7 @@ Use the `sm` boolean attribute for a pre-defined size.
 
 #### Medium
 
-Use the `md` boolean attribute for a pre-defined size.
+Use `md` for a loader bigger than `sm`.
 
 <div class="exampleWrapper">
   <!-- AURO-GENERATED-CONTENT:START (FILE:src=../apiExamples/md.html) -->
@@ -114,7 +112,7 @@ Use the `md` boolean attribute for a pre-defined size.
 
 #### Large
 
-Use the `lg` boolean attribute for a pre-defined size.
+Use `lg` for the largest loader.
 
 <div class="exampleWrapper">
   <!-- AURO-GENERATED-CONTENT:START (FILE:src=../apiExamples/lg.html) -->
@@ -129,20 +127,18 @@ Use the `lg` boolean attribute for a pre-defined size.
 </auro-accordion>
 
 
-## Slot Examples
+## Slot examples
 
-### Cycling Messages
+### Cycling messages
 
 Use the `message` slot to display one or more messages alongside the animation. Any element type is supported. When more than one is slotted, they rotate at the interval (in milliseconds) set by the `message-interval` attribute (default `5000`).
 
-**Note**: Typography, spacing and color for this slot are placeholder values pending Design sign-off.
+**Note**: The `laser` type doesn't support messages, because it has no room for text.
 
-**Note**: not supported on the `laser` type — no room for accompanying text in any motion state.
+**Note**: Typography, spacing, and color for this slot are placeholder values pending Design sign-off.
 
-A few things to know:
-
-- The component toggles `hidden` on your slotted elements to rotate them — don't also manage `hidden` on those elements yourself.
-- An invalid `message-interval` (`0`, negative, or non-numeric) falls back to `5000`.
+- The component toggles `hidden` on your slotted elements to rotate them. Don't also manage `hidden` on those elements yourself.
+- A `message-interval` of `0`, a negative number, a non-number, or a value above 2147483647 falls back to `5000`.
 - Rotation stops under `prefers-reduced-motion: reduce`; it freezes on whichever message was active when the preference took effect, so each message should be able to stand on its own.
 
 <div class="exampleWrapper">
@@ -157,11 +153,11 @@ A few things to know:
 
 </auro-accordion>
 
-### Message Position
+### Message position
 
-Use the `message-position` attribute to control where the `message` slot content renders relative to the animation. Options are `top`, `right`, `bottom` and `left`; an invalid value falls back to `bottom`.
+Use the `message-position` attribute to control where the `message` slot content renders relative to the animation. Options are `top`, `right`, `bottom`, and `left`; an invalid value falls back to `bottom`.
 
-#### Static Message
+#### Static message
 
 <div class="exampleWrapper">
   <!-- AURO-GENERATED-CONTENT:START (FILE:src=../apiExamples/message-position-static.html) -->
@@ -175,7 +171,7 @@ Use the `message-position` attribute to control where the `message` slot content
 
 </auro-accordion>
 
-#### Cycling Messages
+#### Cycling messages
 
 <div class="exampleWrapper">
   <!-- AURO-GENERATED-CONTENT:START (FILE:src=../apiExamples/message-position-cycling.html) -->
@@ -189,9 +185,9 @@ Use the `message-position` attribute to control where the `message` slot content
 
 </auro-accordion>
 
-### Message Size
+### Message size
 
-The `message` slot and default slot text scale with the loader's animation size: `xs` uses `body-xs`, the default size uses `body-sm`, `sm` uses `body-default`, and `md` and `lg` use `body-lg`. Note that the default (unsized) loader is smaller than `sm`.
+The text in the `message` and default slots scales with the loader size, from small text on `xs` to large text on `md` and `lg`. The default loader is smaller than `sm`.
 
 <div class="exampleWrapper">
   <!-- AURO-GENERATED-CONTENT:START (FILE:src=../apiExamples/message-size.html) -->
@@ -205,14 +201,13 @@ The `message` slot and default slot text scale with the loader's animation size:
 
 </auro-accordion>
 
-### Reduced Motion
+### Reduced motion
 
-The following examples relate to the `prefers-reduced-motion` accessibility feature. In order to see them in action, please enable your system's "Reduce Motion" accessibility setting.
+The following examples relate to the `prefers-reduced-motion` accessibility feature. To see these in action, turn on your system's reduced motion setting.
 
-#### Static Label
+#### Static label
 
-Use the default slot to provide custom text that replaces the `auro-loader` animation when the user has the `prefers-reduced-motion` accessibility feature enabled.
-The default text is `Loading...`
+When people turn on reduced motion, the loader shows text instead of the animation. Use the default slot to set that text. The default is "Loading...".
 
 <div class="exampleWrapper">
   <!-- AURO-GENERATED-CONTENT:START (FILE:src=../apiExamples/static-label.html) -->
@@ -226,9 +221,9 @@ The default text is `Loading...`
 
 </auro-accordion>
 
-#### Message Slot Only
+#### Message slot only
 
-If only the `message` slot is populated, `prefers-reduced-motion: reduce` shows its content instead of the generic `Loading...` fallback (frozen on whichever message was active).
+When only the `message` slot has content and reduced motion is on, the loader shows that content instead of the "Loading..." fallback, frozen on whichever message was active.
 
 <div class="exampleWrapper">
   <!-- AURO-GENERATED-CONTENT:START (FILE:src=../apiExamples/reduced-motion-message-only.html) -->
@@ -242,9 +237,9 @@ If only the `message` slot is populated, `prefers-reduced-motion: reduce` shows 
 
 </auro-accordion>
 
-#### Default Slot and Message Slot Together
+#### Default slot and message slot together
 
-If both slots are populated, only `message` shows under normal motion. Under `prefers-reduced-motion: reduce`, the default slot's content takes over and `message` is hidden — only one piece of text is ever shown at a time.
+If both slots have content, only `message` shows under normal motion. When people turn on reduced motion, the default slot's content takes over and `message` is hidden, so only one piece of text shows at a time.
 
 <div class="exampleWrapper">
   <!-- AURO-GENERATED-CONTENT:START (FILE:src=../apiExamples/reduced-motion-combined.html) -->
@@ -258,11 +253,11 @@ If both slots are populated, only `message` shows under normal motion. Under `pr
 
 </auro-accordion>
 
-## CSS Shadow Part Examples
+## CSS shadow part examples
 
 ### Element
 
-Use the `::part(element)` with your CSS as illustrated to effect things like the speed of the animation.
+Use `::part(element)` in your CSS to change things like the speed of the animation.
 
 <div class="exampleWrapper">
   <!-- AURO-GENERATED-CONTENT:START (FILE:src=../apiExamples/custom-speed.html) -->
@@ -276,11 +271,11 @@ Use the `::part(element)` with your CSS as illustrated to effect things like the
 
 </auro-accordion>
 
-## Common Usage Patterns & Functional Examples
+## Common usage patterns
 
-### Custom Color Support
+### Custom color
 
-The `<auro-loader>` element supports any custom color defined at the root level of the element.
+To use a custom color, set the CSS `color` property on `<auro-loader>`. The loader draws itself in its current text color.
 
 <div class="exampleWrapper">
   <!-- AURO-GENERATED-CONTENT:START (FILE:src=../apiExamples/custom-color.html) -->
@@ -295,9 +290,9 @@ The `<auro-loader>` element supports any custom color defined at the root level 
 
 </auro-accordion>
 
-## Restyle Component with CSS Variables
+## Restyle with CSS custom properties
 
-The component may be restyled by changing the values of the following token(s).
+Restyle the component by changing the values of the following tokens.
 
 <!-- Remove section if component does not have any component specific tokens -->
 

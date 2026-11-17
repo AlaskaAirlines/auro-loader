@@ -11,6 +11,7 @@ An animated loading indicator that shows people a task is in progress, with opti
 - **Appearance**: Set `appearance="inverse"` for dark backgrounds or `appearance="brand"` for the brand color.
 - **Rotating messages**: Slot more than one `message` to cycle through them every `message-interval` milliseconds.
 - **Reduced motion**: Always replaces the animation with text for people who turn on reduced motion.
+- **Screen readers**: The animation is silent, and the `message` slot is announced politely as it changes.
 
 **Example**
 <pre class="language-html"><code class="language-html">&lt;auro-loader orbit&gt;
@@ -43,10 +44,10 @@ An animated loading indicator that shows people a task is in progress, with opti
 
 ### Slots
 
-| Name      | Description                                                                                                                                                                                                         |
-| --------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| (default) | Text shown in place of the animation for people who turn on reduced motion, for example "Loading your reservation". Defaults to "Loading..." unless the `message` slot has content. Not shown for the `laser` type. |
-| message   | Optional message(s) to show alongside the animation, rotating at `messageInterval` when more than one is provided. Not shown for `laser`. See the docs for reduced-motion behavior.                                 |
+| Name      | Description                                                                                                                                                                                                                                                               |
+| --------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| (default) | Text shown in place of the animation for people who turn on reduced motion, for example "Loading your reservation". Defaults to "Loading..." unless the `message` slot has content. Screen readers don't read it otherwise, and it isn't shown for the `laser` type.      |
+| message   | Messages to show beside the animation, for example "Hang tight...". Screen readers politely announce them as they change, and when you slot more than one, they rotate every `messageInterval` milliseconds until someone turns on reduced motion. Not shown for `laser`. |
 
 ### CSS shadow parts
 
@@ -277,6 +278,12 @@ Use the `message` slot to display one or more messages alongside the animation. 
 &lt;/auro-loader&gt;</code></pre>
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>
+
+### Screen reader announcements
+
+The animation itself is silent for screen reader users. The `message` slot is a polite live region (`role="status"`), so screen readers announce its content as it changes without interrupting what they're reading. The default slot isn't read under normal motion. It shows only when people turn on reduced motion. The `laser` type has no text, so it's silent too.
+
+Add a `message` so screen reader users know the loader is working.
 
 ### Message position
 

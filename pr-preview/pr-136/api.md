@@ -44,10 +44,10 @@ An animated loading indicator that shows people a task is in progress, with opti
 
 ### Slots
 
-| Name      | Description                                                                                                                                                                                                                                                               |
-| --------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| (default) | Text shown in place of the animation for people who turn on reduced motion, for example "Loading your reservation". Defaults to "Loading..." unless the `message` slot has content. Screen readers don't read it otherwise, and it isn't shown for the `laser` type.      |
-| message   | Messages to show beside the animation, for example "Hang tight...". Screen readers politely announce them as they change, and when you slot more than one, they rotate every `messageInterval` milliseconds until someone turns on reduced motion. Not shown for `laser`. |
+| Name      | Description                                                                                                                                                                                                                                                                         |
+| --------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| (default) | Text shown in place of the animation for people who turn on reduced motion, for example "Loading your reservation". Defaults to "Loading..." unless the `message` slot has content. Screen readers read it only when reduced motion is on, and it isn't shown for the `laser` type. |
+| message   | Messages to show beside the animation, for example "Hang tight...". Screen readers politely announce them as they change, and when you slot more than one, they rotate every `messageInterval` milliseconds until someone turns on reduced motion. Not shown for `laser`.           |
 
 ### CSS shadow parts
 

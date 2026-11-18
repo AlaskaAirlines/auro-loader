@@ -6,4 +6,4 @@ import { AuroLoader } from '@aurodesignsystem/auro-loader/class';
 AuroLoader.register('custom-loader');
 ```
 
-This will create a new custom element `<custom-loader>` that behaves exactly like `<auro-loader>`, allowing both to coexist on the same page without interfering with each other.
+The `register` call registers a new custom element, `<custom-loader>`, that behaves like `<auro-loader>`, so both can exist on the same page without interfering with each other.
